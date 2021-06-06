@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 공부한 내용 기록용</title>
+    <link>/post/</link>
+    <description>공부한 내용 기록용 (Posts)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 06 Jun 2021 03:01:26 +0900</lastBuildDate>
+    
+    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>테스트용 페이지</title>
+      <link>/post/test/</link>
+      <pubDate>Sun, 06 Jun 2021 03:01:26 +0900</pubDate>
+      
+      <guid>/post/test/</guid>
+      <description>&lt;p&gt;본문 입력 테스트&lt;/p&gt;
+&lt;p&gt;여러줄&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;fun&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(){
+    println(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;코드 스니펫 테스트&amp;#34;&lt;/span&gt;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
