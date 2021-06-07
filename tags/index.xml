@@ -3,12 +3,8 @@
   <channel>
     <title>Tags on 공부한 내용 기록용</title>
     <link>/tags/</link>
-    <description>공부한 내용 기록용 (Tags)</description>
+    <description>Recent content in Tags on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
-    
-    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>ko-kr</language><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

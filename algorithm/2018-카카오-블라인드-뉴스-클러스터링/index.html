@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>2018 카카오 블라인드   뉴스 클러스터링 :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="간단히 문제를 요약하자면&amp;hellip;
+두 문자열을 받아 영문자에 대한 자카르 유사도를 계산하기
+정도로 요약이 되나, 세부적인 사항이 있다.
+문제 풀이에 앞서 문제 및 요구사항 정리를 해보자
+ 입력값으로는 2자 이상 1000자 이하의 두 문자열을 입력 받음 입력값에 대한 자카르 유사도를 출력해야함 입력 문자열은 두 글자씩 끊어서 연산에 사용한다.  이 때, 기타 공백이나 숫자, 특수 문자가 포함될 경우 연산에 사용하지 않는다   대소문자 구별을 하지 않는다.  그렇다면 자카르 유사도 란 무엇일까?" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/algorithm/2018-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EB%B8%94%EB%9D%BC%EC%9D%B8%EB%93%9C-%EB%89%B4%EC%8A%A4-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81/" />
+
+
+
+
+<link rel="stylesheet" href="assets/style.css">
+
+  <link rel="stylesheet" href="assets/blue.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="2018 카카오 블라인드   뉴스 클러스터링">
+<meta property="og:description" content="간단히 문제를 요약하자면&amp;hellip;
+두 문자열을 받아 영문자에 대한 자카르 유사도를 계산하기
+정도로 요약이 되나, 세부적인 사항이 있다.
+문제 풀이에 앞서 문제 및 요구사항 정리를 해보자
+ 입력값으로는 2자 이상 1000자 이하의 두 문자열을 입력 받음 입력값에 대한 자카르 유사도를 출력해야함 입력 문자열은 두 글자씩 끊어서 연산에 사용한다.  이 때, 기타 공백이나 숫자, 특수 문자가 포함될 경우 연산에 사용하지 않는다   대소문자 구별을 하지 않는다.  그렇다면 자카르 유사도 란 무엇일까?" />
+<meta property="og:url" content="/algorithm/2018-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EB%B8%94%EB%9D%BC%EC%9D%B8%EB%93%9C-%EB%89%B4%EC%8A%A4-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  
+    <meta property="og:image" content="favicon.ico">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-06-07 21:11:05 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/algorithm/2018-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EB%B8%94%EB%9D%BC%EC%9D%B8%EB%93%9C-%EB%89%B4%EC%8A%A4-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81/">2018 카카오 블라인드   뉴스 클러스터링</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-06-07 
+      </span>
+    
+    
+  </div>
+
+  
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>간단히 문제를 요약하자면&hellip;</p>
+<p><strong>두 문자열을 받아 영문자에 대한 자카르 유사도를 계산하기</strong></p>
+<p>정도로 요약이 되나, 세부적인 사항이 있다.</p>
+<p>문제 풀이에 앞서 문제 및 요구사항 정리를 해보자</p>
+<ul>
+<li>입력값으로는 2자 이상 1000자 이하의 두 문자열을 입력 받음</li>
+<li>입력값에 대한 자카르 유사도를 출력해야함</li>
+<li>입력 문자열은 두 글자씩 끊어서 연산에 사용한다.
+<ul>
+<li><strong>이 때, 기타 공백이나 숫자, 특수 문자가 포함될 경우 연산에 사용하지 않는다</strong></li>
+</ul>
+</li>
+<li>대소문자 구별을 하지 않는다.</li>
+</ul>
+<p>그렇다면 <code>자카르 유사도</code> 란 무엇일까?</p>
+<h2 id="자카르-유사도">자카르 유사도<a href="#자카르-유사도" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>두 집합 간의 유사도를 검사하느 여러 방법 중 하나로, 수학적 수식으로 표현하면 아래와 같다.</p>
+<p>$$J(A,B) = \frac {|A\cap B|}{|A\cup B|} = \frac {|A\cap B|} {|A| + |B| - |A\cap B| } $$</p>
+<p>교집합을 합집합으로 나눈 값이다.</p>
+<p>그렇다면, 문제에서 자카르 유사도를 어떻게 계산해야 될까?</p>
+<p>문제에서는 두 집합의 경우,</p>
+<p>입력으로 주어지는 두 문자열의 부분 집합으로</p>
+<p>각 문자열을 제약사항(두글자 단위로, 영문만 포함된 문자열)에 맞춰 <strong>중복을 허락</strong> 하는 집합이다.</p>
+<hr>
+<h2 id="풀이">풀이<a href="#풀이" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>먼저 <code>두 문자</code> 로 이뤄진 부분집합을 다루기 위해 해당하는 객체를 선언을 해주었다</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PartStr</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">char</span> a<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">char</span> b<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">PartStr</span><span style="color:#f92672">(</span><span style="color:#66d9ef">char</span> a<span style="color:#f92672">,</span> <span style="color:#66d9ef">char</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> a<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> b<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// equals and hashcode 생략
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></div><p>다음으론 문자열을 <code>PartStr</code> 부분 집합으로 변환하는 메소드를 작성하였는데</p>
+<p>간단하게 문자열을 순회하면서 다음 문자열까지 가져와 둘 다 영문자일 경우에만 부분집합에 추가하였다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>PartStr<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">strToCharSet</span><span style="color:#f92672">(</span>String str<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    List<span style="color:#f92672">&lt;</span>PartStr<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>       <span style="color:#75715e">// 결과로 나올 부분 집합
+</span><span style="color:#75715e"></span>    str <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span><span style="color:#a6e22e">toUpperCase</span><span style="color:#f92672">();</span>                        <span style="color:#75715e">// 대소문자를 무시하고 계산하기 위해 전부 대문자로 변환
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> str<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">char</span> a <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>i<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">char</span> b <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>i <span style="color:#f92672">+</span> 1<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>isLetter<span style="color:#f92672">(</span>a<span style="color:#f92672">)</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span>isLetter<span style="color:#f92672">(</span>b<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>         <span style="color:#75715e">// Character.isLetter 메소드를 사용하여 검사하였음
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">continue</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        result<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> PartStr<span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>이제 두 집합을 추출하였으니, 자카르 유사도를 검사를 해야 한다.</p>
+<p>처음 작성시에는 중복 여부에 따른 값 변화를 깊게 생각하질 않아서,</p>
+<p><code>Stream</code> 연산을 통해 곂치는 값만 카운팅을 해주었으나,</p>
+<p>중복을 허용하는 집합이기에 다르게 처리를 하였다.</p>
+<p>한 집합(A)에 대해서 순차적으로 확인 후(교집합) 다른 집합(B) 에서 제거하는 형식으로 진행하였다.</p>
+<p>합집합의 경우 $ |A| + |B| - |A\cap B| $ 이기에</p>
+<p>교집합 연산시 처리되지 않는 요소(A)와 제거되지 않은 요소(B)를 모두 더하면 자동으로 나온다.</p>
+<p>그리고 소숫점 5자리까지는 정확히 계산하기 위해 <code>BigDecimal</code>을 통해 연산을 진행하였다.</p>
+<p><code>float</code> 를 사용할시 부정확하게 연산될 가능성이 있기에</p>
+<p><code>double</code> 이나 <code>BigDecimal</code> 을 통해 연산을 하는게 좋아보인다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">float</span> <span style="color:#a6e22e">jaccard</span><span style="color:#f92672">(</span>Collection<span style="color:#f92672">&lt;</span>PartStr<span style="color:#f92672">&gt;</span> partStrs1<span style="color:#f92672">,</span> Collection<span style="color:#f92672">&lt;</span>PartStr<span style="color:#f92672">&gt;</span> partStrs2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">//교집합
+</span><span style="color:#75715e"></span>    List<span style="color:#f92672">&lt;</span>PartStr<span style="color:#f92672">&gt;</span> intersection <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span> <span style="color:#75715e">// 교집합으로 나올 집합
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//합집합
+</span><span style="color:#75715e"></span>    List<span style="color:#f92672">&lt;</span>PartStr<span style="color:#f92672">&gt;</span> union <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span> <span style="color:#75715e">// 합집합으로 나올 결과
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>PartStr elem <span style="color:#f92672">:</span> partStrs1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>partStrs2<span style="color:#f92672">.</span><span style="color:#a6e22e">contains</span><span style="color:#f92672">(</span>elem<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+            intersection<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>elem<span style="color:#f92672">);</span>
+            partStrs2<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">(</span>elem<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        union<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>elem<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+    union<span style="color:#f92672">.</span><span style="color:#a6e22e">addAll</span><span style="color:#f92672">(</span>partStrs2<span style="color:#f92672">);</span>
+    
+    BigDecimal intersectionCount <span style="color:#f92672">=</span> 
+        BigDecimal<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>intersection<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">());</span>
+    BigDecimal unionCount 
+        <span style="color:#f92672">=</span> BigDecimal<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>union<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">());</span>
+    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> intersectionCount
+            <span style="color:#f92672">.</span><span style="color:#a6e22e">divide</span><span style="color:#f92672">(</span>unionCount<span style="color:#f92672">,</span> 5<span style="color:#f92672">,</span> RoundingMode<span style="color:#f92672">.</span><span style="color:#a6e22e">FLOOR</span><span style="color:#f92672">)</span>
+            <span style="color:#f92672">.</span><span style="color:#a6e22e">floatValue</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 0으로 나뉘는 경우나 연산을 할 수 없는 경우, 문제 내용에 따라 1을 반환하였다.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> 1L<span style="color:#f92672">;</span> 
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><hr>
+<h3 id="참고">참고<a href="#참고" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<ul>
+<li><a href="https://programmers.co.kr/learn/courses/30/lessons/17677">문제 링크</a></li>
+<li><a href="https://github.com/Ddudooo/algorithm/blob/main/programmers30_17677/src/main/java/study/problem/Solution.java">풀이 코드</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="pathname"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script src="assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>

@@ -3,12 +3,8 @@
   <channel>
     <title>Categories on 공부한 내용 기록용</title>
     <link>/categories/</link>
-    <description>공부한 내용 기록용 (Categories)</description>
+    <description>Recent content in Categories on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
-    
-    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>ko-kr</language><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
