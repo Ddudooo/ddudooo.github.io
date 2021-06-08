@@ -1,0 +1,14 @@
+
+@font-face {
+    font-family: Nanum Gothic Coding;
+    src: url(fonts/NanumGothicCoding.woff) format('woff');
+    unicode-range: U+AC00-U+D7A3;
+    font-style: normal;
+} 
+
+
+body {
+    font-family: 'Nanum Gothic Coding','Fira Code','Monaco','Consolas','Ubuntu Mono','monospace';
+}
+
+/* @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:400') */
