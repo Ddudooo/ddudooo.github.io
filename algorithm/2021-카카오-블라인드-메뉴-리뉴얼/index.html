@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>2021 카카오 블라인드   메뉴 리뉴얼 :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="문제 본문이 굉장히 긴편인데, 한눈에 들어오지도 않아 요구하는 바가 무엇인지 바로 파악하기가 힘들었다.
+문제의 요구사항으로는
+ 문자열에 대해 각 문자로 만들 수 있는 문자열 조합 도출 문자열 조합에 대한 갯수 도출 가장 많이 나온 조합에 대해 알파벳 순으로 출력  비교적 쉬운 수준으로 보이나, 위에서 말했다싶이 문제 본문을 읽고 바로 요구사항이 떠오르질 않는다&amp;hellip;
+문제 해결을 위해서 좀 더 풀어서 써보자면&amp;hellip;
+ 입력으로 받은 각 손님 별 주문 (문자열) 에 대해 부분 문자열 조합 생성 각 부분 문자열에 대한 카운트 저장 및 업데이트 목표 코스 크기 (int) 에 대해 가장 많이 호출된 부분 문자열 찾기 결과 반환을 위해 알파벳 순으로 정렬  정도로 문자열에 대해 목표 크기에 맞는 부분 문자열 조합을 생성 후" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/algorithm/2021-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EB%B8%94%EB%9D%BC%EC%9D%B8%EB%93%9C-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="2021 카카오 블라인드   메뉴 리뉴얼">
+<meta property="og:description" content="문제 본문이 굉장히 긴편인데, 한눈에 들어오지도 않아 요구하는 바가 무엇인지 바로 파악하기가 힘들었다.
+문제의 요구사항으로는
+ 문자열에 대해 각 문자로 만들 수 있는 문자열 조합 도출 문자열 조합에 대한 갯수 도출 가장 많이 나온 조합에 대해 알파벳 순으로 출력  비교적 쉬운 수준으로 보이나, 위에서 말했다싶이 문제 본문을 읽고 바로 요구사항이 떠오르질 않는다&amp;hellip;
+문제 해결을 위해서 좀 더 풀어서 써보자면&amp;hellip;
+ 입력으로 받은 각 손님 별 주문 (문자열) 에 대해 부분 문자열 조합 생성 각 부분 문자열에 대한 카운트 저장 및 업데이트 목표 코스 크기 (int) 에 대해 가장 많이 호출된 부분 문자열 찾기 결과 반환을 위해 알파벳 순으로 정렬  정도로 문자열에 대해 목표 크기에 맞는 부분 문자열 조합을 생성 후" />
+<meta property="og:url" content="/algorithm/2021-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EB%B8%94%EB%9D%BC%EC%9D%B8%EB%93%9C-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  
+    <meta property="og:image" content="/favicon.ico">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-06-10 02:36:29 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/algorithm/2021-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EB%B8%94%EB%9D%BC%EC%9D%B8%EB%93%9C-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC/">2021 카카오 블라인드   메뉴 리뉴얼</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-06-10 [Updated: 2021-06-10]
+      </span>
+    
+    
+  </div>
+
+  
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>문제 본문이 굉장히 긴편인데, 한눈에 들어오지도 않아 요구하는 바가 무엇인지 바로 파악하기가 힘들었다.</p>
+<p>문제의 요구사항으로는</p>
+<ul>
+<li>문자열에 대해 각 문자로 만들 수 있는 문자열 조합 도출</li>
+<li>문자열 조합에 대한 갯수 도출</li>
+<li>가장 많이 나온 조합에 대해 알파벳 순으로 출력</li>
+</ul>
+<p>비교적 쉬운 수준으로 보이나, 위에서 말했다싶이 문제 본문을 읽고 바로 요구사항이 떠오르질 않는다&hellip;</p>
+<p>문제 해결을 위해서 좀 더 풀어서 써보자면&hellip;</p>
+<ol>
+<li>입력으로 받은 각 손님 별 주문 (문자열) 에 대해 <strong>부분 문자열 조합 생성</strong></li>
+<li>각 부분 문자열에 대한 카운트 저장 및 업데이트</li>
+<li>목표 코스 크기 (int) 에 대해 <strong>가장 많이 호출된 부분 문자열</strong> 찾기</li>
+<li>결과 반환을 위해 <strong>알파벳 순으로 정렬</strong></li>
+</ol>
+<p>정도로 문자열에 대해 목표 크기에 맞는 부분 문자열 조합을 생성 후</p>
+<p>추후 목표 크기에 대한 문자열 조합 갯수 비교를 위해, 저장</p>
+<p>결과 반환을 위해 도출한 부분 문자열 정렬 후 반환을 해야한다.</p>
+<hr>
+<h2 id="코드-설명">코드 설명<a href="#코드-설명" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>풀이 작성시 핵심이 되는 부분 문자열 생성메소드 부분이다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>String str<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> cnt<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> target<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> idx<span style="color:#f92672">,</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> order<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// 목표 길이에 맞는지 확인		
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>cnt <span style="color:#f92672">==</span> target<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 결과로 나온 부분 문자열 내부를 알파벳 순에 맞춰 정렬하여 반환 
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> foods <span style="color:#f92672">=</span> courseOrderingByAlphabet<span style="color:#f92672">(</span>str<span style="color:#f92672">);</span>			
+        <span style="color:#75715e">// 정렬을 위해 char[] 로 나온 결과를 다시 스트링 값으로 변경
+</span><span style="color:#75715e"></span>        String newCourse <span style="color:#f92672">=</span> createCourseName<span style="color:#f92672">(</span>foods<span style="color:#f92672">);</span>
+        <span style="color:#75715e">// 부분 문자열 마다 카운팅을 위해, map객체에 저장.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> courseCnt <span style="color:#f92672">=</span> map<span style="color:#f92672">.</span><span style="color:#a6e22e">getOrDefault</span><span style="color:#f92672">(</span>newCourse<span style="color:#f92672">,</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>			
+        map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>newCourse<span style="color:#f92672">,</span> courseCnt<span style="color:#f92672">);</span>
+        <span style="color:#75715e">// 각 코스별 가장 많이 호출된 갯수 저장을 위해 저장.
+</span><span style="color:#75715e"></span>        isMostFavoriteCourse<span style="color:#f92672">(</span>courseCnt<span style="color:#f92672">,</span> target<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>		
+    <span style="color:#f92672">}</span>
+    <span style="color:#75715e">// 입력 문자열에 대해 순차적으로 더하여 부분 문자열 생성하며 진행
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> idx<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> order<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>			
+        <span style="color:#66d9ef">char</span> food <span style="color:#f92672">=</span> order<span style="color:#f92672">[</span>i<span style="color:#f92672">];</span>			
+        create<span style="color:#f92672">(</span>str <span style="color:#f92672">+</span> food<span style="color:#f92672">,</span> cnt <span style="color:#f92672">+</span> 1<span style="color:#f92672">,</span> target<span style="color:#f92672">,</span> i <span style="color:#f92672">+</span> 1<span style="color:#f92672">,</span> order<span style="color:#f92672">);</span>		
+    <span style="color:#f92672">}</span>	
+<span style="color:#f92672">}</span>
+</code></pre></div><p>문자열을 인덱스로 순회하며 문자열의 부분 문자열을 생성하는데, 깔끔하게 메소드를 만들지 못해 아쉽다.</p>
+<p>한 눈에 들어오는 편이 아니기 때문에 추가적인 설명을 남긴다.</p>
+<p>입력 문자열 예시로 <code>ABCDE</code> 라는 문자열이 들어오고</p>
+<p>목표 부분 문자열 크기로 <code>2</code> 라고 하자.</p>
+<p>해당 메소드로 처리를 위해, <code>ABCDE</code> 문자열을 <code>index</code>로 순회하며 메소드를 호출하게 된다.</p>
+<p>메소드의 파라미터를 여기서 정하였는데</p>
+<p><code>str</code> - 생성할 부분 문자열</p>
+<p><code>cnt</code> - 부분 문자열 크기</p>
+<p><code>targert</code> - 목표 부분 문자열크기</p>
+<p><code>idx</code> - 입력 문자열에 대한 <code>index</code> 로 각 문자별 생성을 위해 입력받음</p>
+<p><code>order</code> - 전체 문자열 <code>char[]</code></p>
+<p>보다 싶이 파라미터로 받는 변수가 많아, 정확히 어떤 값을 어떻게 처리하는지 바로 파악하는데 어려움이 따른다&hellip;</p>
+<p><del>나중엔 이러지 말자&hellip;</del></p>
+<p>이후 들어온 문자열을 시작점부터 시작하여 부분 문자열을 생성한다.</p>
+<p>재귀 호출을 통해 생성하는데, 스트링 연산시 새로운 인스턴스가 새롭게 생성되므로</p>
+<p>첫 문자 <code>A</code> -&gt; 두번째 <code>B</code></p>
+<p>첫 문자 <code>A</code> -&gt; 두번째 <code>C</code></p>
+<p>와 같은 순서로 생성되어 문자열에 대한 부분 문자열을 생성하게 된다.</p>
+<p>문자열 크기가 목표 크기에 다다르게 되면, 해당 문자열을 각 문자로 분해후 정렬하여</p>
+<p>결과 도출시 문제가 없도록 한 후, 각 문자별 카운팅을 위해 저장한다.</p>
+<p>마음에 안드는 부분 투성이지만 여기까지&hellip;</p>
+<hr>
+<h2 id="참조">참조<a href="#참조" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li><a href="https://programmers.co.kr/learn/courses/30/lessons/72411">문제 링크</a></li>
+<li><a href="https://tech.kakao.com/2021/01/25/2021-kakao-recruitment-round-1/">공식 풀이</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>
