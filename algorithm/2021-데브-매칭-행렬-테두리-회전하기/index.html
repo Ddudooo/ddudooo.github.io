@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>2021 데브 매칭   행렬 테두리 회전하기 :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="데브 매칭 지원시 실제론 못풀었던 문제&amp;hellip;
+앞에 문제나 뒤에 문제에 너무 시간을 소비했었다.
+이제 와서 풀어보니, 무난하게 풀릴듯.
+먼저 문제 설명을 하자면
+예시로 $ 6 X 6 $ 사이즈의 행렬이 있다고 할때
+아래와 같은 그림처럼 표기할 수 있다.
+이때 각 행렬 좌표 두개의 쌍으로 이루어진 요구사항 (문제상에서는 query) 에 맞춰
+해당 좌표 내에 행렬 값들을 시계 방향으로 회전시킨다.
+아래 그림은 (2, 2), (5, 4) 를 기준으로 했을 때 회전 예시이다." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/algorithm/2021-%EB%8D%B0%EB%B8%8C-%EB%A7%A4%EC%B9%AD-%ED%96%89%EB%A0%AC-%ED%85%8C%EB%91%90%EB%A6%AC-%ED%9A%8C%EC%A0%84%ED%95%98%EA%B8%B0/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="2021 데브 매칭   행렬 테두리 회전하기">
+<meta property="og:description" content="데브 매칭 지원시 실제론 못풀었던 문제&amp;hellip;
+앞에 문제나 뒤에 문제에 너무 시간을 소비했었다.
+이제 와서 풀어보니, 무난하게 풀릴듯.
+먼저 문제 설명을 하자면
+예시로 $ 6 X 6 $ 사이즈의 행렬이 있다고 할때
+아래와 같은 그림처럼 표기할 수 있다.
+이때 각 행렬 좌표 두개의 쌍으로 이루어진 요구사항 (문제상에서는 query) 에 맞춰
+해당 좌표 내에 행렬 값들을 시계 방향으로 회전시킨다.
+아래 그림은 (2, 2), (5, 4) 를 기준으로 했을 때 회전 예시이다." />
+<meta property="og:url" content="/algorithm/2021-%EB%8D%B0%EB%B8%8C-%EB%A7%A4%EC%B9%AD-%ED%96%89%EB%A0%AC-%ED%85%8C%EB%91%90%EB%A6%AC-%ED%9A%8C%EC%A0%84%ED%95%98%EA%B8%B0/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  
+    <meta property="og:image" content="/favicon.ico">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-06-12 19:30:36 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/algorithm/2021-%EB%8D%B0%EB%B8%8C-%EB%A7%A4%EC%B9%AD-%ED%96%89%EB%A0%AC-%ED%85%8C%EB%91%90%EB%A6%AC-%ED%9A%8C%EC%A0%84%ED%95%98%EA%B8%B0/">2021 데브 매칭   행렬 테두리 회전하기</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-06-12 [Updated: 2021-06-12]
+      </span>
+    
+    
+  </div>
+
+  
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>데브 매칭 지원시 실제론 못풀었던 문제&hellip;</p>
+<p>앞에 문제나 뒤에 문제에 너무 시간을 소비했었다.</p>
+<p>이제 와서 풀어보니, 무난하게 풀릴듯.</p>
+<p>먼저 문제 설명을 하자면</p>
+<p>예시로 $ 6 X 6 $  사이즈의 행렬이 있다고 할때</p>
+<p>아래와 같은 그림처럼 표기할 수 있다.</p>
+<p><img src="/images/algorithm/programmers/problem77485/grid_example.png" alt="grid_example.png"></p>
+<p>이때 각 행렬 좌표 두개의 쌍으로 이루어진 요구사항 (문제상에서는 query) 에 맞춰</p>
+<p>해당 좌표 내에 행렬 값들을 시계 방향으로 회전시킨다.</p>
+<p>아래 그림은 (2, 2), (5, 4) 를 기준으로 했을 때 회전 예시이다.</p>
+<p><img src="/images/algorithm/programmers/problem77485/rotation_example.png" alt="rotation_example.png"></p>
+<p>이러한 요구사항들로 행렬을 회전시킨뒤 이동한 값중 최소값을 반환하면 되는 문제</p>
+<ol>
+<li>요구사항대로 행렬을 회전</li>
+<li>회전중에 값을 체크하여 가장 작은 값만 도출</li>
+<li>요구 사항별로 반복</li>
+</ol>
+<p>으로 완료되는 문제.</p>
+<hr>
+<h2 id="풀이">풀이<a href="#풀이" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>회전이라고 해서 복잡하게 생각할 필요 없이,</p>
+<ol>
+<li><strong>목표 가장 상위 열</strong> 을 <strong>우측</strong> 으로 이동</li>
+<li><strong>목표 가장 우측 행</strong> 을 <strong>아래</strong> 로 이동</li>
+<li><strong>목표 가장 하위 열</strong> 을 <strong>좌측</strong> 으로 이동</li>
+<li><strong>목표 가장 좌측 행</strong> 을 <strong>상단</strong> 으로 이동</li>
+</ol>
+<p>으로 나누어서 생각하면 편할 듯 싶다.</p>
+<p>그렇다면 예시로 <code>목표 가장 상위 열을 우측으로 이동</code> 같은 경우에</p>
+<p><code>목표 가장 상위 열</code> 과 <code>우측으로 이동</code> 을 구현하여야 하는데</p>
+<p><code>목표 가장 상위 열</code> 의 경우</p>
+<p>요구사항인 <code>query</code>를 <code>[(x1, y1), (x2, y2)]</code> 표기할 수 있을때</p>
+<p><code>목표 가장 상위 열</code> 은 <code>(*, y1)</code> 이다</p>
+<p>이때 <code>우측으로 이동</code>의 이동 범위 지정을 해줘야 하는데</p>
+<p>이동 범위는 <code>x1 ~ x2</code> 까지 이다</p>
+<p>이와 같은 방식으로 나머지 부분도 구현을 진행하면 해결되는 문제</p>
+<p>나머지는 사소한 것들이 남아 있는데,</p>
+<p>내가 푼 방식의 경우 <code>이차원 배열</code>을 통한 행렬을 표현하였는데, 인덱스가 0부터 시작이기에</p>
+<p>요구사항 <code>query</code>의 행렬과 값을 일치시키기 위해 0번 행과 0열을 넣은 <code>이차원 배열</code>을 생성하였다.</p>
+<p>마지막으로 회전 기능 구현 코드이다.</p>
+<p>사용할 행렬 <code>이차원 배열</code> 과, 요구사항을 구현한 클래스인 <code>Query</code>를 사용하여 구현하였다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">rotate</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> map<span style="color:#f92672">,</span> Query query<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">int</span> startPoint <span style="color:#f92672">=</span> map<span style="color:#f92672">[</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">x</span><span style="color:#f92672">][</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">y</span><span style="color:#f92672">];</span>
+		<span style="color:#66d9ef">int</span> min <span style="color:#f92672">=</span> startPoint<span style="color:#f92672">;</span>
+		<span style="color:#75715e">//상단 우측으로 | a.x -&gt; b.x , a.y 그대로
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> query<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">x</span><span style="color:#f92672">;</span> x <span style="color:#f92672">&lt;</span> query<span style="color:#f92672">.</span><span style="color:#a6e22e">b</span><span style="color:#f92672">.</span><span style="color:#a6e22e">x</span><span style="color:#f92672">;</span> x<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+			map<span style="color:#f92672">[</span>x<span style="color:#f92672">][</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">y</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> map<span style="color:#f92672">[</span>x <span style="color:#f92672">+</span> 1<span style="color:#f92672">][</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">y</span><span style="color:#f92672">];</span>
+			min <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">min</span><span style="color:#f92672">(</span>min<span style="color:#f92672">,</span> map<span style="color:#f92672">[</span>x<span style="color:#f92672">][</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">y</span><span style="color:#f92672">]);</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#75715e">//우변 하단으로 | b.x 그대로, a.y -&gt; b.y
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> query<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">y</span><span style="color:#f92672">;</span> y <span style="color:#f92672">&lt;</span> query<span style="color:#f92672">.</span><span style="color:#a6e22e">b</span><span style="color:#f92672">.</span><span style="color:#a6e22e">y</span><span style="color:#f92672">;</span> y<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+			map<span style="color:#f92672">[</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">b</span><span style="color:#f92672">.</span><span style="color:#a6e22e">x</span><span style="color:#f92672">][</span>y<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> map<span style="color:#f92672">[</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">b</span><span style="color:#f92672">.</span><span style="color:#a6e22e">x</span><span style="color:#f92672">][</span>y <span style="color:#f92672">+</span> 1<span style="color:#f92672">];</span>
+			min <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">min</span><span style="color:#f92672">(</span>min<span style="color:#f92672">,</span> map<span style="color:#f92672">[</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">b</span><span style="color:#f92672">.</span><span style="color:#a6e22e">x</span><span style="color:#f92672">][</span>y<span style="color:#f92672">]);</span>
+		<span style="color:#f92672">}</span>
+
+		<span style="color:#75715e">// 하단 좌측으로 | b.x -&gt; a.x | b.y 그대로
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> query<span style="color:#f92672">.</span><span style="color:#a6e22e">b</span><span style="color:#f92672">.</span><span style="color:#a6e22e">x</span><span style="color:#f92672">;</span> x <span style="color:#f92672">&gt;</span> query<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">x</span><span style="color:#f92672">;</span> x<span style="color:#f92672">--)</span> <span style="color:#f92672">{</span>
+			map<span style="color:#f92672">[</span>x<span style="color:#f92672">][</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">b</span><span style="color:#f92672">.</span><span style="color:#a6e22e">y</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> map<span style="color:#f92672">[</span>x <span style="color:#f92672">-</span> 1<span style="color:#f92672">][</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">b</span><span style="color:#f92672">.</span><span style="color:#a6e22e">y</span><span style="color:#f92672">];</span>
+			min <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">min</span><span style="color:#f92672">(</span>min<span style="color:#f92672">,</span> map<span style="color:#f92672">[</span>x<span style="color:#f92672">][</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">b</span><span style="color:#f92672">.</span><span style="color:#a6e22e">y</span><span style="color:#f92672">]);</span>
+		<span style="color:#f92672">}</span>
+
+		<span style="color:#75715e">// 자변 위쪽으로 | a.x 그대로 | b.y -&gt; a.y
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> query<span style="color:#f92672">.</span><span style="color:#a6e22e">b</span><span style="color:#f92672">.</span><span style="color:#a6e22e">y</span><span style="color:#f92672">;</span> y <span style="color:#f92672">&gt;</span> query<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">y</span><span style="color:#f92672">;</span> y<span style="color:#f92672">--)</span> <span style="color:#f92672">{</span>
+			map<span style="color:#f92672">[</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">x</span><span style="color:#f92672">][</span>y<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> map<span style="color:#f92672">[</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">x</span><span style="color:#f92672">][</span>y <span style="color:#f92672">-</span> 1<span style="color:#f92672">];</span>
+			min <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">min</span><span style="color:#f92672">(</span>min<span style="color:#f92672">,</span> map<span style="color:#f92672">[</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">x</span><span style="color:#f92672">][</span>y<span style="color:#f92672">]);</span>
+		<span style="color:#f92672">}</span>
+		map<span style="color:#f92672">[</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">x</span><span style="color:#f92672">][</span>query<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">y</span> <span style="color:#f92672">+</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> startPoint<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">return</span> min<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><hr>
+<h2 id="참고">참고<a href="#참고" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li><a href="https://programmers.co.kr/learn/courses/30/lessons/77485">문제 링크</a></li>
+<li><a href="https://github.com/Ddudooo/algorithm/blob/main/programmers30_77485/src/main/java/study/problem/Solution.java">문제 풀이 소스</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>
