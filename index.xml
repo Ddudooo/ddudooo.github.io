@@ -6,7 +6,77 @@
     <description>Recent content on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 12 Jun 2021 19:30:36 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Jun 2021 20:07:42 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>프로그래머스 - 카펫</title>
+      <link>/algorithm/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%B9%B4%ED%8E%AB/</link>
+      <pubDate>Sat, 12 Jun 2021 20:07:42 +0900</pubDate>
+      
+      <guid>/algorithm/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%B9%B4%ED%8E%AB/</guid>
+      <description>문제부터 살펴보자
+카펫에 속한 두 타일 색으로 전체 카펫 크기를 도출하면 되는 문제
+입력값으로는 두 타일 색인, 갈색 타일, 노란색 타일, 각각의 갯수가 주어진다
+중앙의 타일은 항상 노란 타일 이며, 바깥 부분은 갈색 타일 로 둘러쌓여진 형태
+ 풀이 먼저 갈색 타일에 대해 좀 더 살펴보자
+갈색 타일 은 전체 카펫의 테두리 부분이며
+전체 카펫 타일 갯수를 $ 가로 X 세로 $ 라 칭할 수 있을 때
+갈색 타일 갯수는</description>
+      <content>&lt;p&gt;문제부터 살펴보자&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;카펫&lt;/code&gt;에 속한 &lt;code&gt;두 타일 색&lt;/code&gt;으로 전체 카펫 크기를 도출하면 되는 문제&lt;/p&gt;
+&lt;p&gt;입력값으로는 두 타일 색인, 갈색 타일, 노란색 타일, 각각의 갯수가 주어진다&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;중앙의 타일은 항상 노란 타일&lt;/strong&gt; 이며, &lt;strong&gt;바깥 부분은 갈색 타일&lt;/strong&gt; 로 둘러쌓여진 형태&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;풀이&#34;&gt;풀이&lt;/h2&gt;
+&lt;p&gt;먼저 갈색 타일에 대해 좀 더 살펴보자&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;갈색 타일&lt;/strong&gt; 은 &lt;strong&gt;전체 카펫의 테두리&lt;/strong&gt; 부분이며&lt;/p&gt;
+&lt;p&gt;전체 카펫 타일 갯수를 $ 가로 X 세로 $ 라 칭할 수 있을 때&lt;/p&gt;
+&lt;p&gt;갈색 타일 갯수는&lt;/p&gt;
+&lt;p&gt;$$ 갈색 타일 갯수 = 2 X ( 가로 + 세로) - 4 = (가로 + 세로 + 가로 + 세로) - 4$$&lt;/p&gt;
+&lt;p&gt;여기서 &lt;code&gt;-4&lt;/code&gt;를 한 이유는 가로 갯수 세로 갯수를 더했을 경우,&lt;/p&gt;
+&lt;p&gt;모서리의 갯수를 중복해서 더하게 되므로 각 모서리의 갯수를 빼주었다.&lt;/p&gt;
+&lt;p&gt;그렇다면 노란 타일도 같은 방식으로 표현해보자&lt;/p&gt;
+&lt;p&gt;노란 타일의 경우 전체 카펫의 중앙 부분으로&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;전체 타일&lt;/strong&gt; 에서 &lt;strong&gt;테두리 부분(갈색 타일)&lt;/strong&gt; 제외한 나머지 부분으로&lt;/p&gt;
+&lt;p&gt;$$ 노란 타일 갯수 = 가로 X 세로 - (2 X ( 가로 + 세로) -4) $$&lt;/p&gt;
+&lt;p&gt;로도 표현할 수 있으나 좀 더 보기 편하게 바꿔보자&lt;/p&gt;
+&lt;p&gt;$$ 노란 타일 갯수 = (가로 - 2) X (세로 - 2)$$&lt;/p&gt;
+&lt;p&gt;이와 같은 이유가 나온 이유는&lt;/p&gt;
+&lt;p&gt;테두리 부분을 제외하기 때문에 기존 카펫의 &lt;code&gt;가로&lt;/code&gt; , &lt;code&gt;세로&lt;/code&gt; 길이에서 테두리 크기 만큼 제외하면&lt;/p&gt;
+&lt;p&gt;나머지 노란 타일의 범위인 사각형의 &lt;code&gt;가로&lt;/code&gt;, &lt;code&gt;세로&lt;/code&gt; 길이가 되기에&lt;/p&gt;
+&lt;p&gt;기존 카펫 길이에서 각각 &lt;code&gt;-2&lt;/code&gt; 만큼 빼주어 계산한다.&lt;/p&gt;
+&lt;p&gt;이와 같은 표현식으로 계산을 편하게 하기 위해 다음과 같은 식을 표현할 수 있다.&lt;/p&gt;
+&lt;p&gt;$$ (가로 + 세로) = (갈색 타일 + 4) / 2 $$&lt;/p&gt;
+&lt;p&gt;이제 나온 표현식으로 가로+세로 범위 내에서 순회하면서 각 표현식을 검사하면서 확인하면 끝&lt;/p&gt;
+&lt;p&gt;아래는 풀이 코드 예시&lt;/p&gt;
+&lt;p&gt;식 도출 외에는 간단한편&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;solution&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; brown&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; yellow&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; answer &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;2&lt;span style=&#34;color:#f92672&#34;&gt;];&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; borderSize &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;brown &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; 4&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; 2&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// 가로 + 세로 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; 3&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; borderSize&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt; i&lt;span style=&#34;color:#f92672&#34;&gt;++)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// i 가로 , j 세로
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// 가로 + 세로 길이를 유추하였기 때문에 해당 조건에 맞는 범위 내에서 순회 처리
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; j &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; borderSize &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; i&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt; 
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;j &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; i&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 문제상 조건으로 추가
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;// 노란 타일 갯수 표현 식
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; isYellowCnt &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;i &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; 2&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;j &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; 2&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt; 
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;yellow &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; isYellowCnt&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 표현식이 모두 맞을 경우 정답처리.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            answer&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; j&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+            answer&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;1&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; i&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; answer&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;참조&#34;&gt;참조&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://programmers.co.kr/learn/courses/30/lessons/42842&#34;&gt;문제 링크&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Ddudooo/algorithm/blob/main/programmers30_42842/src/main/java/study/problem/Solution.java&#34;&gt;풀이 소스&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>2021 데브 매칭   행렬 테두리 회전하기</title>
       <link>/algorithm/2021-%EB%8D%B0%EB%B8%8C-%EB%A7%A4%EC%B9%AD-%ED%96%89%EB%A0%AC-%ED%85%8C%EB%91%90%EB%A6%AC-%ED%9A%8C%EC%A0%84%ED%95%98%EA%B8%B0/</link>
