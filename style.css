@@ -11,4 +11,20 @@ body {
     font-family: 'Nanum Gothic Coding','Fira Code','Monaco','Consolas','Ubuntu Mono','monospace';
 }
 
+
+.tx-orange {
+    color: orange;
+}
+
+.tx-teal{
+    color:teal
+}
+
+.tx-royalblue{
+    color:royalblue
+}
+
+.tx-sub{
+    vertical-align: top;
+}
 /* @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:400') */

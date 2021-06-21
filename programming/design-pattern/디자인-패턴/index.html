@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>디자인 패턴 :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="디자인패턴이란? 앞선 개발자들이 만들어 놓은 공통적으로 발생하는 문제에 대한 재사용 가능한 해결책 이다.
+일반적으로 디자인 패턴 이라고 한다면 Gang-Of-Four 가 쓴 디자인패턴 서적의 내용이라고 보면 된다.
+&amp;ldquo;디자인패턴이란? 일반적인 문제를 해결하기 위한 문제해결책이다.&amp;rdquo;
+이정도까지만 알고 있어도 문제없을듯하다.
+그래서 왜 디자인 패턴을 알아야 하나?   앞서 말한것과 같이 일반적으로 발생하는 문제 의 해결책으로 사용할 수 있기 때문에
+  다른 개발자와 소통하기 편해진다.
+  1번의 경우 앞에서 나온 내용이기에 생략한다." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/programming/design-pattern/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="디자인 패턴">
+<meta property="og:description" content="디자인패턴이란? 앞선 개발자들이 만들어 놓은 공통적으로 발생하는 문제에 대한 재사용 가능한 해결책 이다.
+일반적으로 디자인 패턴 이라고 한다면 Gang-Of-Four 가 쓴 디자인패턴 서적의 내용이라고 보면 된다.
+&amp;ldquo;디자인패턴이란? 일반적인 문제를 해결하기 위한 문제해결책이다.&amp;rdquo;
+이정도까지만 알고 있어도 문제없을듯하다.
+그래서 왜 디자인 패턴을 알아야 하나?   앞서 말한것과 같이 일반적으로 발생하는 문제 의 해결책으로 사용할 수 있기 때문에
+  다른 개발자와 소통하기 편해진다.
+  1번의 경우 앞에서 나온 내용이기에 생략한다." />
+<meta property="og:url" content="/programming/design-pattern/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  
+    <meta property="og:image" content="/favicon.ico">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-06-21 17:12:33 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/programming">Programming</a></li>
+        
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/programming">Programming</a></li>
+      
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/programming/design-pattern/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4/">디자인 패턴</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-06-21 [Updated: 2021-06-21]
+      </span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/">디자인패턴</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="디자인패턴이란">디자인패턴이란?<a href="#디자인패턴이란" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>앞선 개발자들이 만들어 놓은 <strong>공통적으로 발생하는 문제에 대한 재사용 가능한 해결책</strong> 이다.</p>
+<p>일반적으로 <strong>디자인 패턴</strong> 이라고 한다면 <code>Gang-Of-Four</code> 가 쓴 디자인패턴 서적의 내용이라고 보면 된다.</p>
+<p>&ldquo;<strong>디자인패턴이란?  일반적인 문제를 해결하기 위한 문제해결책이다.</strong>&rdquo;</p>
+<p>이정도까지만 알고 있어도 문제없을듯하다.</p>
+<h2 id="그래서-왜-디자인-패턴을-알아야-하나">그래서 왜 디자인 패턴을 알아야 하나?<a href="#그래서-왜-디자인-패턴을-알아야-하나" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ol>
+<li>
+<p>앞서 말한것과 같이 <strong>일반적으로 발생하는 문제</strong> 의 해결책으로 사용할 수 있기 때문에</p>
+</li>
+<li>
+<p>다른 개발자와 소통하기 편해진다.</p>
+</li>
+</ol>
+<p>1번의 경우 앞에서 나온 내용이기에 생략한다.</p>
+<p>2번의 경우, 다르게 생각하는 경우도 있겠지만</p>
+<p>디자인 패턴으로 소통을 한다면</p>
+<ul>
+<li>
+<p>해당 패턴에 사용되는 장점, 단점 등 내포되는 내용을 포괄적으로 소통가능</p>
+</li>
+<li>
+<p>장황하게 길어지는 설명을 단순한 단어로 처리할 수 있음</p>
+</li>
+<li>
+<p>좀 더 프로그램의 구조에 대해 살펴볼 수 있게 됨</p>
+</li>
+<li>
+<p>등등&hellip;</p>
+</li>
+</ul>
+<p>이와 같은 장점들이 있다고 알려져 있다&hellip;</p>
+<h2 id="좀-더-알아보자">좀 더 알아보자<a href="#좀-더-알아보자" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>일반적으로 통용되는 디자인 패턴을 일컫는</p>
+<p><code>Gang-Of-Four</code>의 디자인패턴에서는 여러가지 종류의 디자인 패턴을 소개하고 있다.</p>
+<p>각각의 패턴은 여러가지 종류로 그룹화할 수 있겠지만</p>
+<ol>
+    <li>        
+        <strong class="tx-royalblue">생성 패턴(Creational Pattern)</strong></br>
+        <sub class="tx-sub">객체의 생성을 다루는 패턴</sub>        
+    </li> 
+    <li>
+        <strong class="tx-teal">구조 패턴(Structural Pattern)</strong></br>
+        <sub class="tx-sub">객체의 구성을 다루는 패턴</sub>
+    </li>
+    <li>
+        <strong class="tx-orange">행동 패턴(Behavioral Pattern)</strong></br>
+        <sub class="tx-sub">객체의 행동, 또는 객체 간의 상호작용을 다루는 패턴</sub>
+    </li>
+</ol> 
+일반적으로 사용되는 패턴들을 3가지로 구분하자면 다음과 같다
+<table style="text-align: center;">
+<thead>
+    <tr>
+        <td>
+            <strong class="tx-royalblue">
+                생성 패턴(Creational Pattern)
+            </strong>
+        </td>
+        <td>
+            <strong class="tx-teal">
+            구조패턴(Structural Pattern)
+            </strong>
+        </td>
+        <td>
+            <strong class="tx-orange">
+            행동 패턴(Behavioral Pattern)
+            </strong>
+        </td>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td class="tx-royalblue">
+            <span>추상 팩토리 패턴</span>
+            </br>
+            <sub class="tx-sub">Abstract Factory Pattern</sub>
+        </td>
+        <td class="tx-teal">
+            <span>어댑터 패턴</span>
+            </br>
+            <sub class="tx-sub">Adapter Pattern</sub>
+        </td>
+        <td class="tx-orange">
+            <span>책임 연쇄 패턴</span>
+            </br>
+            <sub class="tx-sub">Chain Of Responsibility</sub>
+        </td>
+    </tr>
+    <tr>
+        <td class="tx-royalblue">
+            <span>빌더 패턴</span>
+            </br>
+            <sub class="tx-sub">Builder Pattern</sub>
+        </td>
+        <td class="tx-teal">
+            <span>브릿지 패턴</span>
+            </br>
+            <sub class="tx-sub">Bridge Pattern</sub>
+        </td>
+        <td class="tx-orange">            
+            <span>커맨드 패턴</span>
+            </br>
+            <sub class="tx-sub">Command Pattern</sub>
+        </td>
+    </tr>
+    <tr>
+        <td class="tx-royalblue">
+            <span>팩토리 메소드 패턴</span>
+            </br>
+            <sub class="tx-sub">Factory Method Pattern</sub>
+        </td>
+        <td class="tx-teal">
+            <span>컴포짓 패턴</span>
+            </br>
+            <sub class="tx-sub">Composite Pattern</sub>
+        </td>
+        <td class="tx-orange">
+            <span>인터프리터 패턴</span>
+            </br>
+            <sub class="tx-sub">Interpreter Pattern</sub>
+        </td>
+    </tr>
+    <tr>
+        <td class="tx-royalblue">
+            <span>프로토타입 패턴</span>
+            </br>
+            <sub class="tx-sub">Prototype Pattern</sub>
+        </td>
+        <td class="tx-teal">
+            <span>데코레이터 패턴</span>
+            </br>
+            <sub class="tx-sub">Decorator Pattern</sub>
+        </td>
+        <td class="tx-orange">
+            <span>이터레이터 패턴</span>
+            </br>
+            <sub class="tx-sub">Iterator Pattern</sub>
+        </td>
+    </tr>
+    <tr>
+        <td class="tx-royalblue">
+            <span>싱글톤 패턴</span>
+            </br>
+            <sub class="tx-sub">Singleton Pattern</sub>
+        </td>
+        <td class="tx-teal">
+            <span>퍼사드 패턴</span>
+            </br>
+            <sub class="tx-sub">Facade Pattern</sub>
+        </td>
+        <td class="tx-orange">
+            <span>중재자 패턴</span>
+            </br>
+            <sub class="tx-sub">Mediator Pattern</sub>
+        </td>
+    </tr>
+    <tr>
+        <td class="tx-royalblue">
+        </td>
+        <td class="tx-teal">
+            <span>플라이웨이트 패턴</span>
+            </br>
+            <sub class="tx-sub">Flyweight Pattern</sub>
+        </td>
+        <td class="tx-orange">
+            <span>메멘토 패턴</span>
+            </br>
+            <sub class="tx-sub">Memento Pattern</sub>
+        </td>
+    </tr>
+    <tr>
+        <td class="tx-royalblue">
+        </td>
+        <td class="tx-teal">
+            <span>프록시 패턴</span>
+            </br>
+            <sub class="tx-sub">Proxy Pattern</sub>
+        </td>
+        <td class="tx-orange">
+            <span>옵저버 패턴</span>
+            </br>
+            <sub class="tx-sub">Observer Pattern</sub>
+        </td>
+    </tr>
+    <tr>
+        <td class="tx-royalblue">
+        </td>
+        <td class="tx-teal">
+        </td>
+        <td class="tx-orange">
+            <span>상태 패턴</span>
+            </br>
+            <sub class="tx-sub">State Pattern</sub>
+        </td>
+    </tr>
+    <tr>
+        <td class="tx-royalblue">
+        </td>
+        <td class="tx-teal">
+        </td>
+        <td class="tx-orange">
+            <span>전략 패턴</span>
+            </br>
+            <sub class="tx-sub">Strategy Pattern</sub>
+        </td>
+    </tr>
+    <tr>
+        <td class="tx-royalblue">
+        </td>
+        <td class="tx-teal">
+        </td>
+        <td class="tx-orange">
+            <span>방문자 패턴</span>
+            </br>
+            <sub class="tx-sub">Visitor Pattern</sub>
+        </td>
+    </tr>
+    <tr>
+        <td class="tx-royalblue">
+        </td>
+        <td class="tx-teal">
+        </td>
+        <td class="tx-orange">
+            <span>템플릿 메소드 패턴</span>
+            </br>
+            <sub class="tx-sub">Template Method Pattern</sub>
+        </td>
+    </tr>
+</tbody>
+</table>
+<p>디자인 패턴이란 말그대로 패턴이기에 많은 패턴이 존재하기에&hellip; 표기되지 않은 패턴이 있을 수 있다.</p>
+<hr>
+<h3 id="참조">참조<a href="#참조" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<ul>
+<li><a href="http://www.yes24.com/Product/Goods/17525598">GoF의 디자인패턴</a></li>
+<li><a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9788979143409">Head First Design Patterns</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>

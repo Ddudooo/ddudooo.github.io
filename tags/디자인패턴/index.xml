@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>디자인패턴 on 공부한 내용 기록용</title>
+    <link>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</link>
+    <description>Recent content in 디자인패턴 on 공부한 내용 기록용</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 21 Jun 2021 17:12:33 +0900</lastBuildDate><atom:link href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>디자인 패턴</title>
+      <link>/programming/design-pattern/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Mon, 21 Jun 2021 17:12:33 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4/</guid>
+      <description>디자인패턴이란? 앞선 개발자들이 만들어 놓은 공통적으로 발생하는 문제에 대한 재사용 가능한 해결책 이다.
+일반적으로 디자인 패턴 이라고 한다면 Gang-Of-Four 가 쓴 디자인패턴 서적의 내용이라고 보면 된다.
+&amp;ldquo;디자인패턴이란? 일반적인 문제를 해결하기 위한 문제해결책이다.&amp;rdquo;
+이정도까지만 알고 있어도 문제없을듯하다.
+그래서 왜 디자인 패턴을 알아야 하나?   앞서 말한것과 같이 일반적으로 발생하는 문제 의 해결책으로 사용할 수 있기 때문에
+  다른 개발자와 소통하기 편해진다.
+  1번의 경우 앞에서 나온 내용이기에 생략한다.</description>
+      <content>&lt;h1 id=&#34;디자인패턴이란&#34;&gt;디자인패턴이란?&lt;/h1&gt;
+&lt;p&gt;앞선 개발자들이 만들어 놓은 &lt;strong&gt;공통적으로 발생하는 문제에 대한 재사용 가능한 해결책&lt;/strong&gt; 이다.&lt;/p&gt;
+&lt;p&gt;일반적으로 &lt;strong&gt;디자인 패턴&lt;/strong&gt; 이라고 한다면 &lt;code&gt;Gang-Of-Four&lt;/code&gt; 가 쓴 디자인패턴 서적의 내용이라고 보면 된다.&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;&lt;strong&gt;디자인패턴이란?  일반적인 문제를 해결하기 위한 문제해결책이다.&lt;/strong&gt;&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;이정도까지만 알고 있어도 문제없을듯하다.&lt;/p&gt;
+&lt;h2 id=&#34;그래서-왜-디자인-패턴을-알아야-하나&#34;&gt;그래서 왜 디자인 패턴을 알아야 하나?&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;앞서 말한것과 같이 &lt;strong&gt;일반적으로 발생하는 문제&lt;/strong&gt; 의 해결책으로 사용할 수 있기 때문에&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;다른 개발자와 소통하기 편해진다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;1번의 경우 앞에서 나온 내용이기에 생략한다.&lt;/p&gt;
+&lt;p&gt;2번의 경우, 다르게 생각하는 경우도 있겠지만&lt;/p&gt;
+&lt;p&gt;디자인 패턴으로 소통을 한다면&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;해당 패턴에 사용되는 장점, 단점 등 내포되는 내용을 포괄적으로 소통가능&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;장황하게 길어지는 설명을 단순한 단어로 처리할 수 있음&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;좀 더 프로그램의 구조에 대해 살펴볼 수 있게 됨&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;등등&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이와 같은 장점들이 있다고 알려져 있다&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;좀-더-알아보자&#34;&gt;좀 더 알아보자&lt;/h2&gt;
+&lt;p&gt;일반적으로 통용되는 디자인 패턴을 일컫는&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Gang-Of-Four&lt;/code&gt;의 디자인패턴에서는 여러가지 종류의 디자인 패턴을 소개하고 있다.&lt;/p&gt;
+&lt;p&gt;각각의 패턴은 여러가지 종류로 그룹화할 수 있겠지만&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;        
+        &lt;strong class=&#34;tx-royalblue&#34;&gt;생성 패턴(Creational Pattern)&lt;/strong&gt;&lt;/br&gt;
+        &lt;sub class=&#34;tx-sub&#34;&gt;객체의 생성을 다루는 패턴&lt;/sub&gt;        
+    &lt;/li&gt; 
+    &lt;li&gt;
+        &lt;strong class=&#34;tx-teal&#34;&gt;구조 패턴(Structural Pattern)&lt;/strong&gt;&lt;/br&gt;
+        &lt;sub class=&#34;tx-sub&#34;&gt;객체의 구성을 다루는 패턴&lt;/sub&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;strong class=&#34;tx-orange&#34;&gt;행동 패턴(Behavioral Pattern)&lt;/strong&gt;&lt;/br&gt;
+        &lt;sub class=&#34;tx-sub&#34;&gt;객체의 행동, 또는 객체 간의 상호작용을 다루는 패턴&lt;/sub&gt;
+    &lt;/li&gt;
+&lt;/ol&gt; 
+일반적으로 사용되는 패턴들을 3가지로 구분하자면 다음과 같다
+&lt;table style=&#34;text-align: center;&#34;&gt;
+&lt;thead&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            &lt;strong class=&#34;tx-royalblue&#34;&gt;
+                생성 패턴(Creational Pattern)
+            &lt;/strong&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;strong class=&#34;tx-teal&#34;&gt;
+            구조패턴(Structural Pattern)
+            &lt;/strong&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;strong class=&#34;tx-orange&#34;&gt;
+            행동 패턴(Behavioral Pattern)
+            &lt;/strong&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td class=&#34;tx-royalblue&#34;&gt;
+            &lt;span&gt;추상 팩토리 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Abstract Factory Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-teal&#34;&gt;
+            &lt;span&gt;어댑터 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Adapter Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-orange&#34;&gt;
+            &lt;span&gt;책임 연쇄 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Chain Of Responsibility&lt;/sub&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class=&#34;tx-royalblue&#34;&gt;
+            &lt;span&gt;빌더 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Builder Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-teal&#34;&gt;
+            &lt;span&gt;브릿지 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Bridge Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-orange&#34;&gt;            
+            &lt;span&gt;커맨드 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Command Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class=&#34;tx-royalblue&#34;&gt;
+            &lt;span&gt;팩토리 메소드 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Factory Method Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-teal&#34;&gt;
+            &lt;span&gt;컴포짓 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Composite Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-orange&#34;&gt;
+            &lt;span&gt;인터프리터 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Interpreter Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class=&#34;tx-royalblue&#34;&gt;
+            &lt;span&gt;프로토타입 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Prototype Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-teal&#34;&gt;
+            &lt;span&gt;데코레이터 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Decorator Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-orange&#34;&gt;
+            &lt;span&gt;이터레이터 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Iterator Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class=&#34;tx-royalblue&#34;&gt;
+            &lt;span&gt;싱글톤 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Singleton Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-teal&#34;&gt;
+            &lt;span&gt;퍼사드 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Facade Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-orange&#34;&gt;
+            &lt;span&gt;중재자 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Mediator Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class=&#34;tx-royalblue&#34;&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-teal&#34;&gt;
+            &lt;span&gt;플라이웨이트 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Flyweight Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-orange&#34;&gt;
+            &lt;span&gt;메멘토 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Memento Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class=&#34;tx-royalblue&#34;&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-teal&#34;&gt;
+            &lt;span&gt;프록시 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Proxy Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-orange&#34;&gt;
+            &lt;span&gt;옵저버 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Observer Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class=&#34;tx-royalblue&#34;&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-teal&#34;&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-orange&#34;&gt;
+            &lt;span&gt;상태 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;State Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class=&#34;tx-royalblue&#34;&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-teal&#34;&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-orange&#34;&gt;
+            &lt;span&gt;전략 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Strategy Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class=&#34;tx-royalblue&#34;&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-teal&#34;&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-orange&#34;&gt;
+            &lt;span&gt;방문자 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Visitor Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class=&#34;tx-royalblue&#34;&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-teal&#34;&gt;
+        &lt;/td&gt;
+        &lt;td class=&#34;tx-orange&#34;&gt;
+            &lt;span&gt;템플릿 메소드 패턴&lt;/span&gt;
+            &lt;/br&gt;
+            &lt;sub class=&#34;tx-sub&#34;&gt;Template Method Pattern&lt;/sub&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;디자인 패턴이란 말그대로 패턴이기에 많은 패턴이 존재하기에&amp;hellip; 표기되지 않은 패턴이 있을 수 있다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;참조&#34;&gt;참조&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.yes24.com/Product/Goods/17525598&#34;&gt;GoF의 디자인패턴&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;amp;ejkGb=KOR&amp;amp;barcode=9788979143409&#34;&gt;Head First Design Patterns&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
