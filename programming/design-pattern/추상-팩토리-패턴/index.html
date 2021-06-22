@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>추상 팩토리 패턴 :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="추상 팩토리 패턴은 __생성 패턴__ 으로 구분되는 패턴중에 하나다." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/programming/design-pattern/%EC%B6%94%EC%83%81-%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="추상 팩토리 패턴">
+<meta property="og:description" content="추상 팩토리 패턴은 __생성 패턴__ 으로 구분되는 패턴중에 하나다." />
+<meta property="og:url" content="/programming/design-pattern/%EC%B6%94%EC%83%81-%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  <meta property="og:image" content="/images/designPattern/abstractFactory/structure.png">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-06-22 16:16:12 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/programming">Programming</a></li>
+        
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/programming">Programming</a></li>
+      
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/programming/design-pattern/%EC%B6%94%EC%83%81-%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4/">추상 팩토리 패턴</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-06-22 [Updated: 2021-06-22]
+      </span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/">디자인패턴</a>&nbsp;
+    
+    #<a href="/tags/%EC%B6%94%EC%83%81%ED%8C%A9%ED%86%A0%EB%A6%AC%ED%8C%A8%ED%84%B4/">추상팩토리패턴</a>&nbsp;
+    
+    #<a href="/tags/abstract_factory_pattern/">abstract_factory_pattern</a>&nbsp;
+    
+  </span>
+  
+
+  
+    <img src="/images/designPattern/abstractFactory/structure.png" class="post-cover" alt="추상 팩토리 패턴" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="구조도">구조도<a href="#구조도" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><img src="/images/designPattern/abstractFactory/structure.png" alt="structure.png"></p>
+<h2 id="추상-팩토리-패턴이란">추상 팩토리 패턴이란?<a href="#추상-팩토리-패턴이란" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>상세화된 서브클래스를 정의하지 않고도 서로 관련성이 있거나</p>
+<p>독립적인 여러 객체의 군을 생성하기 위한 인터페이스를 제공하기 위해 사용.</p>
+<ul>
+<li><code>AbstractFactory</code><br>
+<sub class="tx-sub">개념적 제품에 대한 객체를 생성하는 연산으로 인터페이스를 정의한다.</sub></li>
+<li><code>ConcreteFactory</code><br>
+<sub class="tx-sub">구체적인 제품에 대한 객체를 생성하는 연산을 구현한다.</sub></li>
+<li><code>AbstractProduct</code><br>
+<sub class="tx-sub">개념적 제품 객체에 대한 인터페이스를 정의한다.</sub></li>
+<li><code>ConcreteProduct</code><br>
+<sub class="tx-sub">구체적으로 팩토리가 생성할 객체를 정의하고, <code>AbstractProduct</code>가 정의하는 인터페이스를 구현한다.</sub></li>
+<li><code>Client</code><br>
+<sub class="tx-sub"><code>AbstractFactory</code>와 <code>AbstractProduct</code> 클래스에 선언된 인터페이스를 사용한다.</sub></li>
+</ul>
+<h2 id="언제-사용해야-할까">언제 사용해야 할까?<a href="#언제-사용해야-할까" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>객체 생성과 객체를 사용하는 시스템을 독립적으로 구성하기 위해서.</li>
+<li>여러 객체 군을 시스템이 사용하기 위해,
+다른것으로도 대체를 쉽게 하기 위해서.</li>
+<li>여러 객체 군을 함께 사용할 수 있어야 할때.</li>
+<li>제품에 대한 클래스 라이브러리를 세부 정보를 노출없이 제공하고 싶을 때
+<ul>
+<li>클래스의 구현으로 제공이 아닌 인터페이스만 노출시키고 싶을 경우.</li>
+</ul>
+</li>
+</ul>
+<p>여러 팩토리에서 객체를 생산하며,</p>
+<p>생산된 객체가 무엇인지 몰라도 객체의 인터페이스만으로도 조작할 수 있음.</p>
+<p>객체를 조합으로 생성할 경우, 유용하게 사용할 수 있을듯하다.</p>
+<p>다만, 패턴 생성시 보일러 플레이트가 한두개가 아닌데.</p>
+<p>인터페이스 수정, 추상 메소드의 추가와 같은 수정사항이 생기는 경우&hellip;</p>
+<p>고민을 좀 해봐야 할듯&hellip;</p>
+<hr>
+<h3 id="참조">참조<a href="#참조" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<ul>
+<li>Head First Design Patterns</li>
+<li><a href="https://johngrib.github.io/wiki/abstract-factory-pattern/">기계인간 - Abstract Factory Pattern</a></li>
+<li><a href="https://github.com/Ddudooo/designpattern/tree/main/creation/AbstractFactoryPattern">예제 소스</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>

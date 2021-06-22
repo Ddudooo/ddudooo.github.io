@@ -6,7 +6,66 @@
     <description>Recent content on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 21 Jun 2021 17:12:33 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Jun 2021 16:16:12 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>추상 팩토리 패턴</title>
+      <link>/programming/design-pattern/%EC%B6%94%EC%83%81-%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Tue, 22 Jun 2021 16:16:12 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EC%B6%94%EC%83%81-%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4/</guid>
+      <description>구조도 추상 팩토리 패턴이란? 상세화된 서브클래스를 정의하지 않고도 서로 관련성이 있거나
+독립적인 여러 객체의 군을 생성하기 위한 인터페이스를 제공하기 위해 사용.
+ AbstractFactory
+개념적 제품에 대한 객체를 생성하는 연산으로 인터페이스를 정의한다. ConcreteFactory
+구체적인 제품에 대한 객체를 생성하는 연산을 구현한다. AbstractProduct
+개념적 제품 객체에 대한 인터페이스를 정의한다. ConcreteProduct
+구체적으로 팩토리가 생성할 객체를 정의하고, AbstractProduct가 정의하는 인터페이스를 구현한다. Client
+AbstractFactory와 AbstractProduct 클래스에 선언된 인터페이스를 사용한다.  언제 사용해야 할까?  객체 생성과 객체를 사용하는 시스템을 독립적으로 구성하기 위해서.</description>
+      <content>&lt;h2 id=&#34;구조도&#34;&gt;구조도&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/abstractFactory/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;추상-팩토리-패턴이란&#34;&gt;추상 팩토리 패턴이란?&lt;/h2&gt;
+&lt;p&gt;상세화된 서브클래스를 정의하지 않고도 서로 관련성이 있거나&lt;/p&gt;
+&lt;p&gt;독립적인 여러 객체의 군을 생성하기 위한 인터페이스를 제공하기 위해 사용.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;AbstractFactory&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;개념적 제품에 대한 객체를 생성하는 연산으로 인터페이스를 정의한다.&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ConcreteFactory&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;구체적인 제품에 대한 객체를 생성하는 연산을 구현한다.&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;AbstractProduct&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;개념적 제품 객체에 대한 인터페이스를 정의한다.&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ConcreteProduct&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;구체적으로 팩토리가 생성할 객체를 정의하고, &lt;code&gt;AbstractProduct&lt;/code&gt;가 정의하는 인터페이스를 구현한다.&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Client&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;&lt;code&gt;AbstractFactory&lt;/code&gt;와 &lt;code&gt;AbstractProduct&lt;/code&gt; 클래스에 선언된 인터페이스를 사용한다.&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;언제-사용해야-할까&#34;&gt;언제 사용해야 할까?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;객체 생성과 객체를 사용하는 시스템을 독립적으로 구성하기 위해서.&lt;/li&gt;
+&lt;li&gt;여러 객체 군을 시스템이 사용하기 위해,
+다른것으로도 대체를 쉽게 하기 위해서.&lt;/li&gt;
+&lt;li&gt;여러 객체 군을 함께 사용할 수 있어야 할때.&lt;/li&gt;
+&lt;li&gt;제품에 대한 클래스 라이브러리를 세부 정보를 노출없이 제공하고 싶을 때
+&lt;ul&gt;
+&lt;li&gt;클래스의 구현으로 제공이 아닌 인터페이스만 노출시키고 싶을 경우.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;여러 팩토리에서 객체를 생산하며,&lt;/p&gt;
+&lt;p&gt;생산된 객체가 무엇인지 몰라도 객체의 인터페이스만으로도 조작할 수 있음.&lt;/p&gt;
+&lt;p&gt;객체를 조합으로 생성할 경우, 유용하게 사용할 수 있을듯하다.&lt;/p&gt;
+&lt;p&gt;다만, 패턴 생성시 보일러 플레이트가 한두개가 아닌데.&lt;/p&gt;
+&lt;p&gt;인터페이스 수정, 추상 메소드의 추가와 같은 수정사항이 생기는 경우&amp;hellip;&lt;/p&gt;
+&lt;p&gt;고민을 좀 해봐야 할듯&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;참조&#34;&gt;참조&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Head First Design Patterns&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://johngrib.github.io/wiki/abstract-factory-pattern/&#34;&gt;기계인간 - Abstract Factory Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Ddudooo/designpattern/tree/main/creation/AbstractFactoryPattern&#34;&gt;예제 소스&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>디자인 패턴</title>
       <link>/programming/design-pattern/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4/</link>
