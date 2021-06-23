@@ -6,7 +6,57 @@
     <description>Recent content on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 22 Jun 2021 16:16:12 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Jun 2021 23:10:43 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>어댑터 패턴</title>
+      <link>/programming/design-pattern/%EC%96%B4%EB%8C%91%ED%84%B0-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Wed, 23 Jun 2021 23:10:43 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EC%96%B4%EB%8C%91%ED%84%B0-%ED%8C%A8%ED%84%B4/</guid>
+      <description>구조도 Client 라이브러리나 외부 시스템을 사용하려는 요소
+Adaptee 사용될 라이브러리나 외부 시스템
+Target 어댑터가 구현하는 인터페이스
+클라이언트는 인터페이스를 통해 어댑터와 연결된 Adaptee를 사용하게 된다.
+Adapter Client 와 Adaptee 중간에서 호환성이 없는 둘을 연결하는 역활
+어댑터 패턴이란? 한 클래스의 인터페이스를 클라이언트에서 사용하고자 하는 다른 인터페이스로 변환합니다.
+어댑터를 이용하면 인터페이스 호환성 문제 때문에
+같이 쓸 수 없는 클래스를 연결해서 쓸 수 있음.
+왜 사용해야 할까? 인터페이스 호환 문제로 같이 쓸 수 없을 경우 사용한다곤 하는데</description>
+      <content>&lt;h2 id=&#34;구조도&#34;&gt;구조도&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/adapter/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Client&lt;/code&gt; 라이브러리나 외부 시스템을 사용하려는 요소&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Adaptee&lt;/code&gt; 사용될 라이브러리나 외부 시스템&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Target&lt;/code&gt; 어댑터가 구현하는 인터페이스&lt;/p&gt;
+&lt;p&gt;클라이언트는 인터페이스를 통해 어댑터와 연결된 &lt;code&gt;Adaptee&lt;/code&gt;를 사용하게 된다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Adapter&lt;/code&gt; &lt;code&gt;Client&lt;/code&gt; 와 &lt;code&gt;Adaptee&lt;/code&gt; 중간에서 호환성이 없는 둘을 연결하는 역활&lt;/p&gt;
+&lt;h2 id=&#34;어댑터-패턴이란&#34;&gt;어댑터 패턴이란?&lt;/h2&gt;
+&lt;p&gt;한 클래스의 인터페이스를 클라이언트에서 사용하고자 하는 다른 인터페이스로 변환합니다.&lt;/p&gt;
+&lt;p&gt;어댑터를 이용하면 인터페이스 호환성 문제 때문에&lt;/p&gt;
+&lt;p&gt;같이 쓸 수 없는 클래스를 연결해서 쓸 수 있음.&lt;/p&gt;
+&lt;h2 id=&#34;왜-사용해야-할까&#34;&gt;왜 사용해야 할까?&lt;/h2&gt;
+&lt;p&gt;인터페이스 호환 문제로 같이 쓸 수 없을 경우 사용한다곤 하는데&lt;/p&gt;
+&lt;p&gt;왜 써야할까?&lt;/p&gt;
+&lt;p&gt;단순하게 사용할 수 있게 수정하면 되지 않을까?&lt;/p&gt;
+&lt;h3 id=&#34;__어댑티-쪽을-수정한다고-가정하면__&#34;&gt;&lt;strong&gt;어댑티 쪽을 수정한다고 가정하면&amp;hellip;&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;어댑티가 제공받은 라이브러리로써 직접적으로 수정이 불가능할 경우에 문제가 생길 수 있다.&lt;/p&gt;
+&lt;p&gt;수정이 가능할 경우 이후 어댑티가 제공자에 의해 수정되는 경우&lt;/p&gt;
+&lt;p&gt;해당 수정내용을 반영한 어댑티를 다시 수정해야 한다..&lt;/p&gt;
+&lt;h3 id=&#34;__그렇다면-클라이언트-쪽은-어떨까__&#34;&gt;&lt;strong&gt;그렇다면 클라이언트 쪽은 어떨까&amp;hellip;&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;클라이언트의 경우 단순한 구조라면 별 문제가 발생하지 않지만&lt;/p&gt;
+&lt;p&gt;구조가 복잡해지거나 클라이언트의 연관관계가 많아질 경우&lt;/p&gt;
+&lt;p&gt;클라이언트 수정시 다른 곳에서 문제가 발생할 수 있다&lt;/p&gt;
+&lt;h3 id=&#34;요약하자면&#34;&gt;요약하자면&lt;/h3&gt;
+&lt;p&gt;클라이언트와 어댑티를 수정하지 않고도 사용할 수 있게 해주는 패턴으로&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;수정시 발생할 수 있는 사이드 이펙트를 막게 해준다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;참조&#34;&gt;참조&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Head First Design Patterns&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Ddudooo/designpattern/tree/main/structural/AdapterPattern&#34;&gt;예제 소스&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>추상 팩토리 패턴</title>
       <link>/programming/design-pattern/%EC%B6%94%EC%83%81-%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4/</link>

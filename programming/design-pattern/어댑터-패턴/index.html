@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>어댑터 패턴 :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="한 클래스의 인터페이스를 사용하고자 하는 다른 인터페이스로 변환" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/programming/design-pattern/%EC%96%B4%EB%8C%91%ED%84%B0-%ED%8C%A8%ED%84%B4/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="어댑터 패턴">
+<meta property="og:description" content="한 클래스의 인터페이스를 사용하고자 하는 다른 인터페이스로 변환" />
+<meta property="og:url" content="/programming/design-pattern/%EC%96%B4%EB%8C%91%ED%84%B0-%ED%8C%A8%ED%84%B4/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  <meta property="og:image" content="/images/designPattern/adapter/adapter.jpg">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-06-23 23:10:43 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/programming">Programming</a></li>
+        
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/programming">Programming</a></li>
+      
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/programming/design-pattern/%EC%96%B4%EB%8C%91%ED%84%B0-%ED%8C%A8%ED%84%B4/">어댑터 패턴</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-06-23 [Updated: 2021-06-23]
+      </span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/">디자인패턴</a>&nbsp;
+    
+    #<a href="/tags/%EC%96%B4%EB%8C%91%ED%84%B0%ED%8C%A8%ED%84%B4/">어댑터패턴</a>&nbsp;
+    
+    #<a href="/tags/adapter_pattern/">adapter_pattern</a>&nbsp;
+    
+  </span>
+  
+
+  
+    <img src="/images/designPattern/adapter/adapter.jpg" class="post-cover" alt="어댑터 패턴" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="구조도">구조도<a href="#구조도" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><img src="/images/designPattern/adapter/structure.png" alt="structure.png"></p>
+<p><code>Client</code> 라이브러리나 외부 시스템을 사용하려는 요소</p>
+<p><code>Adaptee</code> 사용될 라이브러리나 외부 시스템</p>
+<p><code>Target</code> 어댑터가 구현하는 인터페이스</p>
+<p>클라이언트는 인터페이스를 통해 어댑터와 연결된 <code>Adaptee</code>를 사용하게 된다.</p>
+<p><code>Adapter</code> <code>Client</code> 와 <code>Adaptee</code> 중간에서 호환성이 없는 둘을 연결하는 역활</p>
+<h2 id="어댑터-패턴이란">어댑터 패턴이란?<a href="#어댑터-패턴이란" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>한 클래스의 인터페이스를 클라이언트에서 사용하고자 하는 다른 인터페이스로 변환합니다.</p>
+<p>어댑터를 이용하면 인터페이스 호환성 문제 때문에</p>
+<p>같이 쓸 수 없는 클래스를 연결해서 쓸 수 있음.</p>
+<h2 id="왜-사용해야-할까">왜 사용해야 할까?<a href="#왜-사용해야-할까" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>인터페이스 호환 문제로 같이 쓸 수 없을 경우 사용한다곤 하는데</p>
+<p>왜 써야할까?</p>
+<p>단순하게 사용할 수 있게 수정하면 되지 않을까?</p>
+<h3 id="__어댑티-쪽을-수정한다고-가정하면__"><strong>어댑티 쪽을 수정한다고 가정하면&hellip;</strong><a href="#__어댑티-쪽을-수정한다고-가정하면__" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>어댑티가 제공받은 라이브러리로써 직접적으로 수정이 불가능할 경우에 문제가 생길 수 있다.</p>
+<p>수정이 가능할 경우 이후 어댑티가 제공자에 의해 수정되는 경우</p>
+<p>해당 수정내용을 반영한 어댑티를 다시 수정해야 한다..</p>
+<h3 id="__그렇다면-클라이언트-쪽은-어떨까__"><strong>그렇다면 클라이언트 쪽은 어떨까&hellip;</strong><a href="#__그렇다면-클라이언트-쪽은-어떨까__" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>클라이언트의 경우 단순한 구조라면 별 문제가 발생하지 않지만</p>
+<p>구조가 복잡해지거나 클라이언트의 연관관계가 많아질 경우</p>
+<p>클라이언트 수정시 다른 곳에서 문제가 발생할 수 있다</p>
+<h3 id="요약하자면">요약하자면<a href="#요약하자면" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>클라이언트와 어댑티를 수정하지 않고도 사용할 수 있게 해주는 패턴으로</p>
+<p><strong>수정시 발생할 수 있는 사이드 이펙트를 막게 해준다.</strong></p>
+<hr>
+<h3 id="참조">참조<a href="#참조" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<ul>
+<li>Head First Design Patterns</li>
+<li><a href="https://github.com/Ddudooo/designpattern/tree/main/structural/AdapterPattern">예제 소스</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>
