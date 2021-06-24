@@ -6,7 +6,61 @@
     <description>Recent content in Programmings on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 23 Jun 2021 23:10:43 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Jun 2021 15:22:20 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>책임 연쇄 패턴</title>
+      <link>/programming/design-pattern/%EC%B1%85%EC%9E%84-%EC%97%B0%EC%87%84-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Thu, 24 Jun 2021 15:22:20 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EC%B1%85%EC%9E%84-%EC%97%B0%EC%87%84-%ED%8C%A8%ED%84%B4/</guid>
+      <description>구조도   Handler 요청을 수신하고 처리객체들의 집합에 전달하는 인터페이스
+집합의 첫 번째 핸들러에 대한 정보만 가지고 있음
+  Concrete handlers 요청을 처리하는 객체
+  Client 요청을 전달하는 클라이언트
+  책임 연쇄 패턴이란? 명령 객체와 일련의 처리 객체를 포함하는 패턴으로
+각각의 처리 객체는 명령 객체를 처리할 수 있는 연산의 집합이고
+체인 안의 처리 객체가 핸들할 수 없는 명령은 다음 처리 객체로 넘겨지며 처리된다.
+장점  요청을 보낸 쪽하고 받는 쪽을 분리시킬 수 있다 객체에는 사슬의 구조를 몰라도 되고 그 사슬에 들어있는</description>
+      <content>&lt;h2 id=&#34;구조도&#34;&gt;구조도&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/chain-of-responsibility/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Handler&lt;/code&gt; 요청을 수신하고 처리객체들의 집합에 전달하는 인터페이스&lt;br&gt;
+집합의 첫 번째 핸들러에 대한 정보만 가지고 있음&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Concrete handlers&lt;/code&gt; 요청을 처리하는 객체&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Client&lt;/code&gt; 요청을 전달하는 클라이언트&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;책임-연쇄-패턴이란&#34;&gt;책임 연쇄 패턴이란?&lt;/h2&gt;
+&lt;p&gt;명령 객체와 일련의 처리 객체를 포함하는 패턴으로&lt;/p&gt;
+&lt;p&gt;각각의 처리 객체는 명령 객체를 처리할 수 있는 연산의 집합이고&lt;/p&gt;
+&lt;p&gt;체인 안의 처리 객체가 핸들할 수 없는 명령은 다음 처리 객체로 넘겨지며 처리된다.&lt;/p&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;요청을 보낸 쪽하고 받는 쪽을 분리시킬 수 있다&lt;/li&gt;
+&lt;li&gt;객체에는 사슬의 구조를 몰라도 되고 그 사슬에 들어있는&lt;br&gt;
+다른 객체에 대한 직접적인 레퍼런스를 가질 필요도 없기 때문에&lt;br&gt;
+객체를 단순하게 만들 수 있다&lt;/li&gt;
+&lt;li&gt;사슬에 들어가는 객체를 바꾸거나 순서를 바꿈으로써 역활을 동적으로 추가/제거할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;실행시 과정을 살펴보거나 디버깅하기 힘들 수 있음&lt;/li&gt;
+&lt;li&gt;요청이 반드시 처리된다는 보장이 없음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;참조&#34;&gt;참조&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Head First Design Patterns&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Ddudooo/designpattern/tree/main/behavioral/ChainOfResponsibility&#34;&gt;예제 소스&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>어댑터 패턴</title>
       <link>/programming/design-pattern/%EC%96%B4%EB%8C%91%ED%84%B0-%ED%8C%A8%ED%84%B4/</link>

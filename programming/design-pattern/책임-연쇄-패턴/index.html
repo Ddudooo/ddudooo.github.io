@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>책임 연쇄 패턴 :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="한 클래스의 인터페이스를 사용하고자 하는 다른 인터페이스로 변환" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/programming/design-pattern/%EC%B1%85%EC%9E%84-%EC%97%B0%EC%87%84-%ED%8C%A8%ED%84%B4/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="책임 연쇄 패턴">
+<meta property="og:description" content="한 클래스의 인터페이스를 사용하고자 하는 다른 인터페이스로 변환" />
+<meta property="og:url" content="/programming/design-pattern/%EC%B1%85%EC%9E%84-%EC%97%B0%EC%87%84-%ED%8C%A8%ED%84%B4/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  <meta property="og:image" content="/images/designPattern/chain-of-responsibility/thumbnail.png">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-06-24 15:22:20 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/programming">Programming</a></li>
+        
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/programming">Programming</a></li>
+      
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/programming/design-pattern/%EC%B1%85%EC%9E%84-%EC%97%B0%EC%87%84-%ED%8C%A8%ED%84%B4/">책임 연쇄 패턴</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-06-24 [Updated: 2021-06-24]
+      </span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/">디자인패턴</a>&nbsp;
+    
+    #<a href="/tags/%EC%B1%85%EC%9E%84-%EC%97%B0%EC%87%84-%ED%8C%A8%ED%84%B4/">책임 연쇄 패턴</a>&nbsp;
+    
+    #<a href="/tags/chain-of-resposibility/">chain-of-resposibility</a>&nbsp;
+    
+  </span>
+  
+
+  
+    <img src="/images/designPattern/chain-of-responsibility/thumbnail.png" class="post-cover" alt="책임 연쇄 패턴" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="구조도">구조도<a href="#구조도" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><img src="/images/designPattern/chain-of-responsibility/structure.png" alt="structure.png"></p>
+<ul>
+<li>
+<p><code>Handler</code> 요청을 수신하고 처리객체들의 집합에 전달하는 인터페이스<br>
+집합의 첫 번째 핸들러에 대한 정보만 가지고 있음</p>
+</li>
+<li>
+<p><code>Concrete handlers</code> 요청을 처리하는 객체</p>
+</li>
+<li>
+<p><code>Client</code> 요청을 전달하는 클라이언트</p>
+</li>
+</ul>
+<h2 id="책임-연쇄-패턴이란">책임 연쇄 패턴이란?<a href="#책임-연쇄-패턴이란" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>명령 객체와 일련의 처리 객체를 포함하는 패턴으로</p>
+<p>각각의 처리 객체는 명령 객체를 처리할 수 있는 연산의 집합이고</p>
+<p>체인 안의 처리 객체가 핸들할 수 없는 명령은 다음 처리 객체로 넘겨지며 처리된다.</p>
+<h2 id="장점">장점<a href="#장점" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>요청을 보낸 쪽하고 받는 쪽을 분리시킬 수 있다</li>
+<li>객체에는 사슬의 구조를 몰라도 되고 그 사슬에 들어있는<br>
+다른 객체에 대한 직접적인 레퍼런스를 가질 필요도 없기 때문에<br>
+객체를 단순하게 만들 수 있다</li>
+<li>사슬에 들어가는 객체를 바꾸거나 순서를 바꿈으로써 역활을 동적으로 추가/제거할 수 있다.</li>
+</ul>
+<h2 id="단점">단점<a href="#단점" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>실행시 과정을 살펴보거나 디버깅하기 힘들 수 있음</li>
+<li>요청이 반드시 처리된다는 보장이 없음</li>
+</ul>
+<hr>
+<h3 id="참조">참조<a href="#참조" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<ul>
+<li>Head First Design Patterns</li>
+<li><a href="https://github.com/Ddudooo/designpattern/tree/main/behavioral/ChainOfResponsibility">예제 소스</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>
