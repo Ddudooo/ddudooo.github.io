@@ -3,19 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2021-06-24T15:22:20+09:00</lastmod>
+    <lastmod>2021-06-24T20:44:04+09:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>/tags/chain-of-resposibility/</loc>
-    <lastmod>2021-06-24T15:22:20+09:00</lastmod>
+    <loc>/tags/builder/</loc>
+    <lastmod>2021-06-24T20:44:04+09:00</lastmod>
   </url><url>
     <loc>/programming/</loc>
-    <lastmod>2021-06-24T15:22:20+09:00</lastmod>
+    <lastmod>2021-06-24T20:44:04+09:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2021-06-24T15:22:20+09:00</lastmod>
+    <lastmod>2021-06-24T20:44:04+09:00</lastmod>
   </url><url>
     <loc>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</loc>
+    <lastmod>2021-06-24T20:44:04+09:00</lastmod>
+  </url><url>
+    <loc>/tags/%EB%B9%8C%EB%8D%94-%ED%8C%A8%ED%84%B4/</loc>
+    <lastmod>2021-06-24T20:44:04+09:00</lastmod>
+  </url><url>
+    <loc>/programming/design-pattern/%EB%B9%8C%EB%8D%94-%ED%8C%A8%ED%84%B4/</loc>
+    <lastmod>2021-06-24T20:44:04+09:00</lastmod>
+  </url><url>
+    <loc>/tags/chain-of-resposibility/</loc>
     <lastmod>2021-06-24T15:22:20+09:00</lastmod>
   </url><url>
     <loc>/tags/%EC%B1%85%EC%9E%84-%EC%97%B0%EC%87%84-%ED%8C%A8%ED%84%B4/</loc>

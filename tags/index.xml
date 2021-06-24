@@ -6,13 +6,13 @@
     <description>Recent content in Tags on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 24 Jun 2021 15:22:20 +0900</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Jun 2021 20:44:04 +0900</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>chain-of-resposibility</title>
-      <link>/tags/chain-of-resposibility/</link>
-      <pubDate>Thu, 24 Jun 2021 15:22:20 +0900</pubDate>
+      <title>builder</title>
+      <link>/tags/builder/</link>
+      <pubDate>Thu, 24 Jun 2021 20:44:04 +0900</pubDate>
       
-      <guid>/tags/chain-of-resposibility/</guid>
+      <guid>/tags/builder/</guid>
       <description></description>
       <content></content>
     </item>
@@ -20,9 +20,29 @@
     <item>
       <title>디자인패턴</title>
       <link>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</link>
-      <pubDate>Thu, 24 Jun 2021 15:22:20 +0900</pubDate>
+      <pubDate>Thu, 24 Jun 2021 20:44:04 +0900</pubDate>
       
       <guid>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>빌더 패턴</title>
+      <link>/tags/%EB%B9%8C%EB%8D%94-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Thu, 24 Jun 2021 20:44:04 +0900</pubDate>
+      
+      <guid>/tags/%EB%B9%8C%EB%8D%94-%ED%8C%A8%ED%84%B4/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>chain-of-resposibility</title>
+      <link>/tags/chain-of-resposibility/</link>
+      <pubDate>Thu, 24 Jun 2021 15:22:20 +0900</pubDate>
+      
+      <guid>/tags/chain-of-resposibility/</guid>
       <description></description>
       <content></content>
     </item>
