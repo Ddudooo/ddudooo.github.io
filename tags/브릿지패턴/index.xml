@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>브릿지패턴 on 공부한 내용 기록용</title>
+    <link>/tags/%EB%B8%8C%EB%A6%BF%EC%A7%80%ED%8C%A8%ED%84%B4/</link>
+    <description>Recent content in 브릿지패턴 on 공부한 내용 기록용</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 25 Jun 2021 17:17:15 +0900</lastBuildDate><atom:link href="/tags/%EB%B8%8C%EB%A6%BF%EC%A7%80%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>브릿지 패턴</title>
+      <link>/programming/design-pattern/%EB%B8%8C%EB%A6%BF%EC%A7%80-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Fri, 25 Jun 2021 17:17:15 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EB%B8%8C%EB%A6%BF%EC%A7%80-%ED%8C%A8%ED%84%B4/</guid>
+      <description>브릿지 패턴이란?  구현부와 추상층을 분리한 패턴
+구현 뿐만 아니라 추상화 부분까지 변경시켜야 하는 경우에 사용하는 구조적 디자인 패턴.
+ 구조  Abstraction 추상화된 인터페이스 RefinedAbstraction 정의된 인터페이스를 확장하는 객체 Implementor 구현 클래스의 인터페이스를 정의
+Abstraction의 인터페이스와 일치 할 필요는 없다. ConcreteImplementor Implementor의 인터페이스를 구현하고 구체적인 구현한 객체  장점  구현을 인터페이스에 완전히 결합시키지 않음
+-&amp;gt; 구현과 추상화된 부분을 분리시킬 수 있음. 추상화된 부분과 실제 구현 부분을 독립적으로 확장할 수 있음 추상화된 부분을 구현한 구상 클래스를 바꿔도 클라이언트에 영향을 끼치지 않음  단점  디자인이 복잡해짐   참고  Head First Design Patterns SLiPP::위키 Bridge Pattern 예제 소스  </description>
+      <content>&lt;h2 id=&#34;브릿지-패턴이란&#34;&gt;브릿지 패턴이란?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;구현부와 추상층을 분리한 패턴&lt;/p&gt;
+&lt;p&gt;구현 뿐만 아니라 추상화 부분까지 변경시켜야 하는 경우에 사용하는 구조적 디자인 패턴.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조&#34;&gt;구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/bridge/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Abstraction&lt;/code&gt;
+추상화된 인터페이스&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;RefinedAbstraction&lt;/code&gt;
+정의된 인터페이스를 확장하는 객체&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Implementor&lt;/code&gt;
+구현 클래스의 인터페이스를 정의&lt;br&gt;
+&lt;code&gt;Abstraction&lt;/code&gt;의 인터페이스와 일치 할 필요는 없다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ConcreteImplementor&lt;/code&gt;
+&lt;code&gt;Implementor&lt;/code&gt;의 인터페이스를 구현하고 구체적인 구현한 객체&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;구현을 인터페이스에 완전히 결합시키지 않음&lt;br&gt;
+-&amp;gt; 구현과 추상화된 부분을 분리시킬 수 있음.&lt;/li&gt;
+&lt;li&gt;추상화된 부분과 실제 구현 부분을 독립적으로 확장할 수 있음&lt;/li&gt;
+&lt;li&gt;추상화된 부분을 구현한 구상 클래스를 바꿔도 클라이언트에 영향을 끼치지 않음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;디자인이 복잡해짐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Head First Design Patterns&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slipp.net/wiki/display/SLS/Bridge+Pattern&#34;&gt;SLiPP::위키 Bridge Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Ddudooo/designpattern/tree/main/structural/BridgePattern&#34;&gt;예제 소스&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
