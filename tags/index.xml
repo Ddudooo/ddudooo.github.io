@@ -6,13 +6,13 @@
     <description>Recent content in Tags on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 25 Jun 2021 17:17:15 +0900</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Jun 2021 15:55:24 +0900</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>bridge_pattern</title>
-      <link>/tags/bridge_pattern/</link>
-      <pubDate>Fri, 25 Jun 2021 17:17:15 +0900</pubDate>
+      <title>command_pattern</title>
+      <link>/tags/command_pattern/</link>
+      <pubDate>Mon, 28 Jun 2021 15:55:24 +0900</pubDate>
       
-      <guid>/tags/bridge_pattern/</guid>
+      <guid>/tags/command_pattern/</guid>
       <description></description>
       <content></content>
     </item>
@@ -20,9 +20,29 @@
     <item>
       <title>디자인패턴</title>
       <link>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</link>
-      <pubDate>Fri, 25 Jun 2021 17:17:15 +0900</pubDate>
+      <pubDate>Mon, 28 Jun 2021 15:55:24 +0900</pubDate>
       
       <guid>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>커맨드패턴</title>
+      <link>/tags/%EC%BB%A4%EB%A7%A8%EB%93%9C%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Mon, 28 Jun 2021 15:55:24 +0900</pubDate>
+      
+      <guid>/tags/%EC%BB%A4%EB%A7%A8%EB%93%9C%ED%8C%A8%ED%84%B4/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>bridge_pattern</title>
+      <link>/tags/bridge_pattern/</link>
+      <pubDate>Fri, 25 Jun 2021 17:17:15 +0900</pubDate>
+      
+      <guid>/tags/bridge_pattern/</guid>
       <description></description>
       <content></content>
     </item>

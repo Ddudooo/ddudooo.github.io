@@ -6,7 +6,69 @@
     <description>Recent content in Programmings on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 25 Jun 2021 17:17:15 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Jun 2021 15:55:24 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>커맨드 패턴</title>
+      <link>/programming/design-pattern/%EC%BB%A4%EB%A7%A8%EB%93%9C-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Mon, 28 Jun 2021 15:55:24 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EC%BB%A4%EB%A7%A8%EB%93%9C-%ED%8C%A8%ED%84%B4/</guid>
+      <description>커맨드 패턴이란?  요청을 객체의 형태로 캡슐화하여 사용자가 보낸 요청을 나중에 이용할 수 있도록
+매서드 이름, 매개변수 등 요청에 필요한 정보를 저장 또는 로깅, 취소할 수 있게 하는 패턴
+ HEAD FIRST DESIGN 에서&amp;hellip;  커맨드 객체는 일련의 행동을 특정 리시버하고 연결시킴으로써 요구 사항을 캡슐화한 것이라는 점을 이미 배웠습니다.
+이렇게 하기 위해서 행동과 리시버를 한 객체에 집어넣고, execute()라는 메소드 하나만 외부에 공개하는 방법을 씁니다.
+이 메소드 호출에 의해서 리시버에서 일련의 작업이 처리됩니다.</description>
+      <content>&lt;h2 id=&#34;커맨드-패턴이란&#34;&gt;커맨드 패턴이란?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;요청을 객체의 형태로 캡슐화하여 사용자가 보낸 요청을 나중에 이용할 수 있도록&lt;/p&gt;
+&lt;p&gt;매서드 이름, 매개변수 등 요청에 필요한 정보를 저장 또는 로깅, 취소할 수 있게 하는 패턴&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;head-first-design-에서&#34;&gt;HEAD FIRST DESIGN 에서&amp;hellip;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;커맨드 객체는 일련의 행동을 특정 리시버하고 연결시킴으로써 요구 사항을 캡슐화한 것이라는 점을 이미 배웠습니다.&lt;/p&gt;
+&lt;p&gt;이렇게 하기 위해서 행동과 리시버를 한 객체에 집어넣고, execute()라는 메소드 하나만 외부에 공개하는 방법을 씁니다.&lt;/p&gt;
+&lt;p&gt;이 메소드 호출에 의해서 리시버에서 일련의 작업이 처리됩니다.&lt;/p&gt;
+&lt;p&gt;외부에서 볼 때는 어떤 객체가 리시버 역할을 하는지, 그 리시버에서 실제로 어떤 일을 하는지 알 수 없습니다.&lt;/p&gt;
+&lt;p&gt;그냥 execute() 메소드를 호출하면 요구 사항이 처리된다는 것만 알 수 있을 뿐이죠.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조&#34;&gt;구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/command/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Command&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;실행될 기능에 대한 인터페이스&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ConcreteCommand&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;실제로 실행되는 기능을 구현&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Invoker&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;기능의 실행을 요청하는 호출자 클래스&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Receiver&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;&lt;code&gt;ConcreteCommand&lt;/code&gt;에서 &lt;code&gt;execute&lt;/code&gt; 메서드를 구현할 때 필요한 클래스&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;작업을 요청하는 클래스와 실제로 작업을 수행하는 클래스를 분리하여 시스템의 결합도를 낮출 수 있음&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;기존 코드를 수정하지 않고 새로운 기능을 비교적 쉽게 추가할 수 있음&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;동작자체를 객체화하여 일련의 트랜잭션을 객체단위로 제공할 수 있음&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;구현 및 유지보수해야 하는 클래스가 많아지게 됨.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Head First Design Patterns&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://johngrib.github.io/wiki/command-pattern/&#34;&gt;기계인간 John Grib Command Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Ddudooo/designpattern/tree/main/behavioral/CommandPattern&#34;&gt;예제 소스&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>브릿지 패턴</title>
       <link>/programming/design-pattern/%EB%B8%8C%EB%A6%BF%EC%A7%80-%ED%8C%A8%ED%84%B4/</link>
