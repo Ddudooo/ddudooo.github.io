@@ -6,7 +6,45 @@
     <description>Recent content in Programmings on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 28 Jun 2021 15:55:24 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Jun 2021 17:26:46 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>팩토리 메소드 패턴</title>
+      <link>/programming/design-pattern/%ED%8C%A9%ED%86%A0%EB%A6%AC-%EB%A9%94%EC%86%8C%EB%93%9C-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Tue, 29 Jun 2021 17:26:46 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%ED%8C%A9%ED%86%A0%EB%A6%AC-%EB%A9%94%EC%86%8C%EB%93%9C-%ED%8C%A8%ED%84%B4/</guid>
+      <description>팩토리 메소드 패턴이란?  객체 생성을 캡슐화하는 패턴
+자식(하위) 클래스가 어떤 객체를 생성할지를 결정하도록 하는 패턴
+ 구조 장점  객체의 자료형이 하위 클래스 의해서 결정되어 비교적 확장에 용이함 하위 클래스에서 객체를 생성할 때, 상위 클래스에서 그 객체에 대한 정확한 타입을 몰라도 됨 동일한 형태로 프로그래밍 가능함 확장성 있는 전체 프로젝트 구성 가능함 구상 클래스에 의존하지 않고 추상화된 것에 의존  단점  객체가 늘어날 때마다 하위 클래스 재정의로 인한 불필요한 많은 클래스 생성 가능성이 있음   참고  Head First Design Patterns SLiPP::위키 Factory Method Pattern 예제 소스  </description>
+      <content>&lt;h2 id=&#34;팩토리-메소드-패턴이란&#34;&gt;팩토리 메소드 패턴이란?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;객체 생성을 캡슐화하는 패턴&lt;/p&gt;
+&lt;p&gt;자식(하위) 클래스가 어떤 객체를 생성할지를 결정하도록 하는 패턴&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조&#34;&gt;구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/factoryMethod/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;객체의 자료형이 하위 클래스 의해서 결정되어 비교적 확장에 용이함&lt;/li&gt;
+&lt;li&gt;하위 클래스에서 객체를 생성할 때, 상위 클래스에서 그 객체에 대한 정확한 타입을 몰라도 됨&lt;/li&gt;
+&lt;li&gt;동일한 형태로 프로그래밍 가능함&lt;/li&gt;
+&lt;li&gt;확장성 있는 전체 프로젝트 구성 가능함&lt;/li&gt;
+&lt;li&gt;구상 클래스에 의존하지 않고 추상화된 것에 의존&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;객체가 늘어날 때마다 하위 클래스 재정의로 인한 불필요한 많은 클래스 생성 가능성이 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Head First Design Patterns&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slipp.net/wiki/display/SLS/Factory+Method+Pattern&#34;&gt;SLiPP::위키 Factory Method Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Ddudooo/designpattern/tree/main/creation/FactoryMethodPattern&#34;&gt;예제 소스&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>커맨드 패턴</title>
       <link>/programming/design-pattern/%EC%BB%A4%EB%A7%A8%EB%93%9C-%ED%8C%A8%ED%84%B4/</link>

@@ -6,13 +6,13 @@
     <description>Recent content in Tags on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 28 Jun 2021 15:55:24 +0900</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Jun 2021 17:26:46 +0900</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>command_pattern</title>
-      <link>/tags/command_pattern/</link>
-      <pubDate>Mon, 28 Jun 2021 15:55:24 +0900</pubDate>
+      <title>factory_method_pattern</title>
+      <link>/tags/factory_method_pattern/</link>
+      <pubDate>Tue, 29 Jun 2021 17:26:46 +0900</pubDate>
       
-      <guid>/tags/command_pattern/</guid>
+      <guid>/tags/factory_method_pattern/</guid>
       <description></description>
       <content></content>
     </item>
@@ -20,9 +20,29 @@
     <item>
       <title>디자인패턴</title>
       <link>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</link>
-      <pubDate>Mon, 28 Jun 2021 15:55:24 +0900</pubDate>
+      <pubDate>Tue, 29 Jun 2021 17:26:46 +0900</pubDate>
       
       <guid>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>팩토리메소드패턴</title>
+      <link>/tags/%ED%8C%A9%ED%86%A0%EB%A6%AC%EB%A9%94%EC%86%8C%EB%93%9C%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Tue, 29 Jun 2021 17:26:46 +0900</pubDate>
+      
+      <guid>/tags/%ED%8C%A9%ED%86%A0%EB%A6%AC%EB%A9%94%EC%86%8C%EB%93%9C%ED%8C%A8%ED%84%B4/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>command_pattern</title>
+      <link>/tags/command_pattern/</link>
+      <pubDate>Mon, 28 Jun 2021 15:55:24 +0900</pubDate>
+      
+      <guid>/tags/command_pattern/</guid>
       <description></description>
       <content></content>
     </item>
