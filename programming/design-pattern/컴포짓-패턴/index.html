@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>컴포짓 패턴 :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="개별 객체와 복합 객체를 동일하게 다룰 수 있도록 하는 패턴" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/programming/design-pattern/%EC%BB%B4%ED%8F%AC%EC%A7%93-%ED%8C%A8%ED%84%B4/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="컴포짓 패턴">
+<meta property="og:description" content="개별 객체와 복합 객체를 동일하게 다룰 수 있도록 하는 패턴" />
+<meta property="og:url" content="/programming/design-pattern/%EC%BB%B4%ED%8F%AC%EC%A7%93-%ED%8C%A8%ED%84%B4/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  <meta property="og:image" content="/images/designPattern/composite/thumbnail.png">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-07-05 17:38:39 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/programming">Programming</a></li>
+        
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/programming">Programming</a></li>
+      
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/programming/design-pattern/%EC%BB%B4%ED%8F%AC%EC%A7%93-%ED%8C%A8%ED%84%B4/">컴포짓 패턴</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-07-05 [Updated: 2021-07-05]
+      </span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/">디자인패턴</a>&nbsp;
+    
+    #<a href="/tags/%EC%BB%B4%ED%8F%AC%EC%A7%93%ED%8C%A8%ED%84%B4/">컴포짓패턴</a>&nbsp;
+    
+    #<a href="/tags/composite_pattern/">composite_pattern</a>&nbsp;
+    
+  </span>
+  
+
+  
+    <img src="/images/designPattern/composite/thumbnail.png" class="post-cover" alt="컴포짓 패턴" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="컴포짓-패턴이란">컴포짓 패턴이란?<a href="#컴포짓-패턴이란" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>개별 객체와 복합 객체를 동일하게 다룰 수 있도록 하는 패턴</p>
+<p>여러 객체들로 구성된 복합 객체와 단일 객체를 클라이언트에서 구별 없이 다루게 해주는 패턴</p>
+</blockquote>
+<h2 id="구조">구조<a href="#구조" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><img src="/images/designPattern/composite/structure.png" alt="structure.png"></p>
+<ul>
+<li><code>Component</code><br>
+<sub class="tx-sub"> 모든 클래스에 해당하는 공통의 행동을 정의하고 구현.</sub></li>
+<li><code>Composite</code><br>
+<sub class="tx-sub"> 자식을 가지는 클래스를 구현함. 자식과 관련된 연산을 포함함.</sub></li>
+<li><code>Leaf</code><br>
+<sub class="tx-sub"> 구성 요소의 기본이 되는 객체를 정의함.</sub></li>
+</ul>
+<h2 id="장점">장점<a href="#장점" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>단일 객체와 복합 객체를 구별하지 않고 동일하게 생각하여, 같은 객체군으로 묶어서 관리할 때 편리</li>
+</ul>
+<h2 id="단점">단점<a href="#단점" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>복합객체 내 구성 요소의 깊이 만큼, 코드 단위의 디버깅이 힘들어진다.</li>
+</ul>
+<hr>
+<h2 id="참고">참고<a href="#참고" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Head First Design Patterns</li>
+<li><a href="https://mygumi.tistory.com/343">마이구미의 Hello World :: 컴포지트 패턴</a></li>
+<li><a href="https://github.com/Ddudooo/designpattern/tree/main/structural/CompositePattern">예제 소스</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>

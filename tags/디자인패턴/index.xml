@@ -6,7 +6,52 @@
     <description>Recent content in 디자인패턴 on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 29 Jun 2021 17:26:46 +0900</lastBuildDate><atom:link href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Jul 2021 17:38:39 +0900</lastBuildDate><atom:link href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>컴포짓 패턴</title>
+      <link>/programming/design-pattern/%EC%BB%B4%ED%8F%AC%EC%A7%93-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Mon, 05 Jul 2021 17:38:39 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EC%BB%B4%ED%8F%AC%EC%A7%93-%ED%8C%A8%ED%84%B4/</guid>
+      <description>컴포짓 패턴이란?  개별 객체와 복합 객체를 동일하게 다룰 수 있도록 하는 패턴
+여러 객체들로 구성된 복합 객체와 단일 객체를 클라이언트에서 구별 없이 다루게 해주는 패턴
+ 구조  Component
+모든 클래스에 해당하는 공통의 행동을 정의하고 구현. Composite
+자식을 가지는 클래스를 구현함. 자식과 관련된 연산을 포함함. Leaf
+구성 요소의 기본이 되는 객체를 정의함.  장점  단일 객체와 복합 객체를 구별하지 않고 동일하게 생각하여, 같은 객체군으로 묶어서 관리할 때 편리  단점  복합객체 내 구성 요소의 깊이 만큼, 코드 단위의 디버깅이 힘들어진다.</description>
+      <content>&lt;h2 id=&#34;컴포짓-패턴이란&#34;&gt;컴포짓 패턴이란?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;개별 객체와 복합 객체를 동일하게 다룰 수 있도록 하는 패턴&lt;/p&gt;
+&lt;p&gt;여러 객체들로 구성된 복합 객체와 단일 객체를 클라이언트에서 구별 없이 다루게 해주는 패턴&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조&#34;&gt;구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/composite/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Component&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt; 모든 클래스에 해당하는 공통의 행동을 정의하고 구현.&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Composite&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt; 자식을 가지는 클래스를 구현함. 자식과 관련된 연산을 포함함.&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Leaf&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt; 구성 요소의 기본이 되는 객체를 정의함.&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;단일 객체와 복합 객체를 구별하지 않고 동일하게 생각하여, 같은 객체군으로 묶어서 관리할 때 편리&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;복합객체 내 구성 요소의 깊이 만큼, 코드 단위의 디버깅이 힘들어진다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Head First Design Patterns&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mygumi.tistory.com/343&#34;&gt;마이구미의 Hello World :: 컴포지트 패턴&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Ddudooo/designpattern/tree/main/structural/CompositePattern&#34;&gt;예제 소스&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>팩토리 메소드 패턴</title>
       <link>/programming/design-pattern/%ED%8C%A9%ED%86%A0%EB%A6%AC-%EB%A9%94%EC%86%8C%EB%93%9C-%ED%8C%A8%ED%84%B4/</link>
