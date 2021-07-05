@@ -6,7 +6,112 @@
     <description>Recent content in Programmings on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 29 Jun 2021 17:26:46 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Jun 2021 18:15:41 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JVM</title>
+      <link>/programming/java/jvm/</link>
+      <pubDate>Tue, 29 Jun 2021 18:15:41 +0900</pubDate>
+      
+      <guid>/programming/java/jvm/</guid>
+      <description>Java Virtual Machine, JVM 이란?  자바 응용 프로그램을 실행시키기 위한 가상 머신으로 자바를 실행시키기 위한 프로그램
+ 일반적으로 다른 프로그래밍 언어의 경우,
+컴파일러를 통해 컴파일할 때, 특정 시스템에 종속적인 결과물이 나오게 되어 있다
+반면, Java 컴파일러는 JVM, Java Virtual Machine 에 대한 결과물을 생성한다.
+이를 통해, 다른 플랫폼이나 환경이 다를 지라도 JVM만 있다면 동일한 결과물을 얻을 수 있게 되었다.
+좀 더 자세히 살펴보자면
+Java 컴파일러는 .java 파일을 .class 파일로 컴파일을 하게 되는데</description>
+      <content>&lt;h1 id=&#34;java-virtual-machine-jvm-이란&#34;&gt;&lt;code&gt;Java Virtual Machine&lt;/code&gt;, &lt;code&gt;JVM&lt;/code&gt; 이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;자바 응용 프로그램을 실행시키기 위한 가상 머신으로 자바를 실행시키기 위한 프로그램&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;일반적으로 다른 프로그래밍 언어의 경우,&lt;/p&gt;
+&lt;p&gt;컴파일러를 통해 컴파일할 때, 특정 시스템에 종속적인 결과물이 나오게 되어 있다&lt;/p&gt;
+&lt;p&gt;반면, &lt;code&gt;Java&lt;/code&gt; 컴파일러는 &lt;code&gt;JVM&lt;/code&gt;, &lt;code&gt;Java Virtual Machine&lt;/code&gt; 에 대한 결과물을 생성한다.&lt;/p&gt;
+&lt;p&gt;이를 통해, 다른 플랫폼이나 환경이 다를 지라도 &lt;code&gt;JVM&lt;/code&gt;만 있다면 동일한 결과물을 얻을 수 있게 되었다.&lt;/p&gt;
+&lt;p&gt;좀 더 자세히 살펴보자면&lt;/p&gt;
+&lt;p&gt;Java 컴파일러는 &lt;code&gt;.java&lt;/code&gt; 파일을 &lt;code&gt;.class&lt;/code&gt; 파일로 컴파일을 하게 되는데&lt;/p&gt;
+&lt;p&gt;이 &lt;code&gt;.class&lt;/code&gt; 파일이 &lt;code&gt;JVM&lt;/code&gt;에 입력되어 로드되고 실행되게 된다.&lt;/p&gt;
+&lt;h2 id=&#34;jvm의-구조&#34;&gt;JVM의 구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/java/jvm/JVM-Architecture.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;위 구조도를 참고하여 보자면&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;JVM&lt;/code&gt;은 크게 세가지 영역으로 이루어져 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;클래스 로더&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;ClassLoader Subsystem&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;런타임 데이터 영역&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Runtime Data Area&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;실행 엔진&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Execution Engine&lt;/sub&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;각각 영역에 대한 자세한 내용은 차차 다루도록 하고&lt;/p&gt;
+&lt;p&gt;무슨 역할을 하는지 간략하게 알아보자&lt;/p&gt;
+&lt;h3 id=&#34;클래스-로더&#34;&gt;클래스 로더&lt;/h3&gt;
+&lt;p&gt;자바의 경우 동적으로 클래스를 읽어온다.
+&lt;/br&gt;&lt;strong&gt;&lt;sub class=&#34;tx-sub tx-orange&#34;&gt;Dynamic Class Loading 동적 클래스 로딩&lt;/sub&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;런타임 상에 모든 코드가 JVM 상에 링크된다는 것인데, 좀 더 풀어서 설명하자면&lt;/p&gt;
+&lt;p&gt;앞서 설명처럼&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;자바 프로그램이 실행될 때, 컴파일된 &lt;code&gt;class&lt;/code&gt; 파일로 입력되고 실행&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;해당 역할을 담당하는 시스템 모듈이다.&lt;/p&gt;
+&lt;h3 id=&#34;런타임-데이터-영역&#34;&gt;런타임 데이터 영역&lt;/h3&gt;
+&lt;p&gt;흔히 말하길 &lt;code&gt;메모리 영역&lt;/code&gt;이라고도 불리는 영역이다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;JVM 상에서 사용되는 데이터들을 적재하는 영역&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;메소드, 힙, 스택, PC Register, 네이티브 메소드 스택(&lt;code&gt;JNI&lt;/code&gt;) 등이 있다.&lt;/p&gt;
+&lt;h3 id=&#34;실행-엔진&#34;&gt;실행 엔진&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;런타임 데이터 영역에 할당된 바이트코드를 실행시킨다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;실행 엔진은 바이트 코드를 읽어 명령어 단위로 실행시킨다.&lt;/p&gt;
+&lt;p&gt;명령어 실행은 두 방식으로 나뉘어 실행되는데&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;인터프리터&lt;/li&gt;
+&lt;li&gt;JIT 컴파일러&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이 두가지 방식으로 실행된다.&lt;/p&gt;
+&lt;p&gt;추가적으로 실행엔진에서 &lt;code&gt;GC&lt;/code&gt;라고 흔히 부르는&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Garbage Collector&lt;/code&gt;가 동작하여 불필요한 리소스를 반환한다.&lt;/p&gt;
+&lt;h2 id=&#34;jre-jdk&#34;&gt;JRE? JDK?&lt;/h2&gt;
+&lt;p&gt;JVM 구현체를 포함한 녀석들이다.&lt;/p&gt;
+&lt;p&gt;흔히 말하는 &lt;code&gt;자바 다운로드&lt;/code&gt;, &lt;code&gt;자바 개발 환경 설정&lt;/code&gt;을 할때, 나오는 녀석들&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JRE
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;J&lt;/code&gt;ava &lt;code&gt;R&lt;/code&gt;untime &lt;code&gt;E&lt;/code&gt;nvironment 자바 실행 환경의 약자&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;JVM&lt;/code&gt; + &lt;code&gt;Library&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;실행 관련 핵심 부분을 포함하고 있다&lt;/li&gt;
+&lt;li&gt;개발 관련 도구 ❌&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;JDK
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;J&lt;/code&gt;ava &lt;code&gt;D&lt;/code&gt;evelopment &lt;code&gt;K&lt;/code&gt;it 자바 개발도구의 약자&lt;/li&gt;
+&lt;li&gt;JRE + 개발 관련 도구&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;자바-코드-실행-흐름&#34;&gt;자바 코드 실행 흐름&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;프로그램 실행&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;JVM&lt;/code&gt;이 &lt;code&gt;OS&lt;/code&gt;로부터 메모리 할당&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;이 때 JVM이 할당 받은 메모리를 여러 영역으로 나누어 관리&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;자바 컴파일러가 &lt;code&gt;class&lt;/code&gt; 파일로 컴파일&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;클래스 로더&lt;/code&gt;를 통해 &lt;code&gt;JVM&lt;/code&gt;으로 로딩&lt;/li&gt;
+&lt;li&gt;로딩된 &lt;code&gt;class&lt;/code&gt; 파일은 &lt;code&gt;실행 엔진&lt;/code&gt;을 통해 해석 및 실행&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참조&#34;&gt;참조&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dzone.com/articles/jvm-architecture-explained&#34;&gt;JVM architecture-explained&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wikidocs.net/257&#34;&gt;JVM, JRE, JDK의 차이&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slipp.net/wiki/pages/viewpage.action?pageId=8880250&#34;&gt;SLiPP::위키 1장 - Java Virtual Machine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Java_virtual_machine&#34;&gt;wikipedia - Java_virtual_machine&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>팩토리 메소드 패턴</title>
       <link>/programming/design-pattern/%ED%8C%A9%ED%86%A0%EB%A6%AC-%EB%A9%94%EC%86%8C%EB%93%9C-%ED%8C%A8%ED%84%B4/</link>

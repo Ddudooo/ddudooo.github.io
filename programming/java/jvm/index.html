@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>JVM :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="JVM이란 무엇일까?" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/programming/java/jvm/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="JVM">
+<meta property="og:description" content="JVM이란 무엇일까?" />
+<meta property="og:url" content="/programming/java/jvm/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  <meta property="og:image" content="/images/java/jvm/thumbnail.png">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-06-29 18:15:41 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/programming">Programming</a></li>
+        
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/programming">Programming</a></li>
+      
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/programming/java/jvm/">JVM</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-06-29 [Updated: 2021-06-29]
+      </span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="/tags/jvm/">jvm</a>&nbsp;
+    
+    #<a href="/tags/java/">java</a>&nbsp;
+    
+  </span>
+  
+
+  
+    <img src="/images/java/jvm/thumbnail.png" class="post-cover" alt="JVM" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="java-virtual-machine-jvm-이란"><code>Java Virtual Machine</code>, <code>JVM</code> 이란?<a href="#java-virtual-machine-jvm-이란" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>자바 응용 프로그램을 실행시키기 위한 가상 머신으로 자바를 실행시키기 위한 프로그램</p>
+</blockquote>
+<p>일반적으로 다른 프로그래밍 언어의 경우,</p>
+<p>컴파일러를 통해 컴파일할 때, 특정 시스템에 종속적인 결과물이 나오게 되어 있다</p>
+<p>반면, <code>Java</code> 컴파일러는 <code>JVM</code>, <code>Java Virtual Machine</code> 에 대한 결과물을 생성한다.</p>
+<p>이를 통해, 다른 플랫폼이나 환경이 다를 지라도 <code>JVM</code>만 있다면 동일한 결과물을 얻을 수 있게 되었다.</p>
+<p>좀 더 자세히 살펴보자면</p>
+<p>Java 컴파일러는 <code>.java</code> 파일을 <code>.class</code> 파일로 컴파일을 하게 되는데</p>
+<p>이 <code>.class</code> 파일이 <code>JVM</code>에 입력되어 로드되고 실행되게 된다.</p>
+<h2 id="jvm의-구조">JVM의 구조<a href="#jvm의-구조" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><img src="/images/java/jvm/JVM-Architecture.png" alt="structure.png"></p>
+<p>위 구조도를 참고하여 보자면</p>
+<p><code>JVM</code>은 크게 세가지 영역으로 이루어져 있다.</p>
+<ol>
+<li>클래스 로더<br>
+<sub class="tx-sub">ClassLoader Subsystem</sub></li>
+<li>런타임 데이터 영역<br>
+<sub class="tx-sub">Runtime Data Area</sub></li>
+<li>실행 엔진<br>
+<sub class="tx-sub">Execution Engine</sub></li>
+</ol>
+<p>각각 영역에 대한 자세한 내용은 차차 다루도록 하고</p>
+<p>무슨 역할을 하는지 간략하게 알아보자</p>
+<h3 id="클래스-로더">클래스 로더<a href="#클래스-로더" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>자바의 경우 동적으로 클래스를 읽어온다.
+</br><strong><sub class="tx-sub tx-orange">Dynamic Class Loading 동적 클래스 로딩</sub></strong></p>
+<p>런타임 상에 모든 코드가 JVM 상에 링크된다는 것인데, 좀 더 풀어서 설명하자면</p>
+<p>앞서 설명처럼</p>
+<blockquote>
+<p>자바 프로그램이 실행될 때, 컴파일된 <code>class</code> 파일로 입력되고 실행</p>
+</blockquote>
+<p>해당 역할을 담당하는 시스템 모듈이다.</p>
+<h3 id="런타임-데이터-영역">런타임 데이터 영역<a href="#런타임-데이터-영역" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>흔히 말하길 <code>메모리 영역</code>이라고도 불리는 영역이다.</p>
+<blockquote>
+<p>JVM 상에서 사용되는 데이터들을 적재하는 영역</p>
+</blockquote>
+<p>메소드, 힙, 스택, PC Register, 네이티브 메소드 스택(<code>JNI</code>) 등이 있다.</p>
+<h3 id="실행-엔진">실행 엔진<a href="#실행-엔진" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<blockquote>
+<p>런타임 데이터 영역에 할당된 바이트코드를 실행시킨다.</p>
+</blockquote>
+<p>실행 엔진은 바이트 코드를 읽어 명령어 단위로 실행시킨다.</p>
+<p>명령어 실행은 두 방식으로 나뉘어 실행되는데</p>
+<ol>
+<li>인터프리터</li>
+<li>JIT 컴파일러</li>
+</ol>
+<p>이 두가지 방식으로 실행된다.</p>
+<p>추가적으로 실행엔진에서 <code>GC</code>라고 흔히 부르는</p>
+<p><code>Garbage Collector</code>가 동작하여 불필요한 리소스를 반환한다.</p>
+<h2 id="jre-jdk">JRE? JDK?<a href="#jre-jdk" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>JVM 구현체를 포함한 녀석들이다.</p>
+<p>흔히 말하는 <code>자바 다운로드</code>, <code>자바 개발 환경 설정</code>을 할때, 나오는 녀석들</p>
+<ul>
+<li>JRE
+<ul>
+<li><code>J</code>ava <code>R</code>untime <code>E</code>nvironment 자바 실행 환경의 약자</li>
+<li><code>JVM</code> + <code>Library</code></li>
+<li>실행 관련 핵심 부분을 포함하고 있다</li>
+<li>개발 관련 도구 ❌</li>
+</ul>
+</li>
+<li>JDK
+<ul>
+<li><code>J</code>ava <code>D</code>evelopment <code>K</code>it 자바 개발도구의 약자</li>
+<li>JRE + 개발 관련 도구</li>
+</ul>
+</li>
+</ul>
+<h1 id="자바-코드-실행-흐름">자바 코드 실행 흐름<a href="#자바-코드-실행-흐름" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<ol>
+<li>프로그램 실행</li>
+<li><code>JVM</code>이 <code>OS</code>로부터 메모리 할당<br>
+<sub class="tx-sub">이 때 JVM이 할당 받은 메모리를 여러 영역으로 나누어 관리</sub></li>
+<li>자바 컴파일러가 <code>class</code> 파일로 컴파일</li>
+<li><code>클래스 로더</code>를 통해 <code>JVM</code>으로 로딩</li>
+<li>로딩된 <code>class</code> 파일은 <code>실행 엔진</code>을 통해 해석 및 실행</li>
+</ol>
+<hr>
+<h2 id="참조">참조<a href="#참조" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li><a href="https://dzone.com/articles/jvm-architecture-explained">JVM architecture-explained</a></li>
+<li><a href="https://wikidocs.net/257">JVM, JRE, JDK의 차이</a></li>
+<li><a href="https://www.slipp.net/wiki/pages/viewpage.action?pageId=8880250">SLiPP::위키 1장 - Java Virtual Machine</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Java_virtual_machine">wikipedia - Java_virtual_machine</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>

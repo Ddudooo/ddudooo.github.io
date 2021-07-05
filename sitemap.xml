@@ -3,16 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2021-06-29T17:26:46+09:00</lastmod>
+    <lastmod>2021-06-29T18:15:41+09:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>/tags/factory_method_pattern/</loc>
-    <lastmod>2021-06-29T17:26:46+09:00</lastmod>
+    <loc>/tags/java/</loc>
+    <lastmod>2021-06-29T18:15:41+09:00</lastmod>
+  </url><url>
+    <loc>/programming/java/jvm/</loc>
+    <lastmod>2021-06-29T18:15:41+09:00</lastmod>
+  </url><url>
+    <loc>/tags/jvm/</loc>
+    <lastmod>2021-06-29T18:15:41+09:00</lastmod>
   </url><url>
     <loc>/programming/</loc>
-    <lastmod>2021-06-29T17:26:46+09:00</lastmod>
+    <lastmod>2021-06-29T18:15:41+09:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
+    <lastmod>2021-06-29T18:15:41+09:00</lastmod>
+  </url><url>
+    <loc>/tags/factory_method_pattern/</loc>
     <lastmod>2021-06-29T17:26:46+09:00</lastmod>
   </url><url>
     <loc>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</loc>
