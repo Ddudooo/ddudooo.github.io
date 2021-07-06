@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>인터프리터패턴 on 공부한 내용 기록용</title>
+    <link>/tags/%EC%9D%B8%ED%84%B0%ED%94%84%EB%A6%AC%ED%84%B0%ED%8C%A8%ED%84%B4/</link>
+    <description>Recent content in 인터프리터패턴 on 공부한 내용 기록용</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 05 Jul 2021 19:49:09 +0900</lastBuildDate><atom:link href="/tags/%EC%9D%B8%ED%84%B0%ED%94%84%EB%A6%AC%ED%84%B0%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>인터프리터 패턴</title>
+      <link>/programming/design-pattern/%EC%9D%B8%ED%84%B0%ED%94%84%EB%A6%AC%ED%84%B0-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Mon, 05 Jul 2021 19:49:09 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EC%9D%B8%ED%84%B0%ED%94%84%EB%A6%AC%ED%84%B0-%ED%8C%A8%ED%84%B4/</guid>
+      <description>인터프리터 패턴이란?  문법 규칙을 클래스화 한 구조로써, 일련의 규칙으로 정의된 언어를 해석하는 패턴
+인터프리터 언어의 인터프리터와 같은 의미로 쓰임
+ 구조  Context
+인터프리터가 구문해석을 실행하기 위한 정보를 제공. 문맥에 대한 정보를 모두 가지고 있음. AbstactExpression
+공통 인터페이스 정의 TerminalExpression
+해당 표현 이후에 그 이상 전개 되지 않는 표현. 코드상에서 해당 표현 이후에는 더 이상 다른 Expression 객체를 호출하지 않음. NonterminalExpression
+이미 전개된 표현  장점  각 문법 규칙을 클래스로 표현하여 언어를 쉽게 구현 가능 언어의 변경이나 확장이 쉬운편 Visitor 패턴을 활용, 기존 Expression 구조의 변경 없이 새로운 종류의 해석을 정의할 수 있음  단점  문법 규칙의 갯수가 많아지면 시스템의 복잡도가 올라간다.</description>
+      <content>&lt;h2 id=&#34;인터프리터-패턴이란&#34;&gt;인터프리터 패턴이란?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;문법 규칙을 클래스화 한 구조로써, 일련의 규칙으로 정의된 언어를 해석하는 패턴&lt;/p&gt;
+&lt;p&gt;인터프리터 언어의 인터프리터와 같은 의미로 쓰임&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조&#34;&gt;구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/interpreter/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Context&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;인터프리터가 구문해석을 실행하기 위한 정보를 제공. 문맥에 대한 정보를 모두 가지고 있음.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;AbstactExpression&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;공통 인터페이스 정의&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TerminalExpression&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;해당 표현 이후에 그 이상 전개 되지 않는 표현.&lt;/br&gt; 코드상에서 해당 표현 이후에는 더 이상 다른 &lt;code&gt;Expression&lt;/code&gt; 객체를 호출하지 않음.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NonterminalExpression&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;이미 전개된 표현&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;각 문법 규칙을 클래스로 표현하여 언어를 쉽게 구현 가능&lt;/li&gt;
+&lt;li&gt;언어의 변경이나 확장이 쉬운편&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Visitor&lt;/code&gt; 패턴을 활용, 기존 &lt;code&gt;Expression&lt;/code&gt; 구조의 변경 없이 새로운 종류의 해석을 정의할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;문법 규칙의 갯수가 많아지면 시스템의 복잡도가 올라간다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Head First Design Patterns&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slipp.net/wiki/display/SLS/Interpreter&#34;&gt;SLiPP::위키 Interpreter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.baeldung.com/java-interpreter-pattern&#34;&gt;Baeldung::Interpreter Design Pattern in Java&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Ddudooo/designpattern/tree/main/behavioral/InterpreterPattern&#34;&gt;예제 소스&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
