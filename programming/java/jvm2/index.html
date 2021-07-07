@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>JVM(2) - ClassLoader :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="클래스 로더에 대해 좀 더 알아보자" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/programming/java/jvm2/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="JVM(2) - ClassLoader">
+<meta property="og:description" content="클래스 로더에 대해 좀 더 알아보자" />
+<meta property="og:url" content="/programming/java/jvm2/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  <meta property="og:image" content="/images/java/jvm/thumbnail.png">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-07-06 22:05:34 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/programming">Programming</a></li>
+        
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/programming">Programming</a></li>
+      
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/programming/java/jvm2/">JVM(2) - ClassLoader</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-07-06 [Updated: 2021-07-06]
+      </span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="/tags/jvm/">jvm</a>&nbsp;
+    
+    #<a href="/tags/java/">java</a>&nbsp;
+    
+  </span>
+  
+
+  
+    <img src="/images/java/jvm/thumbnail.png" class="post-cover" alt="JVM(2) - ClassLoader" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="클래스-로더란">클래스 로더란?<a href="#클래스-로더란" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>컴파일된 바이트 코드, <code>.class</code> 파일 읽어</p>
+<p><code>class</code> 객체를 생성하여 메모리에 적재하는 역할을 담당하는 객체</p>
+</blockquote>
+<p>아래에서 소개하는 내용은 내장 클래스 로더 위주로 알아보았다.</p>
+<h2 id="클래스-로더-구조">클래스 로더 구조<a href="#클래스-로더-구조" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<img src="/images/java/classloader/structure.png" alt="structure.png" width="200 em"/>
+<p>클래스 로더는 계층 구조로 이뤄져 있으며,  기본적으로 세가지 클래스 로더가 제공된다.</p>
+<ul>
+<li>부트 스트랩 클래스 로더<br>
+<sub class="tx-sub tx-teal">Bootstrap ClassLoader</sub><br>
+<code>JAVA_HOME\lib</code>에 있는 코어 자바 API를 제공<br>
+최상위 우선순위를 가진 클래스 로더</li>
+<li>익스텐션 클래스로더<br>
+<sub class="tx-sub tx-orange">Extension ClassLoader</sub><br>
+<code>JAVA_HOME\lib\ext</code> 폴더 또는 <code>java.ext.dirs</code><br>
+시스템 변수에 해당하는 위치에 있는 클래스를 읽는다.</li>
+<li>애플리케이션 클래스로더<br>
+<sub class="tx-sub tx-gold">Application ClassLoader</sub><br>
+애플리케이션 클래스패스에서 클래스를 읽는다.<br>
+<sub class="tx-sub">(애플리케이션 실행할 때 주는 <code>-classpath</code> 옵션 또는 <code>java.class.path</code> 환경 변수의 값에 해당하는 위치)</sub></li>
+</ul>
+<p>아래는 서버 응용 프로그램의 클래스 로더 구조에 대한 예시이다.</p>
+<p><img src="/images/java/classloader/classLoaderStructure.png" alt="classloader-structure.png"></p>
+<h3 id="after-java-9">After Java 9<a href="#after-java-9" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Java 9 부터 모듈 시스템 도입에 맞춰 기본 클래스 로더의 이름과 구현 내용등이 바뀌었는데</p>
+<p>자세한 내용은 <a href="https://homoefficio.github.io/2018/10/13/Java-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A1%9C%EB%8D%94-%ED%9B%91%EC%96%B4%EB%B3%B4%EA%B8%B0/">링크</a>를 확인하도록 하자<br>
+<sub class="tx-sub tx-lightgray">클래스로더의 전반적인 설명과 원칙 그리고 자바 9 이후 변경점 등을 자세히 설명해주고 있다. </sub></p>
+<h1 id="클래스-로더의-진행-순서">클래스 로더의 진행 순서<a href="#클래스-로더의-진행-순서" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>자바 응용 프로그램의 실행시, 클래스 로더의 구성 요소별 작동 방식에 대해 알아보자</p>
+<p><img src="/images/java/classloader/classloader.png" alt="classloader.png"></p>
+<p>클래스 로더는 크게 <code>로딩</code>, <code>링크</code>, <code>초기화</code> 순으로 진행된다.</p>
+<h2 id="로딩">로딩<a href="#로딩" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>클래스 로더가 <code>.class</code> 파일을 읽고<br>
+그 내용에 따라 적절한 바이너리 데이터를 만들고 <code>메소드</code> 영역에 저장.</p>
+<ul>
+<li>이때 메소드 영역에 저장하는 데이터
+<ul>
+<li><code>Fully Qualified Class Name</code><br>
+<sub class="tx-sub tx-lightgray">클래스가 속한 패키지 명을 모두 포함한 이름</sub></li>
+<li><code>class</code> | <code>interface</code> | <code>enum</code></li>
+<li>메소드와 변수</li>
+</ul>
+</li>
+<li>로딩이 끝나면 해당 클래스 타입의 <code>Class 객체</code>를 생성하여 <code>힙</code> 영역에 저장.</li>
+</ul>
+<ol>
+<li><code>Bootstrap ClassLoader</code><br>
+<sub class="tx-sub">자바 런타임 코어 클래스 로드</sub></li>
+<li><code>Extension ClassLoader</code><br>
+<sub class="tx-sub">Bootstrap Class 부모로 설정, 필요시 부모로 작업 위임</sub></li>
+<li><code>Application ClassLoader</code><br>
+<sub class="tx-sub">지정된 클래스 패스에 위치한 클래스 로드, Application에 해당되는 클래스들.</sub></li>
+</ol>
+<p>순으로 진행된다.</p>
+<h3 id="classnotfoundexception-noclassdeffounderror">ClassNotFoundException? NoClassDefFoundError?<a href="#classnotfoundexception-noclassdeffounderror" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p><code>ClassNotFoundException</code> 클래스 로더가 클래스 패스에서 해당 클래스를 찾을 수 없을 경우 발생하는 에러로</p>
+<p>클래스 로더는 기본적으로<br>
+<code>Application</code> -&gt; <code>Extension</code> -&gt; <code>Bootstrap</code> 
+순으로 클래스를 찾게 되는데,</p>
+<p>모두 진행 후 찾을 수 없는 경우 예외가 발생하게 된다.</p>
+<p><code>NoClassDefFoundError</code> 
+컴파일 타임에는 클래스가 존재하지만</p>
+<p>런타임 당시에 클래스의 변경으로 인해 클래스의 스태틱 초기화 등으로</p>
+<p>런타임 당시에 클래스를 찾을 수 없는 경우 예외를 발생하게 된다.</p>
+<h2 id="링크">링크<a href="#링크" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>링크의 경우 <code>Verify</code>, <code>Prepare</code>, <code>Resolve</code> 세단계로 나눠져 있으며, 아래와 같은 순서로 진행된다.</p>
+<ol>
+<li><code>Verify</code><br>
+<sub class="tx-sub">검증, <code>.class</code> 파일 형식이 유효한지 체크</sub></li>
+<li><code>Prepare</code><br>
+<sub class="tx-sub">클래스 변수 (static 변수) 와 기본값에 필요한 메모리를 준비하는 과정</sub></li>
+<li><code>Resolve</code> <sub class="tx-royalblue">(optional)</sub><br>
+<sub class="tx-sub">심볼릭 메모리 레퍼런스를 메소드 영역에 있는 실제 레퍼런스로 교체<br>
+이과정에서 진행 될 수 있고, 실제 메소드를 실행당시에 실행될 수도 있음.</sub></li>
+</ol>
+<h2 id="초기화">초기화<a href="#초기화" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><code>Static</code> 변수의 값 할당, <code>static</code> 블럭이 있을 경우 이때 실행된다.</p>
+<h1 id="마치며">마치며<a href="#마치며" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>클래스 로더는 <code>Java</code> 프로그램을 실행하는 데 필수적이며</p>
+<p>내부적으로 사용되는 <code>Bootstrap</code> 클래스 로더는</p>
+<p><strong>다른 클래스 로더의 부모, 최상위 루트 클래스 로더 역할이며 JDK 내부 클래스를 로드합니다</strong></p>
+<p><code>Extension</code>, <code>Application</code> 클래스 로더는</p>
+<p><strong>각각 Java 확장 디렉토리와 클래스 경로에서 클래스를 로드합니다</strong></p>
+<hr>
+<h1 id="참고">참고<a href="#참고" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<ul>
+<li><a href="https://www.baeldung.com/java-classloaders">Baeldung::java-classloader</a></li>
+<li><a href="https://www.inflearn.com/course/the-java-code-manipulation">더 자바, 코드를 조작하는 다양한 방법</a></li>
+<li><a href="https://homoefficio.github.io/2018/10/13/Java-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A1%9C%EB%8D%94-%ED%9B%91%EC%96%B4%EB%B3%B4%EA%B8%B0/">Java 클래스로더 훑어보기</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>

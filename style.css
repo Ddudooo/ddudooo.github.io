@@ -16,12 +16,20 @@ body {
     color: orange;
 }
 
+.tx-gold {
+    color: gold;
+}
+
 .tx-teal{
     color:teal
 }
 
 .tx-royalblue{
     color:royalblue
+}
+
+.tx-lightgray{
+    color: lightgray;
 }
 
 .tx-sub{
