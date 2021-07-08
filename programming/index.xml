@@ -6,7 +6,179 @@
     <description>Recent content in Programmings on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 06 Jul 2021 22:05:34 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jul 2021 22:12:16 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JVM(3) - Runtime Data Area</title>
+      <link>/programming/java/jvm3/</link>
+      <pubDate>Wed, 07 Jul 2021 22:12:16 +0900</pubDate>
+      
+      <guid>/programming/java/jvm3/</guid>
+      <description>런타임 데이터 영역이란?  OS에서 JVM에 할당해준 메모리 영역을 Runtime Data Area,
+런타임 데이터 영역이라 한다.
+ 런타임 데이터 영역은 그림 같이
+ 스택 PC 힙 메소드 네이티브 메소드 스택  5가지 영역으로 나눌 수 있다.
+스택 쓰레드마다 런타임 스택이 생성되며
+자바에서 메서드를 호출할 때 메서드의 프레임이 저장되는 영역
+그리고 그 프레임 안에는 지역변수, 인자값, 리턴값 등이 저장된다.
+메서드 호출 하나 하나마다 새 프레임이 생성되어 스택에 쌓이고
+메서드 호출이 정상적으로 종료되거나 예외가 발생시 프레임은 스택에서 빠져나와 소멸된다.</description>
+      <content>&lt;h1 id=&#34;런타임-데이터-영역이란&#34;&gt;런타임 데이터 영역이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OS에서 JVM에 할당해준 메모리 영역을 Runtime Data Area,&lt;/p&gt;
+&lt;p&gt;런타임 데이터 영역이라 한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;/images/java/dataarea/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;런타임 데이터 영역은 그림 같이&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;스택&lt;/li&gt;
+&lt;li&gt;PC&lt;/li&gt;
+&lt;li&gt;힙&lt;/li&gt;
+&lt;li&gt;메소드&lt;/li&gt;
+&lt;li&gt;네이티브 메소드 스택&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;5가지 영역으로 나눌 수 있다.&lt;/p&gt;
+&lt;h2 id=&#34;스택&#34;&gt;스택&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;쓰레드마다 런타임 스택이 생성되며&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;자바에서 메서드를 호출할 때 메서드의 프레임이 저장되는 영역&lt;/p&gt;
+&lt;p&gt;그리고 그 프레임 안에는 지역변수, 인자값, 리턴값 등이 저장된다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;메서드 호출 하나 하나마다 새 프레임이 생성되어 스택에 쌓이고&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;메서드 호출이 정상적으로 종료되거나 예외가 발생시 프레임은 스택에서 빠져나와 소멸된다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;쓰레드가 종료시 쓰레드가 가지고 있는 스택도 제거된다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;스택에도 직접적으로 저장되는 값이 있고 힙영역에 저장되며 레퍼런스만 저장하는 값이 있는데&lt;/p&gt;
+&lt;p&gt;기본 자료형, &lt;code&gt;Primitive Type&lt;/code&gt; 의 경우 스택 영역에 저장되고&lt;/p&gt;
+&lt;p&gt;기본 자료형을 제외한 타입의 경우&lt;/p&gt;
+&lt;p&gt;힙 영역에 저장되고 스택 영역의 레퍼런스값을 통해 연결된다.&lt;/p&gt;
+&lt;h2 id=&#34;pc-resisters&#34;&gt;PC Resisters&lt;/h2&gt;
+&lt;p&gt;쓰레드가 생성될 때마다 생성되어, 각 쓰레드마다 존재함.&lt;/p&gt;
+&lt;p&gt;쓰레드가 생성될 때마다 그 쓰레드가 어떠한 명령을 실행하게 될지에 대한 부분을 기록하는 메모리 공간을 말한다.&lt;/p&gt;
+&lt;p&gt;JVM은 &lt;code&gt;Stacks-Base&lt;/code&gt; 방식으로 작동한다.&lt;/p&gt;
+&lt;p&gt;JVM은 CPU에 직접 명령을 수행하지 않고 &lt;code&gt;Stack&lt;/code&gt;에서 &lt;code&gt;Operand&lt;/code&gt;를 뽑아내 이를 별도의 메모리 공간에 저장하는 방식을 취하는데, 이러한 메모리 공간을 &lt;code&gt;PC Registers&lt;/code&gt;라고 한다.&lt;/p&gt;
+&lt;p&gt;연산을 위해 필요한 피연산자를 임시로 저장하기 위한 용도로 사용한다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;힙&#34;&gt;힙&lt;/h2&gt;
+&lt;p&gt;모든 스레드 간에 공유되는 영역이며&lt;/p&gt;
+&lt;p&gt;런타임 중에 생성된 개체, 클래스의 메타 데이터, 배열 등이 포함됨.&lt;/p&gt;
+&lt;p&gt;JVM이 종료되면 소멸되어 OS에 반환된다.&lt;/p&gt;
+&lt;p&gt;실행시 특정 플래그를 사용하여 JVM의 힙 요구량을 제어할 수 있으며,&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;GC&lt;/code&gt;, &lt;code&gt;Garbage Collector&lt;/code&gt; 에 의해 이 공간이 관리되고 필요없어진 리소스를 정리하여 공간을 정리한다.&lt;/p&gt;
+&lt;h3 id=&#34;힙힙의-구조&#34;&gt;힙::힙의 구조&lt;/h3&gt;
+&lt;img src=&#34;/images/java/dataarea/heap.png&#34; alt=&#34;stack.png&#34; height=&#34;200 em&#34;/&gt;
+&lt;p&gt;위에 그림은 일반적으로 알려진 힙의 구조다.&lt;/p&gt;
+&lt;p&gt;크게 &lt;code&gt;Young Generation&lt;/code&gt; 과 &lt;code&gt;Old Generation&lt;/code&gt; 영역으로 나뉘며&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Young Generation&lt;/code&gt;은&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Eden&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Survivor&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;영역으로 나뉘게 된다.&lt;/p&gt;
+&lt;h4 id=&#34;힙eden&#34;&gt;힙::Eden&lt;/h4&gt;
+&lt;p&gt;객체가 최초로 &lt;code&gt;Heap&lt;/code&gt; 영역에 할당되는 장소&lt;/p&gt;
+&lt;p&gt;이 영역이 가득 찰시에&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;새로 할당할 객체의 참조여부를 확인&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Live Object&lt;/code&gt;, 즉 사용중인 객체를 &lt;code&gt;Suvivor&lt;/code&gt; 영역으로 넘김&lt;/li&gt;
+&lt;li&gt;참조가 사라진 &lt;code&gt;Garbage Object&lt;/code&gt;의 경우 그대로 둠&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Eden&lt;/code&gt; 영역을 모두 청소&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;힙survivor&#34;&gt;힙::Survivor&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;Survivor0&lt;/code&gt; 과 &lt;code&gt;Survivor1&lt;/code&gt; 로 구성되는 영역&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Eden&lt;/code&gt; 영역에 살아 남은 객체들이 잠시 머무르는 곳&lt;br&gt;
+&lt;code&gt;Live Object&lt;/code&gt; 사용중인 객체들은 하나의 &lt;code&gt;Survivor&lt;/code&gt; 영역만 사용하게 되며&lt;br&gt;
+이러한 전반적인 과정을 &lt;code&gt;Minor GC&lt;/code&gt;라고 한다.&lt;/p&gt;
+&lt;h4 id=&#34;힙old-generation&#34;&gt;힙::Old Generation&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;Old Generation&lt;/code&gt;은 새로 &lt;code&gt;Heap&lt;/code&gt;에 할당된 객체가 들어오는 것이 아닌, &lt;code&gt;Survivor&lt;/code&gt; 영역에서 살아남아 오랫동안 참조 되었고 앞으로도 사용될 확률이 높은 객체들을 저장하는 영역이다.&lt;/p&gt;
+&lt;p&gt;이러한 &lt;code&gt;Promotion&lt;/code&gt; 과정 중 &lt;code&gt;Old Generation&lt;/code&gt;의 메모리가 충분하지 않으면 해당 영역에서 &lt;code&gt;GC&lt;/code&gt;가 발생하는데 이를 &lt;code&gt;Major GC&lt;/code&gt;라고 한다.&lt;/p&gt;
+&lt;h4 id=&#34;힙permanent&#34;&gt;힙::Permanent&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;Permanent&lt;/code&gt; 영역은 보통 &lt;code&gt;Class Meta&lt;/code&gt; 정보나 메소드의 메타 정보,&lt;br&gt;
+&lt;code&gt;static&lt;/code&gt; 변수와 상수 정보들이 저장되는 공간으로 흔히 &lt;code&gt;메타데이터 저장 영역&lt;/code&gt;이라고 한다.&lt;/p&gt;
+&lt;p&gt;이 영역은 &lt;code&gt;JAVA8&lt;/code&gt; 부터 &lt;code&gt;Native Memory&lt;/code&gt; 영역으로 이동하였다.&lt;/p&gt;
+&lt;p&gt;기존의 &lt;code&gt;Permanent&lt;/code&gt; 영역 존재하는 &lt;code&gt;static object&lt;/code&gt;는 &lt;code&gt;Heap&lt;/code&gt; 영역으로 옮겨졌다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;메소드-영역&#34;&gt;메소드 영역&lt;/h2&gt;
+&lt;p&gt;메서드 영역에서는 런타임 상수풀과 메서드 데이터 내용, 생성자 및 메서드의 코드 내용을 저장.&lt;/p&gt;
+&lt;p&gt;즉, 코드 레벨에 클레스 수준의 정보를 저장한다.&lt;/p&gt;
+&lt;p&gt;여기에 클래스 변수가 저장되며&lt;/p&gt;
+&lt;p&gt;해당 클래스가 코드에서 맨 처음 사용될 때 메서드 영역에 로딩되며&lt;/p&gt;
+&lt;p&gt;추가로 이때 클래스의 static 블록이 존재한다면 단 한번 실행된다.&lt;/p&gt;
+&lt;p&gt;&lt;strong class=&#34;tx-orange&#34;&gt;전역 변수 및 &lt;code&gt;statc 변수&lt;/code&gt; 가 프로그램 종료시 까지 어디서든 사용 가능한 이유다. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;메소드 영역에 저장되는 데이터는&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Type Information&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;타입 정보&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Runtime Constant Pool&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;런타임 상수 풀&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Field Information&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;필드 정보&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Method Information&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;메서드 정보&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Class Variable&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;클래스 변수&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;와 같으며 해당 내용에 대해 좀 더 알아보자면&lt;/p&gt;
+&lt;h3 id=&#34;메소드-영역type-information&#34;&gt;메소드 영역::Type Information&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Type&lt;/code&gt;의 전체 이름&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Type&lt;/code&gt;의 직계 하위 클래스 전체 이름&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Type&lt;/code&gt; 클래스 / 인터페이스 여부&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Type&lt;/code&gt;의 접근 제어자&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;&lt;code&gt;public&lt;/code&gt; / &lt;code&gt;abstract&lt;/code&gt; / &lt;code&gt;final&lt;/code&gt;&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;연관된 인터페이스 이름 리스트&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;메소드-영역runtime-constant-pool&#34;&gt;메소드 영역::Runtime Constant Pool&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;타입의 모든 상수 정보를 가지고 있다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Type&lt;/code&gt;, &lt;code&gt;Field&lt;/code&gt;, &lt;code&gt;Method&lt;/code&gt;의 모든 &lt;code&gt;Symbolic Reference&lt;/code&gt; 정보&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Constant Pool&lt;/code&gt;의 &lt;code&gt;Entry&lt;/code&gt;는 인덱스 번호를 통해 접근&lt;/li&gt;
+&lt;li&gt;객체의 접근 등 모든 참조를 위한 핵심 요소&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;메소드-영역field-information&#34;&gt;메소드 영역::Field Information&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;필드 타입&lt;/li&gt;
+&lt;li&gt;필드의 접근 제어자
+&lt;code&gt;public&lt;/code&gt; / &lt;code&gt;private&lt;/code&gt; / &lt;code&gt;protected&lt;/code&gt; / &lt;code&gt;static&lt;/code&gt; / &lt;code&gt;final&lt;/code&gt; / &lt;code&gt;volatile&lt;/code&gt; / &lt;code&gt;transient&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;메소드-영역method-information&#34;&gt;메소드 영역::Method Information&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Constructor&lt;/code&gt;, 생성자를 포함한 모든 메소드&lt;/li&gt;
+&lt;li&gt;메소드 이름&lt;/li&gt;
+&lt;li&gt;메소드 반환 타입&lt;/li&gt;
+&lt;li&gt;메소드 파라미터 수와 타입&lt;/li&gt;
+&lt;li&gt;메소드의 접근 제어자&lt;/li&gt;
+&lt;li&gt;메소드 구현 부분이 있을 경우&lt;/li&gt;
+&lt;li&gt;&lt;strong class=&#34;tx-orange&#34;&gt;메소드의 바이트 코드&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;메소드의 스택 프레임의 &lt;code&gt;Operand Stack&lt;/code&gt; 및
+&lt;code&gt;Local variable section&lt;/code&gt;의 크기&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Exception Table&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;메소드-영역class-variable&#34;&gt;메소드 영역::Class Variable&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Class&lt;/code&gt; 변수는 &lt;code&gt;static&lt;/code&gt; 키워드로 선언된 변수를 의미&lt;/li&gt;
+&lt;li&gt;모든 인스턴스에 공유 되며 인스턴스가 없어도
+직접 접근이 가능하다.&lt;/li&gt;
+&lt;li&gt;변수는 인스턴스의 것이 아니라 클래스에 속하게 된다.&lt;/li&gt;
+&lt;li&gt;클래스를 사용 하기 이전에 이 변수들은 미리 메모리를 할당 받은 상태가 된다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;final class&lt;/code&gt; 변수는 상수로 치환 되어 &lt;code&gt;Runtime Constant Pool&lt;/code&gt;에 값을 복사한다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;static&lt;/code&gt; 변수는 해당 영역에 저장되지만, 기본형이 아닌 &lt;code&gt;static&lt;/code&gt; 클래스형 변수는 레퍼런스 변수만 저장되고 실제 인스턴스는 &lt;code&gt;Heap&lt;/code&gt;에 저장되어 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;네이티브-메소드-스택&#34;&gt;네이티브 메소드 스택&lt;/h2&gt;
+&lt;p&gt;자바 이외의 언어로 만들어진 코드들을 위한 스택 영역&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;JNI&lt;/code&gt; (Java Native Interface)를 통해 호출되는 &lt;code&gt;C&lt;/code&gt; / &lt;code&gt;C++&lt;/code&gt; 등의 코드를 수행하기 위한 스택&lt;/p&gt;
+&lt;p&gt;JVM 스택과 마찬가지로 스레드 단위의 자료구조로 이루어져 있다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;JVM&lt;/code&gt; 내부에 영향을 주지 않기 위해 따로 메모리 공간을 활용한다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참고할-사이트&#34;&gt;참고할 사이트&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://smjeon.dev/etc/jvm-rda/&#34;&gt;https://smjeon.dev/etc/jvm-rda/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sgcomputer.tistory.com/64&#34;&gt;https://sgcomputer.tistory.com/64&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.holaxprogramming.com/2013/07/16/java-jvm-runtime-data-area/&#34;&gt;https://www.holaxprogramming.com/2013/07/16/java-jvm-runtime-data-area/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tutorialspoint.com/java_virtual_machine/java_virtual_machine_runtime_data_areas.htm&#34;&gt;https://www.tutorialspoint.com/java_virtual_machine/java_virtual_machine_runtime_data_areas.htm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://beststar-1.tistory.com/14&#34;&gt;https://beststar-1.tistory.com/14&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-2.html#jvms-2.5&#34;&gt;https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-2.html#jvms-2.5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>JVM(2) - ClassLoader</title>
       <link>/programming/java/jvm2/</link>
