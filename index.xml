@@ -167,14 +167,12 @@
 &lt;p&gt;JVM 스택과 마찬가지로 스레드 단위의 자료구조로 이루어져 있다.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;JVM&lt;/code&gt; 내부에 영향을 주지 않기 위해 따로 메모리 공간을 활용한다.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;참고할-사이트&#34;&gt;참고할 사이트&lt;/h2&gt;
+&lt;h2 id=&#34;참고-사이트&#34;&gt;참고 사이트&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://smjeon.dev/etc/jvm-rda/&#34;&gt;https://smjeon.dev/etc/jvm-rda/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://sgcomputer.tistory.com/64&#34;&gt;https://sgcomputer.tistory.com/64&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.holaxprogramming.com/2013/07/16/java-jvm-runtime-data-area/&#34;&gt;https://www.holaxprogramming.com/2013/07/16/java-jvm-runtime-data-area/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.tutorialspoint.com/java_virtual_machine/java_virtual_machine_runtime_data_areas.htm&#34;&gt;https://www.tutorialspoint.com/java_virtual_machine/java_virtual_machine_runtime_data_areas.htm&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://beststar-1.tistory.com/14&#34;&gt;https://beststar-1.tistory.com/14&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-2.html#jvms-2.5&#34;&gt;https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-2.html#jvms-2.5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-2.html#jvms-2.5&#34;&gt;Oracle docs::JVM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://smjeon.dev/etc/jvm-rda/&#34;&gt;SMJ Blog::JVM의 Runtime Data Area&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sgcomputer.tistory.com/64&#34;&gt;컴퓨터 공부하는 블로그::자바(Java) 메모리 구조 / Runtime Data Area&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tutorialspoint.com/java_virtual_machine/java_virtual_machine_runtime_data_areas.htm&#34;&gt;tutorialspoint::Java Virtual Machine - Runtime Data Areas&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     </item>
