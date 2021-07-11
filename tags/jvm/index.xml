@@ -6,7 +6,56 @@
     <description>Recent content in jvm on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 07 Jul 2021 22:12:16 +0900</lastBuildDate><atom:link href="/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jul 2021 16:48:38 +0900</lastBuildDate><atom:link href="/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JVM(4) - Execution Engine</title>
+      <link>/programming/java/jvm4/</link>
+      <pubDate>Sun, 11 Jul 2021 16:48:38 +0900</pubDate>
+      
+      <guid>/programming/java/jvm4/</guid>
+      <description>실행 엔진이란?  클래스 로더를 통해 런타임 데이터 영역에 배치된 Class
+즉, 바이트 코드를 명령어 단위로 읽어 실행한다.
+바이트 코드를 기계어로 읽어 실행함.
+ 실행 엔진 구조  Interpreter  바이트 코드를 한 라인씩 읽어 해석후 실행하는 방식. 속도가 느리다는 단점이 있다.   JustInTme  주로 JIT 이라고 줄여서 불리며, 인터프리터의 단점을 보안해서 등장 인터프리터 방식에 비해 실행속도는 빨라졌지만, 어셈블러 코드로 변경하는데 비용이 발생함. 반복 수행이 발생하지 않으면 인터프리터 방식이 더 빠르기에, 인터프리터 방식으로 진행하다 일정 기준을 넘어서면 JIT 방식으로 실행한다.</description>
+      <content>&lt;h1 id=&#34;실행-엔진이란&#34;&gt;실행 엔진이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;클래스 로더를 통해 런타임 데이터 영역에 배치된 &lt;code&gt;Class&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;즉, 바이트 코드를 명령어 단위로 읽어 실행한다.&lt;/p&gt;
+&lt;p&gt;바이트 코드를 기계어로 읽어 실행함.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;실행-엔진-구조&#34;&gt;실행 엔진 구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/java/execution_engine/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Interpreter&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;바이트 코드를 한 라인씩 읽어 해석후 실행하는 방식.&lt;/li&gt;
+&lt;li&gt;속도가 느리다는 단점이 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;JustInTme&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;주로 &lt;code&gt;JIT&lt;/code&gt; 이라고 줄여서 불리며, 인터프리터의 단점을 보안해서 등장&lt;/li&gt;
+&lt;li&gt;인터프리터 방식에 비해 실행속도는 빨라졌지만, 어셈블러 코드로 변경하는데 비용이 발생함.&lt;/li&gt;
+&lt;li&gt;반복 수행이 발생하지 않으면 인터프리터 방식이 더 빠르기에, 인터프리터 방식으로 진행하다 일정 기준을 넘어서면 &lt;code&gt;JIT&lt;/code&gt; 방식으로 실행한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GarbageCollector&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;더 이상 참조되지 않는 객체를 모아서 정리한다.&lt;/li&gt;
+&lt;li&gt;조건에 맞는 &lt;code&gt;GC&lt;/code&gt; 방식을 사용한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;참고&#34;&gt;참고&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slipp.net/wiki/pages/viewpage.action?pageId=8880270&#34;&gt;SLiPP::위키 - 5장 - Execution Engine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.oracle.com/en/database/oracle/oracle-database/19/jjdev/Oracle-JVM-JIT.html#GUID-23D5BA60-A2B3-45F9-93DF-81A3D971CA50&#34;&gt;Oracle JVM Just-in-Time Compiler (JIT)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.javacodegeeks.com/2018/04/jvm-architecture-execution-engine-in-jvm.html&#34;&gt;JVM Architecture: Execution Engine in JVM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>JVM(3) - Runtime Data Area</title>
       <link>/programming/java/jvm3/</link>
