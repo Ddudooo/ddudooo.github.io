@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>프로토타입 패턴 :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="생성할 객체들의 타입이 프로토타입인 인스턴스로부터 결정되도록 하며, 인스턴스는 새 객체를 만들기 위해 자신을 복제하는 패턴" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/programming/design-pattern/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-%ED%8C%A8%ED%84%B4/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="프로토타입 패턴">
+<meta property="og:description" content="생성할 객체들의 타입이 프로토타입인 인스턴스로부터 결정되도록 하며, 인스턴스는 새 객체를 만들기 위해 자신을 복제하는 패턴" />
+<meta property="og:url" content="/programming/design-pattern/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-%ED%8C%A8%ED%84%B4/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  <meta property="og:image" content="/images/designPattern/prototype/thumbnail.png">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-07-12 18:36:41 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/programming">Programming</a></li>
+        
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/programming">Programming</a></li>
+      
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/programming/design-pattern/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-%ED%8C%A8%ED%84%B4/">프로토타입 패턴</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-07-12 [Updated: 2021-07-12]
+      </span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/">디자인패턴</a>&nbsp;
+    
+    #<a href="/tags/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%ED%8C%A8%ED%84%B4/">프로토타입패턴</a>&nbsp;
+    
+    #<a href="/tags/prototype_pattern/">prototype_pattern</a>&nbsp;
+    
+  </span>
+  
+
+  
+    <img src="/images/designPattern/prototype/thumbnail.png" class="post-cover" alt="프로토타입 패턴" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="프로토-타입-패턴이란">프로토 타입 패턴이란?<a href="#프로토-타입-패턴이란" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>원형이 되는 인스턴스로 새로운 객체 종류를 명시하고</p>
+<p>객체를 복사하여 새로운 객체를 생성하는 패턴</p>
+</blockquote>
+<h2 id="구조도">구조도<a href="#구조도" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><img src="/images/designPattern/prototype/structure.png" alt="structure.png"></p>
+<p><code>Prototype</code> - 복제 자체에 대한 인터페이스를 선언합니다.<br>
+<code>ConcretePrototype</code> - 복제 자체에 대한 작업을 구현합니다.<br>
+<code>Client</code> - 프로토타입을 복제하도록 요청하여 새 개체를 만듭니다.</p>
+<h2 id="왜-사용할까-이점은">왜 사용할까? 이점은?<a href="#왜-사용할까-이점은" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>객체 생성시에 비용이 크게 드는 경우.</p>
+<p>객체의 각 부분을 조합해서 생성하는 형태에도 적용이 가능하기에 비교적 간단하게 객체를 생성할 수 있다.</p>
+<h2 id="유의사항">유의사항<a href="#유의사항" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>프로토타입 패턴을 구현시에 복사하는 연산, <code>clone()</code> 메소드에 대한 구현인데</p>
+<p>얕은 복사와 깊은 복사에 대한 문제가 있다</p>
+<p>인스턴스 변수까지 복사하는지 변수를 공유하는지 대한 문제.</p>
+<h3 id="얕은-복사-깊은-복사">얕은 복사, 깊은 복사<a href="#얕은-복사-깊은-복사" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>얕은 복사[<code>Shallow Copy</code>], 깊은 복사[<code>Deep Copy</code>]에 대해 간단히 알아보자</p>
+<p><strong>얕은 복사의 경우</strong></p>
+<ul>
+<li>객체를 복사시에 해당 객체만 복사하여 새 객체를 생성한다.</li>
+<li>원본의 참조값만 복사하여.<br>
+인스턴스의 변수는 원본, 복사본 모두 같은 값을 바라보게 된다.
+<ul>
+<li>바라보는 변수값이 변경되면 원본, 복사본 모두 변경된다.</li>
+</ul>
+</li>
+</ul>
+<p><strong>깊은 복사의 경우</strong></p>
+<ul>
+<li>객체를 복사 할 때, 해당 객체와 인스턴스 변수까지 복사하는 방식.</li>
+<li>참조는 공유하지 않는다.</li>
+</ul>
+<hr>
+<h1 id="참고">참고<a href="#참고" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<ul>
+<li><a href="https://www.slipp.net/wiki/pages/viewpage.action?pageId=30771915">SLiPP::위키 Prototype Pattern</a></li>
+<li><a href="https://www.baeldung.com/java-pattern-prototype">Baeldung::Prototype Pattern in Java</a></li>
+<li><a href="https://www.tutorialspoint.com/design_pattern/prototype_pattern.htm">Tutorialspoint::Design Patterns - Prototype Pattern</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>

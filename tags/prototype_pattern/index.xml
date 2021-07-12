@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>prototype_pattern on 공부한 내용 기록용</title>
+    <link>/tags/prototype_pattern/</link>
+    <description>Recent content in prototype_pattern on 공부한 내용 기록용</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 12 Jul 2021 18:36:41 +0900</lastBuildDate><atom:link href="/tags/prototype_pattern/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>프로토타입 패턴</title>
+      <link>/programming/design-pattern/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Mon, 12 Jul 2021 18:36:41 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-%ED%8C%A8%ED%84%B4/</guid>
+      <description>프로토 타입 패턴이란?  원형이 되는 인스턴스로 새로운 객체 종류를 명시하고
+객체를 복사하여 새로운 객체를 생성하는 패턴
+ 구조도 Prototype - 복제 자체에 대한 인터페이스를 선언합니다.
+ConcretePrototype - 복제 자체에 대한 작업을 구현합니다.
+Client - 프로토타입을 복제하도록 요청하여 새 개체를 만듭니다.
+왜 사용할까? 이점은? 객체 생성시에 비용이 크게 드는 경우.
+객체의 각 부분을 조합해서 생성하는 형태에도 적용이 가능하기에 비교적 간단하게 객체를 생성할 수 있다.
+유의사항 프로토타입 패턴을 구현시에 복사하는 연산, clone() 메소드에 대한 구현인데</description>
+      <content>&lt;h1 id=&#34;프로토-타입-패턴이란&#34;&gt;프로토 타입 패턴이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;원형이 되는 인스턴스로 새로운 객체 종류를 명시하고&lt;/p&gt;
+&lt;p&gt;객체를 복사하여 새로운 객체를 생성하는 패턴&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조도&#34;&gt;구조도&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/prototype/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Prototype&lt;/code&gt; - 복제 자체에 대한 인터페이스를 선언합니다.&lt;br&gt;
+&lt;code&gt;ConcretePrototype&lt;/code&gt; - 복제 자체에 대한 작업을 구현합니다.&lt;br&gt;
+&lt;code&gt;Client&lt;/code&gt; - 프로토타입을 복제하도록 요청하여 새 개체를 만듭니다.&lt;/p&gt;
+&lt;h2 id=&#34;왜-사용할까-이점은&#34;&gt;왜 사용할까? 이점은?&lt;/h2&gt;
+&lt;p&gt;객체 생성시에 비용이 크게 드는 경우.&lt;/p&gt;
+&lt;p&gt;객체의 각 부분을 조합해서 생성하는 형태에도 적용이 가능하기에 비교적 간단하게 객체를 생성할 수 있다.&lt;/p&gt;
+&lt;h2 id=&#34;유의사항&#34;&gt;유의사항&lt;/h2&gt;
+&lt;p&gt;프로토타입 패턴을 구현시에 복사하는 연산, &lt;code&gt;clone()&lt;/code&gt; 메소드에 대한 구현인데&lt;/p&gt;
+&lt;p&gt;얕은 복사와 깊은 복사에 대한 문제가 있다&lt;/p&gt;
+&lt;p&gt;인스턴스 변수까지 복사하는지 변수를 공유하는지 대한 문제.&lt;/p&gt;
+&lt;h3 id=&#34;얕은-복사-깊은-복사&#34;&gt;얕은 복사, 깊은 복사&lt;/h3&gt;
+&lt;p&gt;얕은 복사[&lt;code&gt;Shallow Copy&lt;/code&gt;], 깊은 복사[&lt;code&gt;Deep Copy&lt;/code&gt;]에 대해 간단히 알아보자&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;얕은 복사의 경우&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;객체를 복사시에 해당 객체만 복사하여 새 객체를 생성한다.&lt;/li&gt;
+&lt;li&gt;원본의 참조값만 복사하여.&lt;br&gt;
+인스턴스의 변수는 원본, 복사본 모두 같은 값을 바라보게 된다.
+&lt;ul&gt;
+&lt;li&gt;바라보는 변수값이 변경되면 원본, 복사본 모두 변경된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;깊은 복사의 경우&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;객체를 복사 할 때, 해당 객체와 인스턴스 변수까지 복사하는 방식.&lt;/li&gt;
+&lt;li&gt;참조는 공유하지 않는다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;참고&#34;&gt;참고&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slipp.net/wiki/pages/viewpage.action?pageId=30771915&#34;&gt;SLiPP::위키 Prototype Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.baeldung.com/java-pattern-prototype&#34;&gt;Baeldung::Prototype Pattern in Java&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tutorialspoint.com/design_pattern/prototype_pattern.htm&#34;&gt;Tutorialspoint::Design Patterns - Prototype Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
