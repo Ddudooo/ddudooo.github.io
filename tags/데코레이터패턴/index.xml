@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>데코레이터패턴 on 공부한 내용 기록용</title>
+    <link>/tags/%EB%8D%B0%EC%BD%94%EB%A0%88%EC%9D%B4%ED%84%B0%ED%8C%A8%ED%84%B4/</link>
+    <description>Recent content in 데코레이터패턴 on 공부한 내용 기록용</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 13 Jul 2021 18:12:12 +0900</lastBuildDate><atom:link href="/tags/%EB%8D%B0%EC%BD%94%EB%A0%88%EC%9D%B4%ED%84%B0%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>데코레이터 패턴</title>
+      <link>/programming/design-pattern/%EB%8D%B0%EC%BD%94%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Tue, 13 Jul 2021 18:12:12 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EB%8D%B0%EC%BD%94%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4/</guid>
+      <description>데코레이터 패턴이란?  객체의 결합을 통해, 기능을 동적으로 확장할 수 있게 해주는 패턴
+서브 클래스의 생성 대신 데코레이터를 통해 클래스의 기능을 확장하여 제공
+ 구조  Component
+클라이언트가 사용하는 객체
+기본 기능과 추가기능의 집합체 Decorator
+추가적으로 제공할 기능의 공통 인터페이스 ConcreateComponent
+기본 기능을 구현할 객체 ConcreateDecorator
+추가적으로 제공의 개별적인 기능의 구현체  언제 사용할까? 기능을 추가할 객체를 수정하지 않고 새로운 기능이나 책임을 추가할 때
+조합으로 재활용하여 다른 곳에도 사용하고 싶을 때</description>
+      <content>&lt;h1 id=&#34;데코레이터-패턴이란&#34;&gt;데코레이터 패턴이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;객체의 결합을 통해, 기능을 동적으로 확장할 수 있게 해주는 패턴&lt;/p&gt;
+&lt;p&gt;서브 클래스의 생성 대신 데코레이터를 통해 클래스의 기능을 확장하여 제공&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조&#34;&gt;구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/decorator/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Component&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;클라이언트가 사용하는 객체&lt;/sub&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;기본 기능과 추가기능의 집합체&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Decorator&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;추가적으로 제공할 기능의 공통 인터페이스&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ConcreateComponent&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;기본 기능을 구현할 객체&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ConcreateDecorator&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;추가적으로 제공의 개별적인 기능의 구현체&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;언제-사용할까&#34;&gt;언제 사용할까?&lt;/h2&gt;
+&lt;p&gt;기능을 추가할 객체를 수정하지 않고 새로운 기능이나 책임을 추가할 때&lt;/p&gt;
+&lt;p&gt;조합으로 재활용하여 다른 곳에도 사용하고 싶을 때&lt;/p&gt;
+&lt;p&gt;서브 클래스를 만드는 것이 비효율적일 때&lt;/p&gt;
+&lt;h2 id=&#34;추가적으로-고려할점&#34;&gt;추가적으로 고려할점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Component&lt;/code&gt;는 장식을 추가할 베이스가 되는 역할이므로 작고 가볍게 정의하도록 한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;가급적 인터페이스만을 정의한다.&lt;/li&gt;
+&lt;li&gt;무언가 저장하는 변수는 정의하지 않는다.
+&lt;sub class=&#34;tx-sub&#34;&gt;(상속받는 여러 Decorator도 같이 복잡하고 무거워진다).&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;저장할 것이 있다면 서브클래스에서 하자.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;상속 구조를 통해 &lt;code&gt;Decorator&lt;/code&gt;와 &lt;code&gt;Component&lt;/code&gt;가 같은 인터페이스를 갖게 해야 한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;투과적 인터페이스: &lt;code&gt;Decorator&lt;/code&gt;로 계속해서 감싸도 &lt;code&gt;Component&lt;/code&gt;의 메소드는 계속 사용할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;코드를 수정하지 않고도 준비된 &lt;code&gt;Decorator&lt;/code&gt;을 조합해 기능을 추가할 수 있도록 생각해서 구현한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;비슷한 성질의 작은 클래스가 많이 만들어질 수 있다는 단점을 고려한다.
+구현하려는 내용이 객체의 겉을 변경하려는 것인지, 속을 변경하려는 것인지 생각해 보자.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;속을 변경하려는 것이라면 &lt;code&gt;strategy-pattern&lt;/code&gt;을 선택하는 것이 더 적절할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;데코레이터 패턴으로 구현한 다음, 사용이 까다롭게 느껴지거나 자주 쓰는 조합이 있다면 다음 패턴을 사용해 제공하는 것을 고려해 보자.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;builder-pattern&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;factory-pattern&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;static-factory-method-pattern&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Decorator&lt;/code&gt;가 다른 &lt;code&gt;Decorator&lt;/code&gt;에 대해 알아야 할 필요가 있다면, 데코레이터 패턴의 사용 의도와 어긋나는 작업일 수 있다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;재귀적으로 기능을 갖게 하는 방법 외에도, &lt;code&gt;Decorator&lt;/code&gt;를 추가할 때마다 얻은 아이템을 &lt;code&gt;List&lt;/code&gt;로 관리하는 방법도 있다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;참조&#34;&gt;참조&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://johngrib.github.io/wiki/decorator-pattern&#34;&gt;기계인간 John Grib :: 데코레이터 패턴&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tutorialspoint.com/design_pattern/decorator_pattern.htm&#34;&gt;Tutorialspoint :: Design Patterns - Decorator Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
