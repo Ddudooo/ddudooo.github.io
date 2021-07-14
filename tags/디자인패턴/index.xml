@@ -6,7 +6,70 @@
     <description>Recent content in 디자인패턴 on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 13 Jul 2021 18:12:12 +0900</lastBuildDate><atom:link href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jul 2021 17:56:18 +0900</lastBuildDate><atom:link href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>이터레이터 패턴</title>
+      <link>/programming/design-pattern/%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Wed, 14 Jul 2021 17:56:18 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4/</guid>
+      <description>이터레이터 패턴이란?  반복자를 사용하여 컨테이너를 가로지르며 컨테이너의 요소들에 접근하는 디자인 패턴으로
+컬렉션 구현 방법을 노출시키지 않으면서도 그 집합체 안에 들어있는 모든 항목에 접근할 수 있게 해주는 방법을 제공해 준다.
+ 구조  Aggreate
+Iterator 객체를 생성하는 인터페이스 ConcreateAggreate
+Iterator를 제공하는 인터페이스의 구현체 Iterator
+원소를 순회 및 접근하는 인터페이스 ConcreateIterator
+Iterator의 구현체  왜 사용할까? 이터레이터 패턴을 사용할 경우
+아래와 같은 특성이 생기게 되는데
+ 집합체의 응집도가 높아진다 집합체 내부 구현을 숨길 수 있다.</description>
+      <content>&lt;h1 id=&#34;이터레이터-패턴이란&#34;&gt;이터레이터 패턴이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;반복자를 사용하여 컨테이너를 가로지르며 컨테이너의 요소들에 접근하는 디자인 패턴으로&lt;/p&gt;
+&lt;p&gt;컬렉션 구현 방법을 노출시키지 않으면서도 그 집합체 안에 들어있는 모든 항목에 접근할 수 있게 해주는 방법을 제공해 준다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조&#34;&gt;구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/iterator/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Aggreate&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Iterator 객체를 생성하는 인터페이스&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ConcreateAggreate&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Iterator를 제공하는 인터페이스의 구현체&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Iterator&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;원소를 순회 및 접근하는 인터페이스&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ConcreateIterator&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Iterator의 구현체&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;왜-사용할까&#34;&gt;왜 사용할까?&lt;/h2&gt;
+&lt;p&gt;이터레이터 패턴을 사용할 경우&lt;/p&gt;
+&lt;p&gt;아래와 같은 특성이 생기게 되는데&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;집합체의 응집도가 높아진다&lt;/li&gt;
+&lt;li&gt;집합체 내부 구현을 숨길 수 있다.&lt;/li&gt;
+&lt;li&gt;집합체 내부 정보를 알필요 없이, 집합체의 모든 항목에 접근할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이러한 특성으로 인해 아래와 같은 목적 등으로 사용한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;집합체의 내부 구현을 보여주지 않고 접근을 허용하고 싶을때.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;집약체에 다양한 탐색 방법이 필요한 경우.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;서로 다른 집합 구조에 대해서도 동일한 방법으로 접근하고 싶을 경우.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Ddudooo/designpattern/tree/main/behavioral/IteratorPattern&#34;&gt;예제 소스&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slipp.net/wiki/pages/viewpage.action?pageId=30772665&#34;&gt;SLiPP::위키 - Iterator pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tutorialspoint.com/design_pattern/iterator_pattern.htm&#34;&gt;tutorialspoint Design Patterns - Iterator Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jusungpark.tistory.com/25&#34;&gt;정리정리정리 - 이터레이터 패턴 (iterator pattern)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>데코레이터 패턴</title>
       <link>/programming/design-pattern/%EB%8D%B0%EC%BD%94%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4/</link>

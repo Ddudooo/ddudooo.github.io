@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>이터레이터 패턴 :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="반복자를 사용하여 컨테이너를 가로지르며 컨테이너의 요소들에 접근하는 디자인 패턴" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/programming/design-pattern/%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="이터레이터 패턴">
+<meta property="og:description" content="반복자를 사용하여 컨테이너를 가로지르며 컨테이너의 요소들에 접근하는 디자인 패턴" />
+<meta property="og:url" content="/programming/design-pattern/%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  <meta property="og:image" content="/images/designPattern/iterator/thumbnail.png">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-07-14 17:56:18 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/programming">Programming</a></li>
+        
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/programming">Programming</a></li>
+      
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/programming/design-pattern/%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4/">이터레이터 패턴</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-07-14 [Updated: 2021-07-14]
+      </span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/">디자인패턴</a>&nbsp;
+    
+    #<a href="/tags/%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0%ED%8C%A8%ED%84%B4/">이터레이터패턴</a>&nbsp;
+    
+    #<a href="/tags/iterator_pattern/">iterator_pattern</a>&nbsp;
+    
+  </span>
+  
+
+  
+    <img src="/images/designPattern/iterator/thumbnail.png" class="post-cover" alt="이터레이터 패턴" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="이터레이터-패턴이란">이터레이터 패턴이란?<a href="#이터레이터-패턴이란" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>반복자를 사용하여 컨테이너를 가로지르며 컨테이너의 요소들에 접근하는 디자인 패턴으로</p>
+<p>컬렉션 구현 방법을 노출시키지 않으면서도 그 집합체 안에 들어있는 모든 항목에 접근할 수 있게 해주는 방법을 제공해 준다.</p>
+</blockquote>
+<h2 id="구조">구조<a href="#구조" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><img src="/images/designPattern/iterator/structure.png" alt="structure.png"></p>
+<ul>
+<li><code>Aggreate</code><br>
+<sub class="tx-sub">Iterator 객체를 생성하는 인터페이스</sub></li>
+<li><code>ConcreateAggreate</code><br>
+<sub class="tx-sub">Iterator를 제공하는 인터페이스의 구현체</sub></li>
+<li><code>Iterator</code><br>
+<sub class="tx-sub">원소를 순회 및 접근하는 인터페이스</sub></li>
+<li><code>ConcreateIterator</code><br>
+<sub class="tx-sub">Iterator의 구현체</sub></li>
+</ul>
+<h2 id="왜-사용할까">왜 사용할까?<a href="#왜-사용할까" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>이터레이터 패턴을 사용할 경우</p>
+<p>아래와 같은 특성이 생기게 되는데</p>
+<ul>
+<li>집합체의 응집도가 높아진다</li>
+<li>집합체 내부 구현을 숨길 수 있다.</li>
+<li>집합체 내부 정보를 알필요 없이, 집합체의 모든 항목에 접근할 수 있다.</li>
+</ul>
+<p>이러한 특성으로 인해 아래와 같은 목적 등으로 사용한다.</p>
+<ul>
+<li>
+<p>집합체의 내부 구현을 보여주지 않고 접근을 허용하고 싶을때.</p>
+</li>
+<li>
+<p>집약체에 다양한 탐색 방법이 필요한 경우.</p>
+</li>
+<li>
+<p>서로 다른 집합 구조에 대해서도 동일한 방법으로 접근하고 싶을 경우.</p>
+</li>
+</ul>
+<hr>
+<h2 id="참고">참고<a href="#참고" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li><a href="https://github.com/Ddudooo/designpattern/tree/main/behavioral/IteratorPattern">예제 소스</a></li>
+<li><a href="https://www.slipp.net/wiki/pages/viewpage.action?pageId=30772665">SLiPP::위키 - Iterator pattern</a></li>
+<li><a href="https://www.tutorialspoint.com/design_pattern/iterator_pattern.htm">tutorialspoint Design Patterns - Iterator Pattern</a></li>
+<li><a href="https://jusungpark.tistory.com/25">정리정리정리 - 이터레이터 패턴 (iterator pattern)</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>
