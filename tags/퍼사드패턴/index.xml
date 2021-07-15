@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>퍼사드패턴 on 공부한 내용 기록용</title>
+    <link>/tags/%ED%8D%BC%EC%82%AC%EB%93%9C%ED%8C%A8%ED%84%B4/</link>
+    <description>Recent content in 퍼사드패턴 on 공부한 내용 기록용</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 15 Jul 2021 18:35:43 +0900</lastBuildDate><atom:link href="/tags/%ED%8D%BC%EC%82%AC%EB%93%9C%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>퍼사드 패턴</title>
+      <link>/programming/design-pattern/%ED%8D%BC%EC%82%AC%EB%93%9C-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Thu, 15 Jul 2021 18:35:43 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%ED%8D%BC%EC%82%AC%EB%93%9C-%ED%8C%A8%ED%84%B4/</guid>
+      <description>퍼사드 패턴이란?  서브시스템의 일련의 인터페이스에 대한 통합된 인터페이스를 제공하는 패턴
+퍼사드에서 고수준 인터페이스를 정의하기 때문에 서브시스템을 더 쉽게 사용할 수 있습니다.
+ 구조 왜 사용할까?   복잡한 서브 시스템을 단순하게 표현
+  사용하는 클라이언트 입장에서 서브 시스템을 모두 알 필요 없어짐
+  장점  서브 시스템간의 결합도가 낮아짐 사용하는 클라이언트에서 간결하게 파악할 수 있음  단점   서브 시스템을 호출하는 클래스를 새롭게 생성해야함
+  구조가 좀 더 복잡해지고 관리가 어려워질 수 있음</description>
+      <content>&lt;h1 id=&#34;퍼사드-패턴이란&#34;&gt;퍼사드 패턴이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;서브시스템의 일련의 인터페이스에 대한 통합된 인터페이스를 제공하는 패턴&lt;/p&gt;
+&lt;p&gt;퍼사드에서 고수준 인터페이스를 정의하기 때문에 서브시스템을 더 쉽게 사용할 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;구조&#34;&gt;구조&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/facade/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;왜-사용할까&#34;&gt;왜 사용할까?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;복잡한 서브 시스템을 단순하게 표현&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;사용하는 클라이언트 입장에서 서브 시스템을 모두 알 필요 없어짐&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;서브 시스템간의 결합도가 낮아짐&lt;/li&gt;
+&lt;li&gt;사용하는 클라이언트에서 간결하게 파악할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;서브 시스템을 호출하는 클래스를 새롭게 생성해야함&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;구조가 좀 더 복잡해지고 관리가 어려워질 수 있음&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;참조&#34;&gt;참조&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slipp.net/wiki/display/SLS/Facade+Pattern&#34;&gt;SLiPP::위키&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tutorialspoint.com/design_pattern/facade_pattern.htm&#34;&gt;tutorialspoint::Design Patterns - Facade Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
