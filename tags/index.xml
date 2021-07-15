@@ -6,13 +6,13 @@
     <description>Recent content in Tags on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 14 Jul 2021 17:56:18 +0900</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Jul 2021 16:19:27 +0900</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>iterator_pattern</title>
-      <link>/tags/iterator_pattern/</link>
-      <pubDate>Wed, 14 Jul 2021 17:56:18 +0900</pubDate>
+      <title>singleton_pattern</title>
+      <link>/tags/singleton_pattern/</link>
+      <pubDate>Thu, 15 Jul 2021 16:19:27 +0900</pubDate>
       
-      <guid>/tags/iterator_pattern/</guid>
+      <guid>/tags/singleton_pattern/</guid>
       <description></description>
       <content></content>
     </item>
@@ -20,9 +20,29 @@
     <item>
       <title>디자인패턴</title>
       <link>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</link>
-      <pubDate>Wed, 14 Jul 2021 17:56:18 +0900</pubDate>
+      <pubDate>Thu, 15 Jul 2021 16:19:27 +0900</pubDate>
       
       <guid>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>싱글톤 패턴</title>
+      <link>/tags/%EC%8B%B1%EA%B8%80%ED%86%A4-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Thu, 15 Jul 2021 16:19:27 +0900</pubDate>
+      
+      <guid>/tags/%EC%8B%B1%EA%B8%80%ED%86%A4-%ED%8C%A8%ED%84%B4/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>iterator_pattern</title>
+      <link>/tags/iterator_pattern/</link>
+      <pubDate>Wed, 14 Jul 2021 17:56:18 +0900</pubDate>
+      
+      <guid>/tags/iterator_pattern/</guid>
       <description></description>
       <content></content>
     </item>
