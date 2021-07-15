@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>중재자 패턴 :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="클래스간 복잡한 로직을 캡슐화 하여 하나의 클래스에 위임하여 처리하는 패턴" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/programming/design-pattern/%EC%A4%91%EC%9E%AC%EC%9E%90-%ED%8C%A8%ED%84%B4/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="중재자 패턴">
+<meta property="og:description" content="클래스간 복잡한 로직을 캡슐화 하여 하나의 클래스에 위임하여 처리하는 패턴" />
+<meta property="og:url" content="/programming/design-pattern/%EC%A4%91%EC%9E%AC%EC%9E%90-%ED%8C%A8%ED%84%B4/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  <meta property="og:image" content="/images/designPattern/mediator/thumbnail.png">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-07-15 21:06:27 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/programming">Programming</a></li>
+        
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/programming">Programming</a></li>
+      
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/programming/design-pattern/%EC%A4%91%EC%9E%AC%EC%9E%90-%ED%8C%A8%ED%84%B4/">중재자 패턴</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-07-15 [Updated: 2021-07-15]
+      </span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/">디자인패턴</a>&nbsp;
+    
+    #<a href="/tags/%EC%A4%91%EC%9E%AC%EC%9E%90%ED%8C%A8%ED%84%B4/">중재자패턴</a>&nbsp;
+    
+    #<a href="/tags/mediator_pattern/">mediator_pattern</a>&nbsp;
+    
+  </span>
+  
+
+  
+    <img src="/images/designPattern/mediator/thumbnail.png" class="post-cover" alt="중재자 패턴" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="중재자-패턴이란">중재자 패턴이란?<a href="#중재자-패턴이란" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>클래스간 복잡한 로직을 캡슐화 하여 하나의 클래스에 위임하여 처리하는 패턴</p>
+<p>M:N의 관계에서 M:1의 관계로 복잡도를 떨어뜨려 유지 보수 및 재사용의 확장성에 유리한 패턴</p>
+</blockquote>
+<h2 id="구조">구조<a href="#구조" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><img src="/images/designPattern/mediator/structure.png" alt="structure.png"></p>
+<ul>
+<li><code>Mediator</code><br>
+<sub class="tx-sub">Colleague 역할과 통신하여 조정을 실행하는 API</sub>
+<ul>
+<li><code>ConcreteMediator</code><br>
+<sub class="tx-sub">Mediator 구현체</sub></li>
+</ul>
+</li>
+<li><code>Colleague</code><br>
+<sub class="tx-sub">Mediator 역할과 통신을 실행할 API</sub>
+<ul>
+<li><code>ConcreateColleague</code><br>
+<sub class="tx-sub">Colleague 구현체</sub></li>
+</ul>
+</li>
+</ul>
+<h2 id="언제-사용할까">언제 사용할까?<a href="#언제-사용할까" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><strong>복잡하게 얽힌 객체와 객체간에 관계를 풀어 줄때 주로 사용하게 된다.</strong></p>
+<p>프로그램을 작성하다 보면 상호작용을 해야하는 경우 객체들 간의 결합도가 증가하고 유연성이 떨어지는 경우가 발생하게 된다.</p>
+<p>이런 경우에</p>
+<p>이제 특정 개체가 명령을 내릴 필요가 있으면 중재자 개체에게 전달하기만 하면 되고,</p>
+<p><strong>중재자는 해당 명령을 자신이 알고 있는 개체들 중에 적절한 개체에게 전달만 하면 된다.</strong></p>
+<h2 id="장점">장점<a href="#장점" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>시스템에서 관련된 기능을 하는 객체의 연결관계를 파악하기 쉬워진다.</p>
+<h2 id="단점">단점<a href="#단점" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>특정 로직에 맞춰져 있기에 재사용하기 힘들다.</p>
+<hr>
+<h2 id="참고">참고<a href="#참고" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li><a href="https://www.tutorialspoint.com/design_pattern/mediator_pattern.htm">tutorialspoint::Design Patterns - Mediator Pattern</a></li>
+<li><a href="https://www.slipp.net/wiki/display/SLS/Mediator">SLiPP::위키 - Mediator</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>

@@ -6,7 +6,63 @@
     <description>Recent content in Programmings on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 15 Jul 2021 18:35:43 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Jul 2021 21:06:27 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>중재자 패턴</title>
+      <link>/programming/design-pattern/%EC%A4%91%EC%9E%AC%EC%9E%90-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Thu, 15 Jul 2021 21:06:27 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EC%A4%91%EC%9E%AC%EC%9E%90-%ED%8C%A8%ED%84%B4/</guid>
+      <description>중재자 패턴이란?  클래스간 복잡한 로직을 캡슐화 하여 하나의 클래스에 위임하여 처리하는 패턴
+M:N의 관계에서 M:1의 관계로 복잡도를 떨어뜨려 유지 보수 및 재사용의 확장성에 유리한 패턴
+ 구조  Mediator
+Colleague 역할과 통신하여 조정을 실행하는 API  ConcreteMediator
+Mediator 구현체   Colleague
+Mediator 역할과 통신을 실행할 API  ConcreateColleague
+Colleague 구현체    언제 사용할까? 복잡하게 얽힌 객체와 객체간에 관계를 풀어 줄때 주로 사용하게 된다.
+프로그램을 작성하다 보면 상호작용을 해야하는 경우 객체들 간의 결합도가 증가하고 유연성이 떨어지는 경우가 발생하게 된다.</description>
+      <content>&lt;h1 id=&#34;중재자-패턴이란&#34;&gt;중재자 패턴이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;클래스간 복잡한 로직을 캡슐화 하여 하나의 클래스에 위임하여 처리하는 패턴&lt;/p&gt;
+&lt;p&gt;M:N의 관계에서 M:1의 관계로 복잡도를 떨어뜨려 유지 보수 및 재사용의 확장성에 유리한 패턴&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조&#34;&gt;구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/mediator/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Mediator&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Colleague 역할과 통신하여 조정을 실행하는 API&lt;/sub&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ConcreteMediator&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Mediator 구현체&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Colleague&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Mediator 역할과 통신을 실행할 API&lt;/sub&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ConcreateColleague&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Colleague 구현체&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;언제-사용할까&#34;&gt;언제 사용할까?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;복잡하게 얽힌 객체와 객체간에 관계를 풀어 줄때 주로 사용하게 된다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;프로그램을 작성하다 보면 상호작용을 해야하는 경우 객체들 간의 결합도가 증가하고 유연성이 떨어지는 경우가 발생하게 된다.&lt;/p&gt;
+&lt;p&gt;이런 경우에&lt;/p&gt;
+&lt;p&gt;이제 특정 개체가 명령을 내릴 필요가 있으면 중재자 개체에게 전달하기만 하면 되고,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;중재자는 해당 명령을 자신이 알고 있는 개체들 중에 적절한 개체에게 전달만 하면 된다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;p&gt;시스템에서 관련된 기능을 하는 객체의 연결관계를 파악하기 쉬워진다.&lt;/p&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;p&gt;특정 로직에 맞춰져 있기에 재사용하기 힘들다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tutorialspoint.com/design_pattern/mediator_pattern.htm&#34;&gt;tutorialspoint::Design Patterns - Mediator Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slipp.net/wiki/display/SLS/Mediator&#34;&gt;SLiPP::위키 - Mediator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>퍼사드 패턴</title>
       <link>/programming/design-pattern/%ED%8D%BC%EC%82%AC%EB%93%9C-%ED%8C%A8%ED%84%B4/</link>
