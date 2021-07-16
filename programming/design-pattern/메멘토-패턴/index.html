@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>메멘토 패턴 :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="객체를 이전 상태로 되돌릴 수 있는 기능을 제공하는 패턴" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/programming/design-pattern/%EB%A9%94%EB%A9%98%ED%86%A0-%ED%8C%A8%ED%84%B4/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="메멘토 패턴">
+<meta property="og:description" content="객체를 이전 상태로 되돌릴 수 있는 기능을 제공하는 패턴" />
+<meta property="og:url" content="/programming/design-pattern/%EB%A9%94%EB%A9%98%ED%86%A0-%ED%8C%A8%ED%84%B4/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  <meta property="og:image" content="/images/designPattern/memento/thumbnail.png">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-07-16 19:57:12 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/programming">Programming</a></li>
+        
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/programming">Programming</a></li>
+      
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/programming/design-pattern/%EB%A9%94%EB%A9%98%ED%86%A0-%ED%8C%A8%ED%84%B4/">메멘토 패턴</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-07-16 [Updated: 2021-07-16]
+      </span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/">디자인패턴</a>&nbsp;
+    
+    #<a href="/tags/%EB%A9%94%EB%A9%98%ED%86%A0%ED%8C%A8%ED%84%B4/">메멘토패턴</a>&nbsp;
+    
+    #<a href="/tags/memento_pattern/">memento_pattern</a>&nbsp;
+    
+  </span>
+  
+
+  
+    <img src="/images/designPattern/memento/thumbnail.png" class="post-cover" alt="메멘토 패턴" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="메멘토-패턴이란">메멘토 패턴이란?<a href="#메멘토-패턴이란" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>객체를 이전 상태로 되돌릴 수 있는 기능을 제공하는 패턴</p>
+<p>객체의 상태를 이전 상태로 복원하려는 위치를 줄이기 위해 사용</p>
+</blockquote>
+<h2 id="구조">구조<a href="#구조" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><img src="/images/designPattern/memento/structure.png" alt="structure.png"></p>
+<ul>
+<li><code>Originator</code><br>
+<sub class="tx-sub">저장하려는 객체</sub></li>
+<li><code>Memento</code><br>
+<sub class="tx-sub">Originator의 특정 시점을 저장하는 객체</sub></li>
+<li><code>Caretaker</code><br>
+<sub class="tx-sub">Memento의 보관 및 관리</sub></li>
+</ul>
+<h2 id="장점">장점<a href="#장점" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>지정된 객체의 상태를 별도의 객체에 보관하여,<br>
+지정 객체와 별도의 라이프 사이클을 지니게 되어 비교적 안전하다</p>
+<p>복구 기능 구현이 쉬운편</p>
+<h2 id="단점">단점<a href="#단점" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>상태를 저장하고 복구하는 기능 자체는 비용이 많이 소요될 수 있음</p>
+<p>객체를 시점에 따라 스냅샷 형식으로 저장해두기에 시스템의 자원에 영향을 미침</p>
+<hr>
+<h2 id="참고">참고<a href="#참고" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Java언어로 배우는 디자인 패턴 입문</li>
+<li><a href="https://www.tutorialspoint.com/design_pattern/memento_pattern.htm">tutorialspoint::Design Patterns - Memento Pattern</a></li>
+<li><a href="https://www.baeldung.com/java-memento-design-pattern">Baeldung::Memento Design Pattern in Java</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>

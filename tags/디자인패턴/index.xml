@@ -6,7 +6,54 @@
     <description>Recent content in 디자인패턴 on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 16 Jul 2021 17:22:37 +0900</lastBuildDate><atom:link href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Jul 2021 19:57:12 +0900</lastBuildDate><atom:link href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>메멘토 패턴</title>
+      <link>/programming/design-pattern/%EB%A9%94%EB%A9%98%ED%86%A0-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Fri, 16 Jul 2021 19:57:12 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EB%A9%94%EB%A9%98%ED%86%A0-%ED%8C%A8%ED%84%B4/</guid>
+      <description>메멘토 패턴이란?  객체를 이전 상태로 되돌릴 수 있는 기능을 제공하는 패턴
+객체의 상태를 이전 상태로 복원하려는 위치를 줄이기 위해 사용
+ 구조  Originator
+저장하려는 객체 Memento
+Originator의 특정 시점을 저장하는 객체 Caretaker
+Memento의 보관 및 관리  장점 지정된 객체의 상태를 별도의 객체에 보관하여,
+지정 객체와 별도의 라이프 사이클을 지니게 되어 비교적 안전하다
+복구 기능 구현이 쉬운편
+단점 상태를 저장하고 복구하는 기능 자체는 비용이 많이 소요될 수 있음</description>
+      <content>&lt;h1 id=&#34;메멘토-패턴이란&#34;&gt;메멘토 패턴이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;객체를 이전 상태로 되돌릴 수 있는 기능을 제공하는 패턴&lt;/p&gt;
+&lt;p&gt;객체의 상태를 이전 상태로 복원하려는 위치를 줄이기 위해 사용&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조&#34;&gt;구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/memento/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Originator&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;저장하려는 객체&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Memento&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Originator의 특정 시점을 저장하는 객체&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Caretaker&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Memento의 보관 및 관리&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;p&gt;지정된 객체의 상태를 별도의 객체에 보관하여,&lt;br&gt;
+지정 객체와 별도의 라이프 사이클을 지니게 되어 비교적 안전하다&lt;/p&gt;
+&lt;p&gt;복구 기능 구현이 쉬운편&lt;/p&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;p&gt;상태를 저장하고 복구하는 기능 자체는 비용이 많이 소요될 수 있음&lt;/p&gt;
+&lt;p&gt;객체를 시점에 따라 스냅샷 형식으로 저장해두기에 시스템의 자원에 영향을 미침&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Java언어로 배우는 디자인 패턴 입문&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tutorialspoint.com/design_pattern/memento_pattern.htm&#34;&gt;tutorialspoint::Design Patterns - Memento Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.baeldung.com/java-memento-design-pattern&#34;&gt;Baeldung::Memento Design Pattern in Java&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>플라이웨이트 패턴</title>
       <link>/programming/design-pattern/%ED%94%8C%EB%9D%BC%EC%9D%B4%EC%9B%A8%EC%9D%B4%ED%8A%B8-%ED%8C%A8%ED%84%B4/</link>
