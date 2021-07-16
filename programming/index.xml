@@ -6,7 +6,55 @@
     <description>Recent content in Programmings on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 15 Jul 2021 21:06:27 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Jul 2021 17:22:37 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>플라이웨이트 패턴</title>
+      <link>/programming/design-pattern/%ED%94%8C%EB%9D%BC%EC%9D%B4%EC%9B%A8%EC%9D%B4%ED%8A%B8-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Fri, 16 Jul 2021 17:22:37 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%ED%94%8C%EB%9D%BC%EC%9D%B4%EC%9B%A8%EC%9D%B4%ED%8A%B8-%ED%8C%A8%ED%84%B4/</guid>
+      <description>플라이웨이트 패턴이란?  동일하거나 유사한 객체들 사이에 가능한 많은 데이터를 서로 공유하여 사용하도록 하여 메모리 사용량을 최소화하는 패턴
+주로 중복 생성 가능성이 높은 자원이나 자원 생성 비용은 크나 사용 빈도가 낮은 경우 사용하는 패턴이다
+ 구조  Flyweight
+공유 자원을 갖는 객체 ConcreateFlyweight
+Flyweight 구현체로 공유 상태에 대한 저장 공간 관리 및 확보  UnsharedConcreateFlyweight
+공유하지 않는 구현체   FlyweightFactory
+Flyweight 객체 생성 및 관리  장점 어플리케이션에 공유 자원을 갖는 객체가 많다면 자원을 절약할 수 있다.</description>
+      <content>&lt;h1 id=&#34;플라이웨이트-패턴이란&#34;&gt;플라이웨이트 패턴이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;동일하거나 유사한 객체들 사이에 가능한 많은 데이터를 서로 공유하여 사용하도록 하여 메모리 사용량을 최소화하는 패턴&lt;/p&gt;
+&lt;p&gt;주로 중복 생성 가능성이 높은 자원이나 자원 생성 비용은 크나 사용 빈도가 낮은 경우 사용하는 패턴이다&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조&#34;&gt;구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/flyweight/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Flyweight&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;공유 자원을 갖는 객체&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ConcreateFlyweight&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Flyweight 구현체로 공유 상태에 대한 저장 공간 관리 및 확보&lt;/sub&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;UnsharedConcreateFlyweight&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;공유하지 않는 구현체&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FlyweightFactory&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Flyweight 객체 생성 및 관리&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;p&gt;어플리케이션에 공유 자원을 갖는 객체가 많다면 자원을 절약할 수 있다.&lt;/p&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;p&gt;공유 자원 호출시 존재하는 데이터 검색과 같은 비용이 발생한다.&lt;/p&gt;
+&lt;p&gt;객체를 공유자원으로 다시 나눠서 구현하기에 비교적 코드가 복잡해진다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Java 언어로 배우는 디자인 패턴 입문&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://readystory.tistory.com/137&#34;&gt;준비된 개발자::[구조 패턴] 플라이웨이트 패턴(Flyweight Pattern) 이해 및 예제&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tutorialspoint.com/design_pattern/flyweight_pattern.htm&#34;&gt;tutorialspoint::Design Patterns - Flyweight Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>중재자 패턴</title>
       <link>/programming/design-pattern/%EC%A4%91%EC%9E%AC%EC%9E%90-%ED%8C%A8%ED%84%B4/</link>
