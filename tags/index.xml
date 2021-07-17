@@ -6,13 +6,13 @@
     <description>Recent content in Tags on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 16 Jul 2021 19:57:12 +0900</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Jul 2021 17:22:02 +0900</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>memento_pattern</title>
-      <link>/tags/memento_pattern/</link>
-      <pubDate>Fri, 16 Jul 2021 19:57:12 +0900</pubDate>
+      <title>proxy_pattern</title>
+      <link>/tags/proxy_pattern/</link>
+      <pubDate>Sat, 17 Jul 2021 17:22:02 +0900</pubDate>
       
-      <guid>/tags/memento_pattern/</guid>
+      <guid>/tags/proxy_pattern/</guid>
       <description></description>
       <content></content>
     </item>
@@ -20,9 +20,29 @@
     <item>
       <title>디자인패턴</title>
       <link>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</link>
-      <pubDate>Fri, 16 Jul 2021 19:57:12 +0900</pubDate>
+      <pubDate>Sat, 17 Jul 2021 17:22:02 +0900</pubDate>
       
       <guid>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>프록시패턴</title>
+      <link>/tags/%ED%94%84%EB%A1%9D%EC%8B%9C%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Sat, 17 Jul 2021 17:22:02 +0900</pubDate>
+      
+      <guid>/tags/%ED%94%84%EB%A1%9D%EC%8B%9C%ED%8C%A8%ED%84%B4/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>memento_pattern</title>
+      <link>/tags/memento_pattern/</link>
+      <pubDate>Fri, 16 Jul 2021 19:57:12 +0900</pubDate>
+      
+      <guid>/tags/memento_pattern/</guid>
       <description></description>
       <content></content>
     </item>

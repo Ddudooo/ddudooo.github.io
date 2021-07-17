@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>proxy_pattern on 공부한 내용 기록용</title>
+    <link>/tags/proxy_pattern/</link>
+    <description>Recent content in proxy_pattern on 공부한 내용 기록용</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sat, 17 Jul 2021 17:22:02 +0900</lastBuildDate><atom:link href="/tags/proxy_pattern/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>프록시 패턴</title>
+      <link>/programming/design-pattern/%ED%94%84%EB%A1%9D%EC%8B%9C-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Sat, 17 Jul 2021 17:22:02 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%ED%94%84%EB%A1%9D%EC%8B%9C-%ED%8C%A8%ED%84%B4/</guid>
+      <description>프록시 패턴이란?  어떤 객체에 대한 접근을 제어하는 용도로 대리인이나 대변인에 해당하는 객체를 제공하는 패턴
+다른 객에 대한 접근 제어나 가상 객체로 실제 처리시에만 처리 가능하게 하는 패턴
+ 구조  Subject
+Proxy와 RealSubject의 인터페이스 Proxy
+클라이언트 요구를 처리할 수 있을 만큼 처리, 자신만으로 처리가 안될시 실 객체에 위임 RealSubject
+실제 처리하는 객체  종류  원격 프록시
+원격 객체에 대한 접근 제어가 가능합니다 가상 프록시 Virtual Proxy
+객체의 생성비용이 많이 들어 미리 생성하기 힘든 객체에 대한 접근 및 생성시점 등을 제어합니다 보호 프록시 Protection Proxy</description>
+      <content>&lt;h1 id=&#34;프록시-패턴이란&#34;&gt;프록시 패턴이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;어떤 객체에 대한 접근을 제어하는 용도로 대리인이나 대변인에 해당하는 객체를 제공하는 패턴&lt;/p&gt;
+&lt;p&gt;다른 객에 대한 접근 제어나 가상 객체로 실제 처리시에만 처리 가능하게 하는 패턴&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조&#34;&gt;구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/proxy/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Subject&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Proxy와 RealSubject의 인터페이스&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Proxy&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;클라이언트 요구를 처리할 수 있을 만큼 처리, 자신만으로 처리가 안될시 실 객체에 위임&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;RealSubject&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;실제 처리하는 객체&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;종류&#34;&gt;종류&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;원격 프록시&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;원격 객체에 대한 접근 제어가 가능합니다&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;가상 프록시&lt;/code&gt; &lt;code&gt;Virtual Proxy&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;객체의 생성비용이 많이 들어 미리 생성하기 힘든 객체에 대한 접근 및 생성시점 등을 제어합니다&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;보호 프록시&lt;/code&gt; &lt;code&gt;Protection Proxy&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;객체에 따른 접근 권한을 제어해야하는 객체에 대한 접근을 제어할 수 있습니다&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;방화벽 프록시&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;일련의 네트워크 자원에 대한 접근을 제어함으로써 주 객체를 &lt;span class=&#34;tx-orange&#34;&gt;&lt;strong&gt;나쁜&lt;/strong&gt;&lt;/span&gt; 클라이언트들로부터 보호하는 역할을 합니다&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;스마트 레퍼런스 프록시&lt;/code&gt; &lt;code&gt;Smart Reference Proxy&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;주 객체가 참조될 때마다 추가 행동을 제공합니다&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;캐싱 프록시&lt;/code&gt; &lt;code&gt;Caching Proxy&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;비용이 많이 드는 작업의 결과를 임시로 저장 하고&lt;/sub&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;추후 여러 클라이언트에 저장된 결과를 실제 작업처리 대신 보여주고 자원을 절약하는 역할을 합니다&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;동기화 프록시&lt;/code&gt; &lt;code&gt;Synchronization Proxy&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;여러 스레드에서 주 객체에 접근하는 경우에 안전하게 작업을 처리할 수 있게 해줍니다&lt;/sub&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;주로 분산 환경에서 일련의 객체에 대한 동기화 된 접근을 제어해주는 자바 스페이스에서 쓰입니다&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;복잡도 숨김 프록시&lt;/code&gt; &lt;code&gt;Complexity Hiding Proxy&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;복잡한 클래스들의 집합에 대한 접근을 제어하고, 복잡도를 숨깁니다&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;지연 복사 프록시&lt;/code&gt; &lt;code&gt;Copy-On-Write Proxy&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;클라이언트에서 필요로 할 때까지 객체가 복사되는 것을 지연시킴으로써 객체의 복사를 제어합니다&lt;/sub&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;&lt;span class=&#34;tx-orange&#34;&gt;&lt;strong&gt;변형된 가상 프록시&lt;/strong&gt;&lt;/span&gt;라고 할 수 있으며 Java 5 의 CopyOnWriteArrayList 에서 쓰입니다&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;p&gt;실제 처리되는 로직이 비용이 클 경우&lt;/p&gt;
+&lt;p&gt;처리 순서를 미뤄 효율적으로 대처할 수 있다.&lt;/p&gt;
+&lt;p&gt;실제 처리하는 객체에 대해 앞서 처리과정을 거친 후 처리할 수 있다.&lt;/p&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;p&gt;추가적으로 객체가 생성되어, 오히려 성능이 저하될 수 있다.&lt;/p&gt;
+&lt;p&gt;올바른 처리과정을 위해 스레드 처리 및 동기화 로직을 적절히 구사해야한다.&lt;/p&gt;
+&lt;p&gt;시스템 자체의 코드 복잡도가 늘어난다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참조&#34;&gt;참조&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Java언어로 배우는 디자인 패턴 입문&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tutorialspoint.com/design_pattern/proxy_pattern.htm&#34;&gt;tutorialspoint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slipp.net/wiki/display/SLS/Proxy+Pattern&#34;&gt;SLiPP::위키 - Proxy Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jdm.kr/blog/235&#34;&gt;JDM&amp;rsquo;s Blog::프록시 패턴(Proxy Pattern)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developside.tistory.com/80&#34;&gt;소스코드 요리사::프록시 패턴(proxy pattern) 이란?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
