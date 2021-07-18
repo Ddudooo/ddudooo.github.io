@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>옵저버 패턴 :: 공부한 내용 기록용</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="객체 사이에 일 대 다의 의존 관계를 정의해 두어, 어떤 객체의 상태가 변할 때 그 객체에 의존성을 가진 다른 객체들이 그 변화를 통지받고 자동으로 갱신될 수 있게 만드는 패턴" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/programming/design-pattern/%EC%98%B5%EC%A0%80%EB%B2%84-%ED%8C%A8%ED%84%B4/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="옵저버 패턴">
+<meta property="og:description" content="객체 사이에 일 대 다의 의존 관계를 정의해 두어, 어떤 객체의 상태가 변할 때 그 객체에 의존성을 가진 다른 객체들이 그 변화를 통지받고 자동으로 갱신될 수 있게 만드는 패턴" />
+<meta property="og:url" content="/programming/design-pattern/%EC%98%B5%EC%A0%80%EB%B2%84-%ED%8C%A8%ED%84%B4/" />
+<meta property="og:site_name" content="공부한 내용 기록용" />
+
+  <meta property="og:image" content="/images/designPattern/observer/thumbnail.png">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-07-18 22:16:50 &#43;0900 KST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Ddudooo
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/programming">Programming</a></li>
+        
+      
+        
+          <li><a href="/algorithm">Algorithm</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/programming">Programming</a></li>
+      
+    
+      
+        <li><a href="/algorithm">Algorithm</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/programming/design-pattern/%EC%98%B5%EC%A0%80%EB%B2%84-%ED%8C%A8%ED%84%B4/">옵저버 패턴</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-07-18 [Updated: 2021-07-18]
+      </span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/">디자인패턴</a>&nbsp;
+    
+    #<a href="/tags/%EC%98%B5%EC%A0%80%EB%B2%84%ED%8C%A8%ED%84%B4/">옵저버패턴</a>&nbsp;
+    
+    #<a href="/tags/observer_pattern/">observer_pattern</a>&nbsp;
+    
+  </span>
+  
+
+  
+    <img src="/images/designPattern/observer/thumbnail.png" class="post-cover" alt="옵저버 패턴" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="옵저버-패턴이란">옵저버 패턴이란?<a href="#옵저버-패턴이란" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>객체의 상태 변화를 관찰하는 관찰자들</p>
+<p>즉 옵저버들의 목록을 객체에 등록하여 상태 변화가 있을 때마다<br>
+메서드 등을 통해 객체가 직접 목록의 각 옵저버에게 통지하도록 하는 디자인 패턴</p>
+<p>주로 분산 이벤트 핸들링 시스템을 구현하는 데 사용
+발행/구독 모델로 알려져 있기도 하다</p>
+</blockquote>
+<h2 id="구조">구조<a href="#구조" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><img src="/images/designPattern/observer/structure.png" alt="structure.png"></p>
+<ul>
+<li><code>Subject</code><br>
+<sub class="tx-sub">Observer, 관찰자를 알고 있는 주체</sub><br>
+<sub class="tx-sub">관찰자를 등록하고 제거하는 인터페이스 제공</sub></li>
+<li><code>Observer</code>
+<sub class="tx-sub">Subject에서 변화에 대한 신호를 받아 들여 갱신하는 인터페이스 제공</sub></li>
+</ul>
+<h2 id="장점">장점<a href="#장점" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>객체간의 결합을 느슨하게 유지할 수 있다
+주체와 관찰자간 데이터 교환을 효과적으로 적용할 수 있다</p>
+<h2 id="단점">단점<a href="#단점" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>데이터 교환간에 오히려 결합도가 높아질 수 있다</p>
+<p>다수의 관찰자에게 데이터 교환시 오히려 상태관리가 힘들어지거나 시스템 전체에 영향을 끼칠 수 있다</p>
+<hr>
+<h2 id="참고">참고<a href="#참고" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li><a href="https://coding-factory.tistory.com/710">코딩팩토리::[Design Pattern] 옵저버 패턴(Observer Pattern)에 대하여</a></li>
+<li><a href="https://johngrib.github.io/wiki/observer-pattern/">기계인간 John Grib::옵저버 패턴(Observer Pattern)</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+<script src="https://utteranc.es/client.js"
+        repo="ddudooo/ddudooo.github.io"
+        issue-term="title"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2021 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+  
+</div>
+
+</body>
+</html>

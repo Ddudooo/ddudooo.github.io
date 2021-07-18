@@ -6,7 +6,52 @@
     <description>Recent content on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 17 Jul 2021 17:22:02 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Jul 2021 22:16:50 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>옵저버 패턴</title>
+      <link>/programming/design-pattern/%EC%98%B5%EC%A0%80%EB%B2%84-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Sun, 18 Jul 2021 22:16:50 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EC%98%B5%EC%A0%80%EB%B2%84-%ED%8C%A8%ED%84%B4/</guid>
+      <description>옵저버 패턴이란?  객체의 상태 변화를 관찰하는 관찰자들
+즉 옵저버들의 목록을 객체에 등록하여 상태 변화가 있을 때마다
+메서드 등을 통해 객체가 직접 목록의 각 옵저버에게 통지하도록 하는 디자인 패턴
+주로 분산 이벤트 핸들링 시스템을 구현하는 데 사용 발행/구독 모델로 알려져 있기도 하다
+ 구조  Subject
+Observer, 관찰자를 알고 있는 주체
+관찰자를 등록하고 제거하는 인터페이스 제공 Observer Subject에서 변화에 대한 신호를 받아 들여 갱신하는 인터페이스 제공  장점 객체간의 결합을 느슨하게 유지할 수 있다 주체와 관찰자간 데이터 교환을 효과적으로 적용할 수 있다</description>
+      <content>&lt;h1 id=&#34;옵저버-패턴이란&#34;&gt;옵저버 패턴이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;객체의 상태 변화를 관찰하는 관찰자들&lt;/p&gt;
+&lt;p&gt;즉 옵저버들의 목록을 객체에 등록하여 상태 변화가 있을 때마다&lt;br&gt;
+메서드 등을 통해 객체가 직접 목록의 각 옵저버에게 통지하도록 하는 디자인 패턴&lt;/p&gt;
+&lt;p&gt;주로 분산 이벤트 핸들링 시스템을 구현하는 데 사용
+발행/구독 모델로 알려져 있기도 하다&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조&#34;&gt;구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/observer/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Subject&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Observer, 관찰자를 알고 있는 주체&lt;/sub&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;관찰자를 등록하고 제거하는 인터페이스 제공&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Observer&lt;/code&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Subject에서 변화에 대한 신호를 받아 들여 갱신하는 인터페이스 제공&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;p&gt;객체간의 결합을 느슨하게 유지할 수 있다
+주체와 관찰자간 데이터 교환을 효과적으로 적용할 수 있다&lt;/p&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;p&gt;데이터 교환간에 오히려 결합도가 높아질 수 있다&lt;/p&gt;
+&lt;p&gt;다수의 관찰자에게 데이터 교환시 오히려 상태관리가 힘들어지거나 시스템 전체에 영향을 끼칠 수 있다&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://coding-factory.tistory.com/710&#34;&gt;코딩팩토리::[Design Pattern] 옵저버 패턴(Observer Pattern)에 대하여&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://johngrib.github.io/wiki/observer-pattern/&#34;&gt;기계인간 John Grib::옵저버 패턴(Observer Pattern)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>프록시 패턴</title>
       <link>/programming/design-pattern/%ED%94%84%EB%A1%9D%EC%8B%9C-%ED%8C%A8%ED%84%B4/</link>
