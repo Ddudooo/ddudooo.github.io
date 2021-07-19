@@ -6,13 +6,13 @@
     <description>Recent content in Tags on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 19 Jul 2021 16:23:18 +0900</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Jul 2021 17:14:51 +0900</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>visitor_pattern</title>
-      <link>/tags/visitor_pattern/</link>
-      <pubDate>Mon, 19 Jul 2021 16:23:18 +0900</pubDate>
+      <title>template_method_pattern</title>
+      <link>/tags/template_method_pattern/</link>
+      <pubDate>Mon, 19 Jul 2021 17:14:51 +0900</pubDate>
       
-      <guid>/tags/visitor_pattern/</guid>
+      <guid>/tags/template_method_pattern/</guid>
       <description></description>
       <content></content>
     </item>
@@ -20,9 +20,29 @@
     <item>
       <title>디자인패턴</title>
       <link>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</link>
-      <pubDate>Mon, 19 Jul 2021 16:23:18 +0900</pubDate>
+      <pubDate>Mon, 19 Jul 2021 17:14:51 +0900</pubDate>
       
       <guid>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>템플릿메소드패턴</title>
+      <link>/tags/%ED%85%9C%ED%94%8C%EB%A6%BF%EB%A9%94%EC%86%8C%EB%93%9C%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Mon, 19 Jul 2021 17:14:51 +0900</pubDate>
+      
+      <guid>/tags/%ED%85%9C%ED%94%8C%EB%A6%BF%EB%A9%94%EC%86%8C%EB%93%9C%ED%8C%A8%ED%84%B4/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>visitor_pattern</title>
+      <link>/tags/visitor_pattern/</link>
+      <pubDate>Mon, 19 Jul 2021 16:23:18 +0900</pubDate>
+      
+      <guid>/tags/visitor_pattern/</guid>
       <description></description>
       <content></content>
     </item>

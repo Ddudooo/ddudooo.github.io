@@ -3,19 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2021-07-19T16:23:18+09:00</lastmod>
+    <lastmod>2021-07-19T17:14:51+09:00</lastmod>
     <priority>0</priority>
   </url><url>
     <loc>/programming/</loc>
-    <lastmod>2021-07-19T16:23:18+09:00</lastmod>
+    <lastmod>2021-07-19T17:14:51+09:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2021-07-19T16:23:18+09:00</lastmod>
+    <lastmod>2021-07-19T17:14:51+09:00</lastmod>
   </url><url>
-    <loc>/tags/visitor_pattern/</loc>
-    <lastmod>2021-07-19T16:23:18+09:00</lastmod>
+    <loc>/tags/template_method_pattern/</loc>
+    <lastmod>2021-07-19T17:14:51+09:00</lastmod>
   </url><url>
     <loc>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</loc>
+    <lastmod>2021-07-19T17:14:51+09:00</lastmod>
+  </url><url>
+    <loc>/programming/design-pattern/%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A9%94%EC%86%8C%EB%93%9C-%ED%8C%A8%ED%84%B4/</loc>
+    <lastmod>2021-07-19T17:14:51+09:00</lastmod>
+  </url><url>
+    <loc>/tags/%ED%85%9C%ED%94%8C%EB%A6%BF%EB%A9%94%EC%86%8C%EB%93%9C%ED%8C%A8%ED%84%B4/</loc>
+    <lastmod>2021-07-19T17:14:51+09:00</lastmod>
+  </url><url>
+    <loc>/tags/visitor_pattern/</loc>
     <lastmod>2021-07-19T16:23:18+09:00</lastmod>
   </url><url>
     <loc>/programming/design-pattern/%EB%B0%A9%EB%AC%B8%EC%9E%90-%ED%8C%A8%ED%84%B4/</loc>

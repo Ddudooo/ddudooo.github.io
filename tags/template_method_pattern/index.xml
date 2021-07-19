@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>template_method_pattern on 공부한 내용 기록용</title>
+    <link>/tags/template_method_pattern/</link>
+    <description>Recent content in template_method_pattern on 공부한 내용 기록용</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 19 Jul 2021 17:14:51 +0900</lastBuildDate><atom:link href="/tags/template_method_pattern/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>템플릿 메소드 패턴</title>
+      <link>/programming/design-pattern/%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A9%94%EC%86%8C%EB%93%9C-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Mon, 19 Jul 2021 17:14:51 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A9%94%EC%86%8C%EB%93%9C-%ED%8C%A8%ED%84%B4/</guid>
+      <description>템플릿 메소드 패턴이란?  알고리즘의 구조를 변경하지 않고 알고리즘의 특정 단계들을 다시 정의할 수 있게 해주는 패턴
+전체적인 내용은 같으나, 부분적으로 수정이 필요할 때 유용하게 사용되는 패턴
+ 장점 같은 템플릿으로 하위 클래스를 생성하기에 추상화에 따른 중복코드를 줄일 수 있다
+이에 따라 좀 더 자식 클래스에서 핵심 로직만 관리하기 편해진다
+단점 일반적인 상속에 따른 자식 클래스를 구현하기에 자식 클래스가 많아질 수록 클래스 관리가 복잡하게 된다
+올바른 추상화를 하지 않을 경우, 오히려 코드를 더 작성해야 한다</description>
+      <content>&lt;h1 id=&#34;템플릿-메소드-패턴이란&#34;&gt;템플릿 메소드 패턴이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;알고리즘의 구조를 변경하지 않고 알고리즘의 특정 단계들을 다시 정의할 수 있게 해주는 패턴&lt;/p&gt;
+&lt;p&gt;전체적인 내용은 같으나, 부분적으로 수정이 필요할 때 유용하게 사용되는 패턴&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;p&gt;같은 템플릿으로 하위 클래스를 생성하기에 추상화에 따른 중복코드를 줄일 수 있다&lt;/p&gt;
+&lt;p&gt;이에 따라 좀 더 자식 클래스에서 핵심 로직만 관리하기 편해진다&lt;/p&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;p&gt;일반적인 상속에 따른 자식 클래스를 구현하기에
+자식 클래스가 많아질 수록 클래스 관리가 복잡하게 된다&lt;/p&gt;
+&lt;p&gt;올바른 추상화를 하지 않을 경우, 오히려 코드를 더 작성해야 한다&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;마치며&#34;&gt;마치며&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;템플릿 메소드 패턴을 마지막으로 간략하게나마 디자인패턴을 살펴보았다.&lt;/p&gt;
+&lt;p&gt;유명한 내용이다 보니 다른 글도 찾아보면서 진행하였는데,&lt;br&gt;
+글 내용 자체에는 코드 관련 내용을 최대한 적지 않고 메모형식으로 작성했는데&lt;/p&gt;
+&lt;p&gt;이유는 아직 덜 이해하기도 해서, 나중에 다시 보면서 이해하기 위해 정리하는 개념으로 작성으로 했다.&lt;/p&gt;
+&lt;p&gt;작성하면서 해본 코드 예시는 &lt;a href=&#34;https://github.com/Ddudooo/designpattern&#34;&gt;디자인패턴 예시 코드 저장소&lt;/a&gt;에서 살펴볼 수 있다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://johngrib.github.io/wiki/template-method-pattern/&#34;&gt;기계인간 John Grib::템플릿 메소드 패턴(Template Method Pattern)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.baeldung.com/java-template-method-pattern&#34;&gt;Baeldung::Implementing the Template Method Pattern in Java&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tutorialspoint.com/design_pattern/template_pattern.htm&#34;&gt;tutorialspoint::Design Patterns - Template Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
