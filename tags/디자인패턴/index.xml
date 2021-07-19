@@ -6,7 +6,55 @@
     <description>Recent content in 디자인패턴 on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 19 Jul 2021 15:45:43 +0900</lastBuildDate><atom:link href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Jul 2021 16:23:18 +0900</lastBuildDate><atom:link href="/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>방문자 패턴</title>
+      <link>/programming/design-pattern/%EB%B0%A9%EB%AC%B8%EC%9E%90-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Mon, 19 Jul 2021 16:23:18 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EB%B0%A9%EB%AC%B8%EC%9E%90-%ED%8C%A8%ED%84%B4/</guid>
+      <description>방문자 패턴이란?  데이터의 구조와 처리를 분리하는 패턴
+분리를 하면 구조를 수정하지 않고도 실질적으로 새로운 동작을 기존의 객체 구조에 추가할 수 있게 된다
+ 구조  Visitor
+데이터 처리를 하는 객체를 추상화 Element
+데이터를 구조를 추상화
+Visitor 객체를 받아들이는 데이터 구조의 인터페이스  장점 데이터의 구조,즉 처리 대상과 처리 항목을 구조적으로 분리하여
+데이터의 독립성을 높여준다
+처리하는 입장에서는 동일한 인터페이스로 다양한 데이터를 처리할 수 있게 해준다
+단점 Element, 데이터 구조가 추가됨에 따라</description>
+      <content>&lt;h1 id=&#34;방문자-패턴이란&#34;&gt;방문자 패턴이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;데이터의 구조와 처리를 분리하는 패턴&lt;/p&gt;
+&lt;p&gt;분리를 하면 구조를 수정하지 않고도 실질적으로 새로운 동작을 기존의 객체 구조에 추가할 수 있게 된다&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조&#34;&gt;구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/visitor/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Visitor&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;데이터 처리를 하는 객체를 추상화&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Element&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;데이터를 구조를 추상화&lt;/sub&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;Visitor 객체를 받아들이는 데이터 구조의 인터페이스&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;p&gt;데이터의 구조,즉 처리 대상과 처리 항목을 구조적으로 분리하여&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;데이터의 독립성을 높여준다&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;처리하는 입장에서는 동일한 인터페이스로 다양한 데이터를 처리할 수 있게 해준다&lt;/p&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Element&lt;/code&gt;, 데이터 구조가 추가됨에 따라&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Visitor&lt;/code&gt;, 처리할 객체도 이에 따른 처리과정을 추가해야 한다.&lt;/p&gt;
+&lt;p&gt;따라서 두 객체간의 결합도가 높아지게 된다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;출처&#34;&gt;출처&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tutorialspoint.com/design_pattern/visitor_pattern.htm&#34;&gt;tutorialspoint::Design Patterns - Visitor Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ganghee-lee.tistory.com/9&#34;&gt;프라이데이::[디자인패턴] Visitor Pattern (방문자 패턴)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://huisam.tistory.com/entry/Visitor&#34;&gt;천천히 올바르게::Visitor Pattern - 비지터 패턴, 방문자 패턴&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.baeldung.com/java-visitor-pattern&#34;&gt;Baeldung::Visitor Design Pattern in Java&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>전략 패턴</title>
       <link>/programming/design-pattern/%EC%A0%84%EB%9E%B5-%ED%8C%A8%ED%84%B4/</link>
