@@ -6,7 +6,51 @@
     <description>Recent content in Programmings on 공부한 내용 기록용</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 18 Jul 2021 22:16:50 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Jul 2021 14:03:58 +0900</lastBuildDate><atom:link href="/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>상태 패턴</title>
+      <link>/programming/design-pattern/%EC%83%81%ED%83%9C-%ED%8C%A8%ED%84%B4/</link>
+      <pubDate>Mon, 19 Jul 2021 14:03:58 +0900</pubDate>
+      
+      <guid>/programming/design-pattern/%EC%83%81%ED%83%9C-%ED%8C%A8%ED%84%B4/</guid>
+      <description>상태 패턴이란?  상태를 객체화 하여 상태가 행동을 할 수 있도록 위임하는 패턴
+ 구조  Context
+객체의 상태를 정의하는 메소드의 인터페이스 State
+상태에 따른 동작을 정의한 인터페이스 ConcreateState
+State의 구현체  장점 객체 상태에 대한 내용이 한곳에 집중되어 유지 보수하기에 편한편이다
+분기 처리시에 단순히 상태를 추가하고 그에 따른 내용만 추가하면 된다
+단점 상태에 따른 클래스 수가 늘어남에 따라 유지보수가 오히려 힘들어질 수 있다
+상태에 대한 내용이 적다면 오히려 불필요하게 코드만 복잡해질 수 있다</description>
+      <content>&lt;h1 id=&#34;상태-패턴이란&#34;&gt;상태 패턴이란?&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;상태를 객체화 하여 상태가 행동을 할 수 있도록 위임하는 패턴&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;구조&#34;&gt;구조&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/images/designPattern/state/structure.png&#34; alt=&#34;structure.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Context&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;객체의 상태를 정의하는 메소드의 인터페이스&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;State&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;상태에 따른 동작을 정의한 인터페이스&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ConcreateState&lt;/code&gt;&lt;br&gt;
+&lt;sub class=&#34;tx-sub&#34;&gt;State의 구현체&lt;/sub&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;장점&#34;&gt;장점&lt;/h2&gt;
+&lt;p&gt;객체 상태에 대한 내용이 한곳에 집중되어 유지 보수하기에 편한편이다&lt;/p&gt;
+&lt;p&gt;분기 처리시에 단순히 상태를 추가하고 그에 따른 내용만 추가하면 된다&lt;/p&gt;
+&lt;h2 id=&#34;단점&#34;&gt;단점&lt;/h2&gt;
+&lt;p&gt;상태에 따른 클래스 수가 늘어남에 따라 유지보수가 오히려 힘들어질 수 있다&lt;/p&gt;
+&lt;p&gt;상태에 대한 내용이 적다면 오히려 불필요하게 코드만 복잡해질 수 있다&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;참고&#34;&gt;참고&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tutorialspoint.com/design_pattern/state_pattern.htm&#34;&gt;tutorialspoint::Design Patterns - State Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slipp.net/wiki/display/SLS/State&#34;&gt;SLiPP::위키 - State&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://steady-coding.tistory.com/387&#34;&gt;느리더라도 꾸준하게::[디자인 패턴] 상태(State) 패턴이란?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>옵저버 패턴</title>
       <link>/programming/design-pattern/%EC%98%B5%EC%A0%80%EB%B2%84-%ED%8C%A8%ED%84%B4/</link>

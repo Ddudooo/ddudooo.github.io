@@ -3,19 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2021-07-18T22:16:50+09:00</lastmod>
+    <lastmod>2021-07-19T14:03:58+09:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>/tags/observer_pattern/</loc>
-    <lastmod>2021-07-18T22:16:50+09:00</lastmod>
-  </url><url>
     <loc>/programming/</loc>
-    <lastmod>2021-07-18T22:16:50+09:00</lastmod>
+    <lastmod>2021-07-19T14:03:58+09:00</lastmod>
+  </url><url>
+    <loc>/tags/state_pattern/</loc>
+    <lastmod>2021-07-19T14:03:58+09:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2021-07-18T22:16:50+09:00</lastmod>
+    <lastmod>2021-07-19T14:03:58+09:00</lastmod>
   </url><url>
     <loc>/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</loc>
+    <lastmod>2021-07-19T14:03:58+09:00</lastmod>
+  </url><url>
+    <loc>/programming/design-pattern/%EC%83%81%ED%83%9C-%ED%8C%A8%ED%84%B4/</loc>
+    <lastmod>2021-07-19T14:03:58+09:00</lastmod>
+  </url><url>
+    <loc>/tags/%EC%83%81%ED%83%9C%ED%8C%A8%ED%84%B4/</loc>
+    <lastmod>2021-07-19T14:03:58+09:00</lastmod>
+  </url><url>
+    <loc>/tags/observer_pattern/</loc>
     <lastmod>2021-07-18T22:16:50+09:00</lastmod>
   </url><url>
     <loc>/programming/design-pattern/%EC%98%B5%EC%A0%80%EB%B2%84-%ED%8C%A8%ED%84%B4/</loc>
